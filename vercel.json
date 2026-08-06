@@ -1,0 +1,25 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "vite",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "sieuthiso-thinhvuaapp.vercel.app" }],
+      "destination": "https://sieuthisoai.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "thinhvuaapp3-ecru.vercel.app" }],
+      "destination": "https://sieuthisoai.com/:path*",
+      "permanent": true
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/check-commissions",
+      "schedule": "0 1 * * *"
+    }
+  ]
+}
