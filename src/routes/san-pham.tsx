@@ -423,7 +423,7 @@ function ProductDetailPage() {
 
             {/* LEFT: Image Gallery */}
             <div className="md:w-[380px] shrink-0 p-4 border-b md:border-b-0 md:border-r border-border bg-card">
-              <div className="rounded-xl overflow-hidden bg-muted aspect-square mb-3 relative border border-border">
+              <div className="rounded-xl overflow-hidden bg-muted aspect-video mb-3 relative border border-border">
                 {currentImg ? (
                   <img src={currentImg} alt={title} className={`w-full h-full ${isAdmin ? "object-cover" : "object-contain"}`} />
                 ) : (

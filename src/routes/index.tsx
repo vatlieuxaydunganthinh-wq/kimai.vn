@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { apps, skillEnTitles } from "@/lib/apps-data";
+import { apps, skillEnTitles, enThumbnailUrls } from "@/lib/apps-data";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getFeaturedPromoServer } from "@/lib/payment-server-fns";
 
@@ -55,7 +55,7 @@ const adminProductsFallback = apps.map((a) => ({
   titleEn: a.titleEn ?? null,
   priceVnd: Number(a.priceVnd),
   image: a.image as string | null,
-  imageEn: null as string | null,
+  imageEn: (a.thumbnailEnUrl ?? enThumbnailUrls[a.n] ?? null) as string | null,
   productKey: null as string | null,
   sortMs: BASE_DATE + a.n * 86400000,
 }));
@@ -586,7 +586,7 @@ function Index() {
                 titleEn: apps.find(a => a.n === p.n)?.titleEn ?? null,
                 priceVnd: p.price_vnd,
                 image: p.thumbnail_url ?? (apps.find(a => a.n === p.n)?.image as string | null ?? null),
-                imageEn: p.thumbnail_url_en ?? null,
+                imageEn: p.thumbnail_url_en ?? enThumbnailUrls[p.n] ?? null,
                 productKey: null as string | null,
                 sortMs: BASE_DATE + p.n * 86400000,
               }))
@@ -621,7 +621,7 @@ function Index() {
             const showEnOverlay = showEnMode && !p.imageEn && p.titleEn && p.image;
             return (
               <a href={href} className="group border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all bg-background">
-                <div className="aspect-square overflow-hidden bg-muted relative">
+                <div className="aspect-video overflow-hidden bg-muted relative">
                   {displayImg ? (
                     <img src={displayImg} alt={showEnMode && p.titleEn ? p.titleEn : p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                   ) : (

@@ -207,7 +207,7 @@ function ShopPage() {
                     <a key={p.id} href={`/san-pham?mp=${p.product_key}`}
                       className="group bg-background rounded-xl border border-border overflow-hidden hover:shadow-md transition-shadow">
                       {/* Product image */}
-                      <div className="aspect-square bg-muted overflow-hidden relative">
+                      <div className="aspect-video bg-muted overflow-hidden relative">
                         {thumb ? (
                           <img src={thumb} alt={p.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />

@@ -141,7 +141,7 @@ function DanhMucPage() {
         href={href}
         className="group border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all bg-background"
       >
-        <div className="aspect-square overflow-hidden bg-muted relative">
+        <div className="aspect-video overflow-hidden bg-muted relative">
           {p.image ? (
             <img src={p.image} alt={displayTitle} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
           ) : (
