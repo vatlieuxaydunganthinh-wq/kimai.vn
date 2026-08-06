@@ -46,10 +46,10 @@ export type AppProduct = {
 // Pre-generated Higgsfield EN thumbnails (same style as VI thumbnails, EN text)
 export const enThumbnailUrls: Record<number, string> = {
   1: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_161825_5d3f6e56-d192-4429-87d2-4a24421febe0.png",
-  2: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081147_f3c80fd0-e7f9-444b-91da-1355800d58e6.png",
-  3: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081155_52683ba5-9a8e-47af-8efa-91ea71a49d18.png",
-  4: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081202_81bc6a31-ef87-4450-9102-63ac95fff1e5.png",
-  5: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081208_498e1a6d-8870-46e7-b3d7-2cef817d8bfa.png",
+  2: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_170729_7ee74852-873b-475b-9cc0-2afe167aaf62.png",
+  3: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_170936_0780fe43-a8c5-42fc-9fce-89991a442dea.png",
+  4: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171213_f76a4e62-8df7-4b8f-b8aa-29fc9d46af7c.png",
+  5: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171536_94938dc5-ba0d-43b0-a46c-39e509ba26ad.png",
   6: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081214_31ed72a9-b5b4-43a4-8f29-8f2cc71fd2ff.png",
   7: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081222_556cf06c-5903-4941-94a7-6971ef8a0e92.png",
   8: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081229_a40828e9-a738-438b-a171-03ca012db03f.png",
@@ -139,7 +139,7 @@ export const apps: AppProduct[] = [
     titleEn: "Intro to Thinh Vua App & AI Entrepreneurship Community",
     desc: "Khám phá Thịnh Vua App và cộng đồng khởi nghiệp cùng AI – kết nối, chia sẻ kinh nghiệm, ứng dụng AI vào thực tế và cùng nhau phát triển.",
     descEn: "Explore Thinh Vua App and the AI startup community — connect, share experience, apply AI in real life, and grow together.",
-    price: "6$", priceVnd: "379000", codeFormat: "KN<SĐT>", codeExample: "KN0367337799", image: khoiNghiepThumb,
+    price: "6$", priceVnd: "379000", codeFormat: "KN<SĐT>", codeExample: "KN0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_170850_07161231-90a6-4a6d-82a9-9eb1251a660a.png",
     previewUrl: "https://www.notion.so/TH-NH-VUA-APP-2bb9a30c0fba80cfb660ed69ab475dcb?source=copy_link",
   },
   {
@@ -148,7 +148,7 @@ export const apps: AppProduct[] = [
     titleEn: "Full Workflow: Earn $4,000/Month with ChatGPT Image 2",
     desc: "Trọn bộ quy trình thực chiến giúp bạn khai thác Chat GPT Image 2 để tạo nội dung, sản phẩm và kiếm tới 100 triệu mỗi tháng.",
     descEn: "Complete battle-tested workflow to leverage ChatGPT Image 2 for content creation, product building, and earning up to $4,000/month.",
-    price: "15$", priceVnd: "79000", codeFormat: "GPT2<SĐT>", codeExample: "GPT20367337799", image: chatgptImage2Thumb,
+    price: "15$", priceVnd: "79000", codeFormat: "GPT2<SĐT>", codeExample: "GPT20367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171051_7dd97185-21ac-44f7-a291-6434e1b42495.png",
     previewUrl: "https://www.facebook.com/reel/1455372752581227",
     productUrl: "https://docs.google.com/document/d/15FeVL2hK1fzVrX2pQB5LzYFsYqGV6iSLlqqO3SF20hE/edit?usp=sharing",
   },
@@ -158,7 +158,7 @@ export const apps: AppProduct[] = [
     titleEn: "Gift Pack: 100+ AI Assistants for All Industries",
     desc: "Bộ sưu tập hơn 100 trợ lý AI được thiết kế chuyên biệt cho đa dạng ngành nghề – sẵn sàng dùng ngay.",
     descEn: "A curated collection of 100+ AI assistants purpose-built for diverse industries — ready to use immediately.",
-    price: "6$", priceVnd: "55000", codeFormat: "TLA<SĐT>", codeExample: "TLA0367337799", image: troLyAiImage,
+    price: "6$", priceVnd: "55000", codeFormat: "TLA<SĐT>", codeExample: "TLA0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171438_088583a4-8add-40f9-9976-4a94b84da137.png",
     productUrl: "https://docs.google.com/spreadsheets/d/1C-svW32rngDD5CZrfxmbg1JIUuIyCteD/edit?usp=sharing&ouid=115789862033738051198&rtpof=true&sd=true",
   },
   {
