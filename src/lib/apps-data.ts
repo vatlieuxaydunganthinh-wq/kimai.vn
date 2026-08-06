@@ -45,7 +45,7 @@ export type AppProduct = {
 
 // Pre-generated Higgsfield EN thumbnails (same style as VI thumbnails, EN text)
 export const enThumbnailUrls: Record<number, string> = {
-  1: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081138_21d02376-a31a-4969-8f58-0cf142bc31f8.png",
+  1: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_161825_5d3f6e56-d192-4429-87d2-4a24421febe0.png",
   2: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081147_f3c80fd0-e7f9-444b-91da-1355800d58e6.png",
   3: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081155_52683ba5-9a8e-47af-8efa-91ea71a49d18.png",
   4: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081202_81bc6a31-ef87-4450-9102-63ac95fff1e5.png",
@@ -120,7 +120,7 @@ export const apps: AppProduct[] = [
     titleEn: "Landing Page Builder Guide — Sales & Conversion Pages A-Z",
     desc: "Hướng dẫn chi tiết từ A–Z cách dùng AI để dựng landing page, trang bán hàng và trang chuyển đổi chuyên nghiệp.",
     descEn: "Step-by-step A-Z guide to using AI to build professional landing pages, sales pages, and conversion-optimized pages.",
-    price: "6$", priceVnd: "79000", codeFormat: "LOVA<SĐT>", codeExample: "LOVA0367337799", image: landingThumb,
+    price: "6$", priceVnd: "79000", codeFormat: "LOVA<SĐT>", codeExample: "LOVA0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_160854_e60cb66d-fedd-47df-ac5f-5526ba580bf9.png",
     previewUrl: "https://www.facebook.com/reel/1001995869073404",
     productUrl: "https://docs.google.com/document/d/1cCcGRNUi_kypjHUI0uum3l6Moa3cXodTU3HpUvsEOXE/edit?usp=sharing",
   },
@@ -130,7 +130,7 @@ export const apps: AppProduct[] = [
     titleEn: "$2 Poster Creation Workflow + Free ChatGPT Plus + Multi-Industry Template Vault",
     desc: "Trọn bộ giải pháp: quy trình tạo poster chuyên nghiệp từ A–Z, trải nghiệm ChatGPT Plus miễn phí, và kho poster mẫu đa ngành nghề – chỉnh sửa & dùng ngay.",
     descEn: "All-in-one solution: professional poster creation workflow A-Z, free ChatGPT Plus trial, and a multi-industry poster template library — edit and use instantly.",
-    price: "6$", priceVnd: "55000", codeFormat: "GPT<SĐT>", codeExample: "GPT0367337799", image: superPromptThumb,
+    price: "6$", priceVnd: "55000", codeFormat: "GPT<SĐT>", codeExample: "GPT0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_162406_1c4687cb-bd67-4583-9727-8de0a8ed0eb5.png",
     productUrl: "https://docs.google.com/document/d/1m4kU9qiPkYhGoTqOhSfnN2llnwjGbWGbgG5rL1Cwb_Y/edit?usp=sharing",
   },
   {
