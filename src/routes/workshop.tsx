@@ -42,10 +42,10 @@ function Page() {
           <Hand className="w-5 h-5" /> Đăng ký ngay – Giữ chỗ
         </a>
 
-        <div className="mt-16 max-w-3xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-br from-amber-300 via-yellow-400 to-orange-400 aspect-[4/3] flex items-center justify-center shadow-2xl relative">
+        <div className="mt-16 max-w-3xl mx-auto rounded-3xl overflow-hidden bg-gradient-to-br from-amber-300 via-yellow-400 to-emerald-400 aspect-[4/3] flex items-center justify-center shadow-2xl relative">
           <div className="text-center text-stone-900">
             <div className="text-6xl md:text-8xl font-black drop-shadow-xl">Ý TƯỞNG</div>
-            <div className="text-6xl md:text-8xl font-black drop-shadow-xl text-orange-700">ĐIÊN RỒ</div>
+            <div className="text-6xl md:text-8xl font-black drop-shadow-xl text-emerald-700">ĐIÊN RỒ</div>
             <div className="mt-4 text-lg font-bold">CHIA SẺ TỪ THỊNH VUA APP</div>
           </div>
         </div>

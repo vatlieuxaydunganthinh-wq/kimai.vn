@@ -69,7 +69,7 @@ function RatingSection({ productKey, hasPurchased }: { productKey: string; hasPu
       </h2>
       <div className="flex flex-col sm:flex-row gap-6 items-start">
         <div className="flex flex-col items-center justify-center min-w-[120px]">
-          <div className="text-5xl font-extrabold text-orange-500">{count > 0 ? avg.toFixed(1) : "—"}</div>
+          <div className="text-5xl font-extrabold text-emerald-500">{count > 0 ? avg.toFixed(1) : "—"}</div>
           <div className="flex gap-0.5 my-1.5">
             {[1, 2, 3, 4, 5].map(s => (
               <span key={s} className={`text-xl ${s <= Math.round(avg) ? "text-yellow-400" : "text-gray-200"}`}>★</span>
@@ -182,7 +182,7 @@ function CommentsSection({ productKey, defaultName, hasPurchased }: { productKey
   };
 
   const avatarColor = (n: string) => {
-    const colors = ["bg-orange-400", "bg-blue-400", "bg-emerald-400", "bg-purple-400", "bg-pink-400", "bg-yellow-400"];
+    const colors = ["bg-emerald-400", "bg-blue-400", "bg-emerald-400", "bg-purple-400", "bg-pink-400", "bg-yellow-400"];
     return colors[n.charCodeAt(0) % colors.length];
   };
 
@@ -469,7 +469,7 @@ function ProductDetailPage() {
 
               <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border">
                 <div className="flex items-center gap-1">
-                  <span className="font-bold text-orange-500 text-sm underline">{t("Đánh giá", "Rating")}</span>
+                  <span className="font-bold text-emerald-500 text-sm underline">{t("Đánh giá", "Rating")}</span>
                   <span className="text-yellow-400 text-sm">★</span>
                 </div>
                 {!isAdmin && memberProduct && (
@@ -484,7 +484,7 @@ function ProductDetailPage() {
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-5">
-                <span className="text-3xl sm:text-4xl font-extrabold text-orange-500">
+                <span className="text-3xl sm:text-4xl font-extrabold text-emerald-500">
                   {price(priceVnd)}
                 </span>
                 {lang === "en" && (
@@ -607,7 +607,7 @@ function ProductDetailPage() {
               { label: t("Tham gia", "Joined"), value: joinDate || "2024" },
             ].map(({ label, value }) => (
               <div key={label} className="text-center px-2">
-                <div className="text-sm font-bold text-orange-500">{value}</div>
+                <div className="text-sm font-bold text-emerald-500">{value}</div>
                 <div className="text-[10px] text-muted-foreground mt-0.5">{label}</div>
               </div>
             ))}

@@ -85,7 +85,7 @@ function SkillsPage() {
       </header>
 
       {/* Banner */}
-      <div className="bg-gradient-to-r from-primary to-orange-400 px-4 py-5 text-center text-white">
+      <div className="bg-gradient-to-r from-primary to-emerald-400 px-4 py-5 text-center text-white">
         <h1 className="text-lg sm:text-2xl font-extrabold mb-1">🎓 KHO SKILL AI — MỌI NGÀNH NGHỀ</h1>
         <p className="text-sm text-white/85">Bộ kỹ năng AI chuyên sâu · Dễ học · Ứng dụng ngay · Kiếm tiền liền</p>
       </div>

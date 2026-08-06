@@ -203,12 +203,12 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
               </p>
               {orderCode && (
                 <p className="text-xs text-white/40 mt-1">
-                  {payMethod === "paypal" ? "Order" : "Mã đơn"}: <span className="font-mono text-amber-400">{orderCode}</span>
+                  {payMethod === "paypal" ? "Order" : "Mã đơn"}: <span className="font-mono text-emerald-400">{orderCode}</span>
                 </p>
               )}
               {product.productUrl && (
                 <a href={product.productUrl} target="_blank" rel="noopener noreferrer"
-                  className="mt-4 block w-full rounded-xl bg-amber-500 text-black py-3.5 font-black text-base hover:bg-amber-400 transition text-center">
+                  className="mt-4 block w-full rounded-xl bg-emerald-500 text-black py-3.5 font-black text-base hover:bg-emerald-400 transition text-center">
                   👉 {payMethod === "paypal" ? "Access Product" : "Truy cập sản phẩm ngay"}
                 </a>
               )}
@@ -229,7 +229,7 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
               <p className="text-sm text-white/50 mt-1">Mã đơn: {orderCode}</p>
               <div className="mt-4 text-center">
                 <div className="text-sm text-white/50">Số tiền chuyển</div>
-                <div className="text-3xl font-black text-amber-400 mt-1">{amountVnd.toLocaleString("vi-VN")}đ</div>
+                <div className="text-3xl font-black text-emerald-400 mt-1">{amountVnd.toLocaleString("vi-VN")}đ</div>
               </div>
               <div className="mt-4 bg-white rounded-2xl p-3 mx-auto max-w-[260px]">
                 <img src={qrUrl} alt="QR Thanh toán" className="w-full h-auto" loading="eager" />
@@ -253,12 +253,12 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
                 <div className="flex justify-between items-center">
                   <span className="text-white/50">Nội dung CK:</span>
                   <div className="flex items-center gap-1">
-                    <span className="font-black text-amber-400 font-mono">{orderCode}</span>
+                    <span className="font-black text-emerald-400 font-mono">{orderCode}</span>
                     <button onClick={() => copy(orderCode)} className="p-1 hover:bg-white/10 rounded"><Copy className="w-3 h-3" /></button>
                   </div>
                 </div>
               </div>
-              <div className="mt-4 flex items-center justify-center gap-2 text-amber-400">
+              <div className="mt-4 flex items-center justify-center gap-2 text-emerald-400">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 <span className="text-sm font-semibold animate-pulse">Đang chờ thanh toán...</span>
               </div>
@@ -281,7 +281,7 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
               <div className="mt-5 flex rounded-xl overflow-hidden border border-white/15">
                 <button
                   onClick={() => setPayMethod("vnd")}
-                  className={`flex-1 py-2.5 text-xs font-bold transition ${payMethod === "vnd" ? "bg-amber-500 text-black" : "bg-white/5 text-white/60 hover:bg-white/10"}`}
+                  className={`flex-1 py-2.5 text-xs font-bold transition ${payMethod === "vnd" ? "bg-emerald-500 text-black" : "bg-white/5 text-white/60 hover:bg-white/10"}`}
                 >
                   🏦 VND
                 </button>
@@ -304,7 +304,7 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
                 {payMethod === "promo" ? null : payMethod === "vnd" ? (
                   <>
                     <div className="text-sm text-white/50">Số tiền</div>
-                    <div className="text-4xl font-black text-amber-400 mt-1">{amountVnd.toLocaleString("vi-VN")}đ</div>
+                    <div className="text-4xl font-black text-emerald-400 mt-1">{amountVnd.toLocaleString("vi-VN")}đ</div>
                   </>
                 ) : (
                   <>
@@ -323,15 +323,15 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
                   </label>
                   <input type="text" value={name} onChange={(e) => setName(e.target.value)}
                     placeholder={payMethod === "paypal" ? "John Doe" : "Nguyễn Văn A"}
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/40" />
+                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-white/80">
-                    {payMethod === "paypal" ? "Email to receive product" : "Email nhận sản phẩm"} <span className="text-amber-400">*</span>
+                    {payMethod === "paypal" ? "Email to receive product" : "Email nhận sản phẩm"} <span className="text-emerald-400">*</span>
                   </label>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                     placeholder="email@gmail.com" required
-                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-amber-500/40" />
+                    className="mt-1 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
                   <p className="text-xs text-white/30 mt-1">
                     {payMethod === "paypal"
                       ? "Product will be sent to this email after payment"
@@ -357,7 +357,7 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
               {payMethod === "vnd" && (
                 <>
                   <button onClick={handleBuy} disabled={creating || !emailValid}
-                    className="mt-6 w-full rounded-xl bg-amber-500 text-black py-3.5 font-black text-base hover:bg-amber-400 transition disabled:opacity-50 flex items-center justify-center gap-2">
+                    className="mt-6 w-full rounded-xl bg-emerald-500 text-black py-3.5 font-black text-base hover:bg-emerald-400 transition disabled:opacity-50 flex items-center justify-center gap-2">
                     {creating ? <><Loader2 className="w-4 h-4 animate-spin" /> Đang tạo đơn...</> : "⚡ Mua ngay"}
                   </button>
                   <p className="text-xs text-white/30 mt-3 text-center">

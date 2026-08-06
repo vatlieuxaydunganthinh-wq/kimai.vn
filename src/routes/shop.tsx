@@ -120,7 +120,7 @@ function ShopPage() {
         {/* ── SHOP PROFILE ── */}
         <div className="bg-card rounded-2xl border border-border overflow-hidden">
           {/* Banner gradient */}
-          <div className="h-28 sm:h-36 bg-gradient-to-br from-primary/80 via-primary to-orange-400 relative">
+          <div className="h-28 sm:h-36 bg-gradient-to-br from-primary/80 via-primary to-emerald-400 relative">
             <div className="absolute inset-0 opacity-20"
               style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
           </div>
@@ -169,7 +169,7 @@ function ShopPage() {
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} className="text-center px-1">
                   <Icon className="w-4 h-4 text-muted-foreground mx-auto mb-1" />
-                  <div className="text-sm font-bold text-orange-500">{value}</div>
+                  <div className="text-sm font-bold text-emerald-500">{value}</div>
                   <div className="text-[10px] text-muted-foreground mt-0.5">{label}</div>
                 </div>
               ))}
@@ -225,7 +225,7 @@ function ShopPage() {
                       <div className="p-2.5">
                         <p className="text-xs font-semibold line-clamp-2 leading-snug mb-1.5">{p.title}</p>
                         <div className="flex items-center justify-between gap-1">
-                          <span className="text-sm font-extrabold text-orange-500">
+                          <span className="text-sm font-extrabold text-emerald-500">
                             {Number(p.price_vnd).toLocaleString("vi-VN")}đ
                           </span>
                         </div>

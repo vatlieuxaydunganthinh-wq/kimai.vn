@@ -33,7 +33,7 @@ function Page() {
       </section>
 
       <section className="px-5 pb-20 max-w-4xl mx-auto">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-200 via-orange-300 to-amber-400 aspect-video flex items-center justify-center shadow-2xl">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-200 via-emerald-300 to-amber-400 aspect-video flex items-center justify-center shadow-2xl">
           <div className="absolute inset-0 bg-black/10" />
           <PlayCircle className="relative w-24 h-24 text-white drop-shadow-2xl hover:scale-110 transition cursor-pointer" />
           <div className="absolute bottom-6 left-6 right-6 text-white text-center">

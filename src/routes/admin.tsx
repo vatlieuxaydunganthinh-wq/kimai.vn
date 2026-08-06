@@ -363,17 +363,17 @@ function AdminPage() {
     for (let x = 0; x < 1200; x += 60) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 630); ctx.stroke(); }
     for (let y = 0; y < 630; y += 60) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1200, y); ctx.stroke(); }
     const glow = ctx.createRadialGradient(1100, 80, 0, 1100, 80, 340);
-    glow.addColorStop(0, "rgba(249,115,22,0.18)"); glow.addColorStop(1, "rgba(249,115,22,0)");
+    glow.addColorStop(0, "rgba(16,185,129,0.18)"); glow.addColorStop(1, "rgba(16,185,129,0)");
     ctx.fillStyle = glow; ctx.fillRect(600, 0, 600, 400);
     const barGrad = ctx.createLinearGradient(0, 0, 0, 630);
-    barGrad.addColorStop(0, "#f59e0b"); barGrad.addColorStop(0.5, "#f97316"); barGrad.addColorStop(1, "#ef4444");
+    barGrad.addColorStop(0, "#064e3b"); barGrad.addColorStop(0.5, "#059669"); barGrad.addColorStop(1, "#10b981");
     ctx.fillStyle = barGrad; ctx.fillRect(0, 0, 10, 630);
     const badgeText = isEn ? "🤖 AI DIGITAL SKILL" : "🤖 KỸ NĂNG AI SỐ";
     ctx.font = "bold 16px Arial, sans-serif";
     const badgeW = ctx.measureText(badgeText).width + 40;
-    ctx.fillStyle = "rgba(249,115,22,0.18)";
+    ctx.fillStyle = "rgba(16,185,129,0.18)";
     ctx.beginPath(); (ctx as any).roundRect(48, 44, badgeW, 36, 18); ctx.fill();
-    ctx.fillStyle = "#f97316"; ctx.fillText(badgeText, 68, 68);
+    ctx.fillStyle = "#059669"; ctx.fillText(badgeText, 68, 68);
     ctx.font = "bold 66px Arial, sans-serif"; ctx.fillStyle = "#ffffff";
     const words = title.split(" "); const lines: string[] = []; let cur = "";
     for (const w of words) {
@@ -392,7 +392,7 @@ function AdminPage() {
     }
     ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(48, 563); ctx.lineTo(1152, 563); ctx.stroke();
-    ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#f97316";
+    ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#059669";
     ctx.fillText(isEn ? "AI DIGITAL MARKET" : "SIÊU THỊ SỐ AI", 48, 605);
     ctx.font = "18px Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const siteText = "sieuthisoai.com";
@@ -440,11 +440,11 @@ function AdminPage() {
     }
 
     // Orange left accent bar
-    const bar = ctx.createLinearGradient(0,0,0,H); bar.addColorStop(0,"#f59e0b"); bar.addColorStop(0.5,"#f97316"); bar.addColorStop(1,"#ef4444");
+    const bar = ctx.createLinearGradient(0,0,0,H); bar.addColorStop(0,"#064e3b"); bar.addColorStop(0.5,"#059669"); bar.addColorStop(1, "#10b981");
     ctx.fillStyle = bar; ctx.fillRect(0,0,7,H);
 
     // HD badge top-right
-    ctx.fillStyle = "#f97316"; ctx.beginPath(); (ctx as any).roundRect(W-100,18,74,36,8); ctx.fill();
+    ctx.fillStyle = "#059669"; ctx.beginPath(); (ctx as any).roundRect(W-100,18,74,36,8); ctx.fill();
     ctx.font = "bold 20px Arial"; ctx.fillStyle = "white"; ctx.textAlign = "left"; ctx.fillText("HD", W-80, 42);
 
     // ── Large neon title at top — same style as VI thumbnails ──
@@ -460,8 +460,8 @@ function AdminPage() {
     const lineH = 104, startY = 110 + 94;
     disp.forEach((line, i) => {
       const y = startY + i * lineH;
-      ctx.shadowColor = "#f97316"; ctx.shadowBlur = 32;
-      ctx.fillStyle = "#f97316"; ctx.font = "bold 94px Arial"; ctx.fillText(line, W/2, y);
+      ctx.shadowColor = "#059669"; ctx.shadowBlur = 32;
+      ctx.fillStyle = "#059669"; ctx.font = "bold 94px Arial"; ctx.fillText(line, W/2, y);
       ctx.shadowColor = "rgba(255,220,100,0.4)"; ctx.shadowBlur = 8;
       ctx.fillStyle = "rgba(255,255,255,0.15)"; ctx.fillText(line, W/2, y);
       ctx.shadowBlur = 0;
@@ -481,7 +481,7 @@ function AdminPage() {
     ctx.textAlign = "left"; ctx.shadowBlur = 0;
     ctx.strokeStyle = "rgba(255,255,255,0.1)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(20,1014); ctx.lineTo(W-20,1014); ctx.stroke();
-    ctx.font = "bold 28px Arial"; ctx.fillStyle = "#f97316"; ctx.fillText("AI MARKET",20,1050);
+    ctx.font = "bold 28px Arial"; ctx.fillStyle = "#059669"; ctx.fillText("AI MARKET",20,1050);
     ctx.fillStyle = "white"; ctx.fillText("PLACE",20+ctx.measureText("AI MARKET").width,1050);
     ctx.font = "18px Arial"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const site = "sieuthisoai.com"; ctx.fillText(site, W-20-ctx.measureText(site).width, 1050);

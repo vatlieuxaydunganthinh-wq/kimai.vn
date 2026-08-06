@@ -228,7 +228,7 @@ function Index() {
                 hasAffiliate ? (
                   <Link
                     to="/affiliate-dashboard"
-                    className="flex items-center gap-1 bg-yellow-300 text-orange-900 rounded-lg px-2.5 py-1.5 text-xs font-extrabold"
+                    className="flex items-center gap-1 bg-yellow-300 text-emerald-900 rounded-lg px-2.5 py-1.5 text-xs font-extrabold"
                     style={{ boxShadow: "0 0 10px 2px rgba(253,224,71,0.5)" }}
                   >
                     📊 <span className="max-w-[60px] truncate">{currentUser.name.split(" ").pop()}</span>
@@ -236,7 +236,7 @@ function Index() {
                 ) : (
                   <button
                     onClick={() => setShowAffiliateMsg(true)}
-                    className="flex items-center gap-1 bg-yellow-300 text-orange-900 rounded-lg px-2.5 py-1.5 text-xs font-extrabold"
+                    className="flex items-center gap-1 bg-yellow-300 text-emerald-900 rounded-lg px-2.5 py-1.5 text-xs font-extrabold"
                   >
                     👤 <span className="max-w-[60px] truncate">{currentUser.name.split(" ").pop()}</span>
                   </button>
@@ -270,7 +270,7 @@ function Index() {
               placeholder={t("Tìm sản phẩm số AI, app, công cụ...", "Search AI products, apps, tools...")}
               className="flex-1 rounded-l-md px-3 py-2 text-sm bg-white text-gray-800 placeholder:text-gray-400 outline-none"
             />
-            <button type="submit" className="bg-orange-600 text-white rounded-r-md px-3 py-2">
+            <button type="submit" className="bg-emerald-600 text-white rounded-r-md px-3 py-2">
               <Search className="w-4 h-4" />
             </button>
           </form>
@@ -294,7 +294,7 @@ function Index() {
               placeholder={t("Tìm sản phẩm số AI, app, công cụ...", "Search AI products, apps, tools...")}
               className="flex-1 rounded-l-md px-4 py-2 text-sm bg-white text-gray-800 placeholder:text-gray-400 outline-none"
             />
-            <button type="submit" className="bg-orange-600 hover:bg-orange-700 text-white rounded-r-md px-4 py-2 transition">
+            <button type="submit" className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-r-md px-4 py-2 transition">
               <Search className="w-4 h-4" />
             </button>
           </form>
@@ -304,7 +304,7 @@ function Index() {
                 {hasAffiliate ? (
                   <Link
                     to="/affiliate-dashboard"
-                    className="flex items-center gap-1.5 bg-yellow-300 text-orange-900 rounded-xl px-4 py-2 text-sm font-extrabold transition hover:bg-yellow-200 whitespace-nowrap"
+                    className="flex items-center gap-1.5 bg-yellow-300 text-emerald-900 rounded-xl px-4 py-2 text-sm font-extrabold transition hover:bg-yellow-200 whitespace-nowrap"
                     style={{ boxShadow: "0 0 16px 4px rgba(253,224,71,0.55), 0 2px 8px rgba(0,0,0,0.15)" }}
                   >
                     📊 Dashboard
@@ -312,7 +312,7 @@ function Index() {
                 ) : (
                   <button
                     onClick={() => setShowAffiliateMsg(true)}
-                    className="flex items-center gap-1.5 bg-yellow-300 text-orange-900 rounded-xl px-4 py-2 text-sm font-extrabold transition hover:bg-yellow-200 whitespace-nowrap"
+                    className="flex items-center gap-1.5 bg-yellow-300 text-emerald-900 rounded-xl px-4 py-2 text-sm font-extrabold transition hover:bg-yellow-200 whitespace-nowrap"
                     style={{ boxShadow: "0 0 16px 4px rgba(253,224,71,0.55), 0 2px 8px rgba(0,0,0,0.15)" }}
                   >
                     📊 Dashboard
@@ -322,7 +322,7 @@ function Index() {
                   onClick={() => setDropdownOpen((v) => !v)}
                   className="flex items-center gap-2 bg-white/15 hover:bg-white/25 rounded-xl px-3 py-1.5 transition"
                 >
-                  <div className="w-7 h-7 rounded-full bg-yellow-300 text-orange-800 grid place-items-center font-bold text-xs">
+                  <div className="w-7 h-7 rounded-full bg-yellow-300 text-emerald-800 grid place-items-center font-bold text-xs">
                     {currentUser.name.charAt(0).toUpperCase()}
                   </div>
                   <span className="text-white text-sm font-semibold max-w-[100px] truncate">{currentUser.name}</span>
@@ -544,13 +544,13 @@ function Index() {
               <div className="text-sm font-black truncate drop-shadow">
                 {lang === "en" ? (
                   <>Enter code{" "}
-                    <span className="promo-badge inline-block bg-white text-orange-600 px-2 py-0.5 rounded-md font-black font-mono uppercase text-xs tracking-wider shadow">
+                    <span className="promo-badge inline-block bg-white text-emerald-600 px-2 py-0.5 rounded-md font-black font-mono uppercase text-xs tracking-wider shadow">
                       PROMO
                     </span>{" "}
                     to unlock for free</>
                 ) : (
                   <>Nhập mã{" "}
-                    <span className="promo-badge inline-block bg-white text-orange-600 px-2 py-0.5 rounded-md font-black font-mono uppercase text-xs tracking-wider shadow">
+                    <span className="promo-badge inline-block bg-white text-emerald-600 px-2 py-0.5 rounded-md font-black font-mono uppercase text-xs tracking-wider shadow">
                       KHUYẾN MÃI
                     </span>{" "}
                     để mở khoá miễn phí</>

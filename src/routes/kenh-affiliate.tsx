@@ -12,7 +12,7 @@ const CHANNELS = [
     name: "Thịnh Vua App",
     desc: "Sản phẩm số AI & khóa học kiếm tiền online",
     emoji: "⚡",
-    color: "from-orange-500 to-orange-400",
+    color: "from-emerald-500 to-emerald-400",
   },
   {
     key: "phong-menly",

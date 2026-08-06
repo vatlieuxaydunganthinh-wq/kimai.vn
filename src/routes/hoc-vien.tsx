@@ -56,7 +56,7 @@ const PRODUCTS = [
 ];
 
 const COURSES = [
-  { title: "Mật Mã Phễu – Master Sale", lessons: 7, color: "from-amber-600 to-orange-700", icon: "📊" },
+  { title: "Mật Mã Phễu – Master Sale", lessons: 7, color: "from-amber-600 to-emerald-700", icon: "📊" },
   { title: "Mật Mã Tự Do", lessons: 9, color: "from-purple-600 to-indigo-700", icon: "📕" },
   { title: "KOL AI SYSTEM", lessons: null, community: true, color: "from-emerald-600 to-teal-700", icon: "🤖" },
 ];
@@ -236,7 +236,7 @@ function HocVienPage() {
           {/* User Profile */}
           <div className="p-5 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 grid place-items-center text-black font-bold text-lg">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-amber-500 to-emerald-600 grid place-items-center text-black font-bold text-lg">
                 {userName.charAt(0).toUpperCase()}
               </div>
               <div className="min-w-0">

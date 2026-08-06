@@ -267,19 +267,19 @@ function AffiliateDashboard() {
     for (let y = 0; y < 630; y += 60) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1200, y); ctx.stroke(); }
     // Orange glow top-right
     const glow = ctx.createRadialGradient(1100, 80, 0, 1100, 80, 340);
-    glow.addColorStop(0, "rgba(249,115,22,0.18)"); glow.addColorStop(1, "rgba(249,115,22,0)");
+    glow.addColorStop(0, "rgba(16,185,129,0.18)"); glow.addColorStop(1, "rgba(16,185,129,0)");
     ctx.fillStyle = glow; ctx.fillRect(600, 0, 600, 400);
     // Left accent bar
     const barGrad = ctx.createLinearGradient(0, 0, 0, 630);
-    barGrad.addColorStop(0, "#f59e0b"); barGrad.addColorStop(0.5, "#f97316"); barGrad.addColorStop(1, "#ef4444");
+    barGrad.addColorStop(0, "#064e3b"); barGrad.addColorStop(0.5, "#059669"); barGrad.addColorStop(1, "#10b981");
     ctx.fillStyle = barGrad; ctx.fillRect(0, 0, 10, 630);
     // Badge pill
     const badgeText = isEn ? "🤖 AI DIGITAL SKILL" : "🤖 KỸ NĂNG AI SỐ";
     ctx.font = "bold 16px Arial, sans-serif";
     const badgeW = ctx.measureText(badgeText).width + 40;
-    ctx.fillStyle = "rgba(249,115,22,0.18)";
+    ctx.fillStyle = "rgba(16,185,129,0.18)";
     ctx.beginPath(); (ctx as any).roundRect(48, 44, badgeW, 36, 18); ctx.fill();
-    ctx.fillStyle = "#f97316"; ctx.fillText(badgeText, 68, 68);
+    ctx.fillStyle = "#059669"; ctx.fillText(badgeText, 68, 68);
     // Title — word wrap
     ctx.font = "bold 66px Arial, sans-serif"; ctx.fillStyle = "#ffffff";
     const words = title.split(" ");
@@ -303,7 +303,7 @@ function AffiliateDashboard() {
     ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(48, 563); ctx.lineTo(1152, 563); ctx.stroke();
     // Branding
-    ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#f97316";
+    ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#059669";
     ctx.fillText(isEn ? "AI DIGITAL MARKET" : "SIÊU THỊ SỐ AI", 48, 605);
     ctx.font = "18px Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const siteText = "sieuthisoai.com";

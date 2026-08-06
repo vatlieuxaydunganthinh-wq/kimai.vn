@@ -14,7 +14,7 @@ export const Route = createFileRoute("/cong-cu-ai")({
 const tools = [
   { name: "ChatGPT", cat: "AI Chatbox", tag: "FREEMIUM", color: "bg-emerald-500", letter: "C", desc: "Trợ lý AI hội thoại của OpenAI – hỏi đáp, viết nội dung, lập kế hoạch và xử lý mọi tác vụ.", rating: 48, views: "5.2K" },
   { name: "Google Gemini", cat: "AI Chatbox", tag: "FREEMIUM", color: "bg-blue-500", letter: "G", desc: "Trợ lý AI đa năng của Google – mạnh về suy luận, kết nối hệ sinh thái Google.", rating: 32, views: "3.8K" },
-  { name: "TopView AI", cat: "AI Video", tag: "FREEMIUM", color: "bg-orange-500", letter: "T", desc: "Best AI video review – tạo video review sản phẩm chuyên nghiệp chỉ trong vài phút.", rating: 14, views: "1.8K" },
+  { name: "TopView AI", cat: "AI Video", tag: "FREEMIUM", color: "bg-emerald-500", letter: "T", desc: "Best AI video review – tạo video review sản phẩm chuyên nghiệp chỉ trong vài phút.", rating: 14, views: "1.8K" },
   { name: "Kling AI", cat: "AI Video", tag: "FREEMIUM", color: "bg-pink-500", letter: "K", desc: "Top công cụ sáng tạo video AI – biến văn bản và hình ảnh thành video sống động.", rating: 22, views: "2.4K" },
   { name: "Lovable", cat: "AI Code", tag: "FREEMIUM", color: "bg-rose-500", letter: "L", desc: "Xây app, web bằng AI chỉ với mô tả – không cần biết code, deploy trong vài phút.", rating: 45, views: "6.1K" },
   { name: "Focusee", cat: "AI Video", tag: "PREMIUM", color: "bg-cyan-500", letter: "F", desc: "Tạo video screen-record chuyên nghiệp với hiệu ứng zoom, focus tự động.", rating: 19, views: "2.1K" },
@@ -60,8 +60,8 @@ function Page() {
                 <span className="text-primary text-xs">✓</span>
               </div>
               <div className="mt-2 flex flex-wrap gap-2">
-                <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-700">{t.cat}</span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-orange-200 text-orange-800 font-semibold">{t.tag}</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">{t.cat}</span>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-200 text-emerald-800 font-semibold">{t.tag}</span>
               </div>
               <p className="mt-3 text-sm text-muted-foreground line-clamp-3">{t.desc}</p>
               <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
