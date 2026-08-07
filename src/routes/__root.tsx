@@ -87,8 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@SieuThiSoAI" },
       { name: "twitter:title", content: "KIM AI - Affiliate Kiếm Tiền" },
       { name: "twitter:description", content: "ĐĂNG KÝ LINK - Affiliate Kiếm Tiền với SP/DV của Kim AI" },
-      { property: "og:image", content: "https://sieuthisoai.com/og-v3.png" },
-      { name: "twitter:image", content: "https://sieuthisoai.com/og-v3.png" },
+      { property: "og:image", content: "https://kimai-two.vercel.app/og-kimai.png" },
+      { name: "twitter:image", content: "https://kimai-two.vercel.app/og-kimai.png" },
     ],
     links: [
       {
