@@ -190,7 +190,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Cosmetics Workflow App — Batch Image & Video Creator",
     desc: "Tạo ảnh/video hàng loạt chỉ bằng một cú click chuột. Ảnh/video sắc nét, cao cấp – chuẩn ngành mỹ phẩm.",
     descEn: "Generate batches of high-quality cosmetics images and videos with a single click — professional-grade output.",
-    price: "9$", priceVnd: "79000", codeFormat: "WMP<SĐT>", codeExample: "WMP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_005032_d7b42ef3-c4c1-4c32-9f1b-9f5492597759.png",
+    price: "9$", priceVnd: "79000", codeFormat: "WMP<SĐT>", codeExample: "WMP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_135740_54ef507d-5ff9-4ead-a14d-4938760d6b8c.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/60a83d02-0695-44a2-96a2-25652a513ffa",
   },
   {
@@ -280,7 +280,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Food & Restaurant Review Content Creator",
     desc: "App review ẩm thực – tạo nội dung review nhà hàng, quán ăn chuyên nghiệp bằng AI.",
     descEn: "AI-powered food and restaurant review app — create professional review content for restaurants and eateries.",
-    priceVnd: "55000", codeFormat: "AMTH<SĐT>", codeExample: "AMTH0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_013537_4369f5a4-09b2-4596-9523-7d15458173f4.png",
+    priceVnd: "55000", codeFormat: "AMTH<SĐT>", codeExample: "AMTH0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_141526_20bf4a17-f480-41cd-b985-ef5675766dab.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/34951af0-a207-456d-80be-eb87b80fb2ad",
   },
   {
@@ -307,7 +307,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Interior Design Creator App",
     desc: "App nội thất – tạo ảnh thiết kế nội thất chuyên nghiệp bằng AI, phù hợp cho kiến trúc sư và nhà thiết kế.",
     descEn: "AI interior design app — create professional interior design images, perfect for architects and designers.",
-    priceVnd: "79000", codeFormat: "NOTH<SĐT>", codeExample: "NOTH0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_015641_6a9f1af3-34e9-4dcd-8033-29595b38da1e.png",
+    priceVnd: "79000", codeFormat: "NOTH<SĐT>", codeExample: "NOTH0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_142119_6b28339c-55c6-4213-bdbb-9dc6464e10b6.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/b422bca7-ff9f-4dd4-b6de-48b265268bf7",
   },
   {
