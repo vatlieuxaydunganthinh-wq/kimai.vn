@@ -58,7 +58,7 @@ export const enThumbnailUrls: Record<number, string> = {
   11: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010109_4c5e4cfc-45bc-4602-8702-8851c979b3b1.png",
   12: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010520_30f8fbd5-4bcc-404e-8d73-3f60f7530cb3.png",
   13: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010924_c5f06931-ff07-4379-b976-7e0739989a59.png",
-  14: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081311_9c123626-3490-4225-a2fe-4e40b64c6ab4.png",
+  14: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_011339_8b111867-2e43-4463-9697-b712f6c382e4.png",
   15: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081318_6616335c-66f3-49c2-8133-f5d8bed964bb.png",
   16: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081325_23484a25-cbf8-4f08-9433-9cdd1e7c88aa.png",
   17: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081332_f6d96bba-51f8-4c5e-98c7-0cd419b4cb40.png",
@@ -242,7 +242,7 @@ export const apps: AppProduct[] = [
     titleEn: "Long-Form Video Generator App — Auto-Create from Content",
     desc: "App Flow giúp tạo video dài từ nội dung có sẵn – tự động hoá quy trình sản xuất video.",
     descEn: "AI Flow app that generates long-form videos from existing content — fully automated video production pipeline.",
-    priceVnd: "79000", codeFormat: "FVID<SĐT>", codeExample: "FVID0367337799", image: sp14Thumb,
+    priceVnd: "79000", codeFormat: "FVID<SĐT>", codeExample: "FVID0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_011254_df997e04-b602-4743-b721-8f8b9e410ec2.png",
     productUrl: "https://docs.google.com/document/d/17Y5Q9_oTjGLBgJA45_vgRngWc5cAsDDGXqa4mh0-z_c/edit?usp=sharing",
   },
   {
