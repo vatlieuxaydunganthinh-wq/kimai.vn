@@ -730,14 +730,6 @@ function Index() {
           );
         })()}
 
-        {/* KÊNH AFFILIATE */}
-        <a href="/kenh-affiliate" className="group flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-primary to-primary/80 px-5 py-4 shadow-md hover:shadow-lg hover:opacity-95 transition-all">
-          <span className="font-extrabold text-sm sm:text-base text-white tracking-wide">
-            {t("💰 KÊNH NGON AFFILIATE AI - KIẾM TIỀN THỤ ĐỘNG", "💰 BEST AI AFFILIATE CHANNELS - PASSIVE INCOME")}
-          </span>
-          <span className="shrink-0 text-white/80 text-lg group-hover:translate-x-1 transition-transform">→</span>
-        </a>
-
       </main>
 
       {/* ── FOOTER ── */}
