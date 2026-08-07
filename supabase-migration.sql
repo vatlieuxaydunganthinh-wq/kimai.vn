@@ -350,10 +350,11 @@ CREATE POLICY "aff_orders_admin_update" ON public.affiliate_orders
 -- STORAGE BUCKETS
 -- ============================================================
 
-INSERT INTO storage.buckets (id, name, public)
+INSERT INTO storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 VALUES
-  ('avatars',        'avatars',        true),
-  ('product-images', 'product-images', true)
+  ('avatars',        'avatars',        true, NULL, NULL),
+  ('product-images', 'product-images', true, NULL, NULL),
+  ('product-videos', 'product-videos', true, 52428800, ARRAY['video/mp4','video/webm','video/quicktime','video/x-matroska'])
 ON CONFLICT (id) DO NOTHING;
 
 -- Storage policies
@@ -361,6 +362,12 @@ CREATE POLICY "avatars_public_read" ON storage.objects FOR SELECT USING (bucket_
 CREATE POLICY "avatars_auth_upload" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'avatars' AND auth.role() = 'authenticated');
 CREATE POLICY "product_images_public_read" ON storage.objects FOR SELECT USING (bucket_id = 'product-images');
 CREATE POLICY "product_images_auth_upload" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'product-images' AND auth.role() = 'authenticated');
+CREATE POLICY "product_videos_public_read" ON storage.objects FOR SELECT USING (bucket_id = 'product-videos');
+CREATE POLICY "product_videos_auth_upload" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'product-videos' AND auth.role() = 'authenticated');
+CREATE POLICY "product_videos_owner_delete" ON storage.objects FOR DELETE USING (bucket_id = 'product-videos' AND auth.role() = 'authenticated');
+
+-- Video demo cho sản phẩm cộng đồng
+ALTER TABLE public.member_products ADD COLUMN IF NOT EXISTS video_url TEXT;
 
 -- ============================================================
 -- SEED: Tạo tài khoản admin sau khi đăng ký

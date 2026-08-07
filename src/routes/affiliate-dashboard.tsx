@@ -61,6 +61,8 @@ function AffiliateDashboard() {
   const [spThumbnailUrlEn, setSpThumbnailUrlEn] = useState("");
   const [spUploadedImages, setSpUploadedImages] = useState<string[]>([]);
   const [spUploadingImages, setSpUploadingImages] = useState(false);
+  const [spVideoUrl, setSpVideoUrl] = useState("");
+  const [spUploadingVideo, setSpUploadingVideo] = useState(false);
   const [spUploadingImageEn, setSpUploadingImageEn] = useState(false);
   const [spGeneratingThumb, setSpGeneratingThumb] = useState(false);
   const [spGeneratingThumbEn, setSpGeneratingThumbEn] = useState(false);
@@ -312,7 +314,7 @@ function AffiliateDashboard() {
   };
 
   const clearAddForm = () => {
-    setSpTitle(""); setSpDesc(""); setSpProductUrl(""); setSpPreviewUrl(""); setSpPriceVnd(""); setSpCommission("20"); setSpThumbnailUrl(""); setSpThumbnailUrlEn(""); setSpUploadedImages([]);
+    setSpTitle(""); setSpDesc(""); setSpProductUrl(""); setSpPreviewUrl(""); setSpPriceVnd(""); setSpCommission("20"); setSpThumbnailUrl(""); setSpThumbnailUrlEn(""); setSpUploadedImages([]); setSpVideoUrl("");
     setEditingProductId(null);
   };
 
@@ -328,6 +330,7 @@ function AffiliateDashboard() {
       commission_rate: parseInt(spCommission) || 20,
       thumbnail_url: spUploadedImages.length > 1 ? JSON.stringify(spUploadedImages) : spThumbnailUrl.trim() || null,
       thumbnail_url_en: spThumbnailUrlEn.trim() || null,
+      video_url: spVideoUrl.trim() || null,
     };
     if (editingProductId) {
       const { error } = await (supabase as any).from("member_products").update(commonFields).eq("id", editingProductId);
@@ -360,7 +363,7 @@ function AffiliateDashboard() {
     setEditingProductId(mp.id); setSpTitle(mp.title || ""); setSpDesc(mp.description || "");
     setSpProductUrl(mp.product_url || ""); setSpPreviewUrl(mp.preview_url || "");
     setSpPriceVnd(String(mp.price_vnd || "")); setSpCommission(String(mp.commission_rate || 20));
-    setSpThumbnailUrl(mp.thumbnail_url || ""); setSpThumbnailUrlEn(mp.thumbnail_url_en || ""); setSpUploadedImages([]); setSellSection("add");
+    setSpThumbnailUrl(mp.thumbnail_url || ""); setSpThumbnailUrlEn(mp.thumbnail_url_en || ""); setSpUploadedImages([]); setSpVideoUrl(mp.video_url || ""); setSellSection("add");
   };
 
   const toggleProductStatus = async (mp: any) => {
@@ -964,6 +967,46 @@ function AffiliateDashboard() {
                   <div>
                     <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{t("Link xem trước / demo", "Preview / Demo Link")} <span className="normal-case font-normal text-muted-foreground">({t("tuỳ chọn", "optional")})</span></label>
                     <input value={spPreviewUrl} onChange={(e) => setSpPreviewUrl(e.target.value)} className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="https://youtu.be/..." />
+                  </div>
+                  <div>
+                    <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{t("Video demo / sản phẩm", "Demo / Product Video")} <span className="normal-case font-normal text-muted-foreground">({t("tuỳ chọn — tối đa 50MB", "optional — max 50MB")})</span></label>
+                    <div className="mt-1 flex items-center gap-2 flex-wrap">
+                      <label className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-dashed border-primary/50 bg-primary/5 text-primary text-sm font-semibold cursor-pointer hover:bg-primary/10 transition ${spUploadingVideo ? "opacity-50 pointer-events-none" : ""}`}>
+                        {spUploadingVideo ? t("Đang tải lên...", "Uploading...") : `🎬 ${t("Chọn video từ máy", "Choose video from device")}`}
+                        <input type="file" accept="video/mp4,video/webm,video/quicktime,video/x-matroska" className="hidden" disabled={spUploadingVideo}
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            if (file.size > 50 * 1024 * 1024) { toast.error(t("Video tối đa 50MB", "Video max 50MB")); e.target.value = ""; return; }
+                            setSpUploadingVideo(true);
+                            try {
+                              const { data: { user } } = await supabase.auth.getUser();
+                              const ownerId = affiliate?.id ?? user?.id ?? "unknown";
+                              const ext = file.name.split(".").pop()?.toLowerCase() ?? "mp4";
+                              const path = `${ownerId}/${Date.now()}.${ext}`;
+                              const { error } = await supabase.storage.from("product-videos").upload(path, file, { upsert: false, contentType: file.type || "video/mp4" });
+                              if (error) { toast.error(t("Lỗi tải video: ", "Video upload error: ") + error.message); }
+                              else {
+                                const { data: urlData } = supabase.storage.from("product-videos").getPublicUrl(path);
+                                setSpVideoUrl(urlData.publicUrl);
+                                toast.success(t("Đã tải video lên!", "Video uploaded!"));
+                              }
+                            } catch (err: any) {
+                              toast.error("Error: " + err.message);
+                            } finally {
+                              setSpUploadingVideo(false);
+                              e.target.value = "";
+                            }
+                          }}
+                        />
+                      </label>
+                      {spVideoUrl && (
+                        <button type="button" onClick={() => setSpVideoUrl("")} className="text-xs text-red-500 hover:underline">✕ {t("Xoá video", "Remove video")}</button>
+                      )}
+                    </div>
+                    {spVideoUrl && (
+                      <video src={spVideoUrl} controls className="mt-2 w-full max-w-xs rounded-lg border border-border" />
+                    )}
                   </div>
                   <div>
                     <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">{t("Ảnh thumbnail sản phẩm", "Product Thumbnail")} <span className="normal-case font-normal text-muted-foreground">({t("tuỳ chọn — tối đa 5 ảnh", "optional — max 5 images")})</span></label>

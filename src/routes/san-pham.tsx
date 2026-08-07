@@ -16,7 +16,7 @@ type MemberProduct = {
   id: string; title: string; description: string; product_url: string;
   preview_url: string | null; thumbnail_url: string | null; thumbnail_url_en: string | null; price_vnd: number;
   commission_rate: number; product_key: string; seller_name: string; shop_name: string | null;
-  affiliate_id: string | null;
+  affiliate_id: string | null; video_url: string | null;
 };
 
 // ── RATING SECTION ──────────────────────────────────────────────────────────
@@ -374,6 +374,7 @@ function ProductDetailPage() {
   const descEn = adminProduct?.descEn ?? null;
   const priceVnd = adminProduct ? Number(adminProduct.priceVnd) : (memberProduct?.price_vnd ?? 0);
   const previewUrl = adminProduct ? adminProduct.previewUrl : memberProduct?.preview_url ?? null;
+  const videoUrl = memberProduct?.video_url ?? null;
   const isAdmin = !!adminProduct;
   const ratingKey = adminProduct ? String(adminProduct.n) : memberProduct?.product_key ?? "";
   const shopName = isAdmin ? "Thịnh Vua App · AIGO Group" : (memberProduct?.shop_name || memberProduct?.seller_name || "");
@@ -450,6 +451,12 @@ function ProductDetailPage() {
                       <img src={img} alt="" className="w-full h-full object-cover" />
                     </button>
                   ))}
+                </div>
+              )}
+              {videoUrl && (
+                <div className="mt-3">
+                  <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5">🎬 {t("Video demo", "Demo Video")}</div>
+                  <video src={videoUrl} controls preload="metadata" className="w-full rounded-xl border border-border bg-black" />
                 </div>
               )}
               <div className="mt-3 flex items-center gap-2">
