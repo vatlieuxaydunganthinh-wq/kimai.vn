@@ -56,7 +56,7 @@ export const enThumbnailUrls: Record<number, string> = {
   9: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_005120_c8ba72f6-9ba0-4596-87be-b9913a23bab6.png",
   10: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_005600_3341e92e-3df3-4a6f-9ae9-4d4709b84d4f.png",
   11: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010109_4c5e4cfc-45bc-4602-8702-8851c979b3b1.png",
-  12: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081256_fd3f4526-8ea1-4460-990e-cbc4e307c4ff.png",
+  12: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010520_30f8fbd5-4bcc-404e-8d73-3f60f7530cb3.png",
   13: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081305_17c9a431-6756-49a9-8d8f-9239b0140851.png",
   14: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081311_9c123626-3490-4225-a2fe-4e40b64c6ab4.png",
   15: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081318_6616335c-66f3-49c2-8133-f5d8bed964bb.png",
@@ -223,7 +223,7 @@ export const apps: AppProduct[] = [
     titleEn: "Affordable Gemini Pro Account — Full Google AI Access",
     desc: "Tài khoản Gemini Pro chính chủ giá rẻ – trải nghiệm AI mạnh mẽ từ Google với đầy đủ tính năng Pro. Chi phí kích hoạt 199k - Tiết kiệm 2 triệu VND so với thị trường.",
     descEn: "Genuine Gemini Pro account at an affordable price — experience Google's powerful AI with full Pro features. Save $80+ compared to market rate.",
-    price: "10$", priceVnd: "300000", codeFormat: "GEM<SĐT>", codeExample: "GEM0367337799", image: geminiProThumb,
+    price: "10$", priceVnd: "300000", codeFormat: "GEM<SĐT>", codeExample: "GEM0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010435_c2ceed45-f4c4-4273-9be7-fe9dddbc56cb.png",
     productUrl: "https://gemini4thchinhchu.lovable.app",
   },
   {
