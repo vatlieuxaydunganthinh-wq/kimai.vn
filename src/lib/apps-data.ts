@@ -68,7 +68,7 @@ export const enThumbnailUrls: Record<number, string> = {
   21: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_015302_ae99e261-a375-405b-aa37-d484cd750650.png",
   22: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_015731_66e8c754-e26b-417f-b4c4-3c3a4d3f84b0.png",
   23: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020204_38232492-bca5-40e3-8f85-03740ea83fdc.png",
-  24: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081415_0f840af9-496e-48fa-86da-6914681db0ee.png",
+  24: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020725_5265b2e5-1572-481b-90d5-bba632832b84.png",
   25: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081421_920de085-ebb4-453c-aec6-ac80d9ae2a11.png",
   26: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081429_2d476a4f-6d02-4408-adb5-3fe7be58fe54.png",
   27: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081436_bea1ab0e-1642-4c8b-ad85-b16cd5e415eb.png",
@@ -340,7 +340,7 @@ export const apps: AppProduct[] = [
     titleEn: "Beginner Orientation Zoom Session — June 21, 2026",
     desc: "Video Zoom định hướng ngày 21/6/2026 – hướng dẫn chi tiết cho người mới bắt đầu.",
     descEn: "Zoom orientation session recording from June 21, 2026 — detailed guide for complete beginners.",
-    priceVnd: "22000", codeFormat: "ZM21<SĐT>", codeExample: "ZM210367337799", image: sp24Thumb,
+    priceVnd: "22000", codeFormat: "ZM21<SĐT>", codeExample: "ZM210367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020638_3cebe1c5-50b5-4eb7-b0e4-3855123b3254.png",
     productUrl: "https://drive.google.com/file/d/1oOtGeGstKVQ34h3g9UTWrnUuziv3AgKS/view?usp=sharing",
   },
   {
