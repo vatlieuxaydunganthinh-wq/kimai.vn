@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import {
   LogOut, Copy, MousePointerClick, ShoppingCart, Clock, DollarSign,
-  CheckCircle2, BarChart3, Link2, Package, ArrowLeft, Shield, Sparkles, Globe,
+  CheckCircle2, BarChart3, Link2, Package, ArrowLeft, Shield, Sparkles, Globe, Pencil,
 } from "lucide-react";
 import { toast } from "sonner";
 import { uploadAvatarServer, getLeaderboardServer, uploadProductImageServer, notifyNewProductServer } from "@/lib/payment-server-fns";
@@ -85,6 +85,22 @@ function AffiliateDashboard() {
   const [savingBank, setSavingBank] = useState(false);
   const avatarFileRef = useRef<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [editingHeaderName, setEditingHeaderName] = useState(false);
+  const [headerNameInput, setHeaderNameInput] = useState("");
+  const [savingHeaderName, setSavingHeaderName] = useState(false);
+
+  const saveHeaderName = async () => {
+    if (!affiliate) return;
+    const newName = headerNameInput.trim();
+    if (!newName) return;
+    setSavingHeaderName(true);
+    const { error } = await (supabase as any).from("affiliates").update({ full_name: newName }).eq("id", affiliate.id);
+    setSavingHeaderName(false);
+    if (!error) {
+      setAffiliate({ ...affiliate, full_name: newName });
+      setEditingHeaderName(false);
+    }
+  };
 
   const load = async () => {
     const { data: userData, error: userErr } = await supabase.auth.getUser();
@@ -414,7 +430,34 @@ function AffiliateDashboard() {
                 {(affiliate.full_name || affiliate.email).charAt(0).toUpperCase()}
               </div>
               <div className="text-right">
-                <div className="text-sm font-bold leading-tight">{affiliate.full_name || affiliate.email}</div>
+                {editingHeaderName ? (
+                  <div className="flex items-center gap-1">
+                    <input
+                      autoFocus
+                      value={headerNameInput}
+                      onChange={(e) => setHeaderNameInput(e.target.value)}
+                      onKeyDown={(e) => e.key === "Enter" && saveHeaderName()}
+                      className="w-36 rounded-lg border border-border bg-background px-2 py-0.5 text-sm font-bold outline-none"
+                    />
+                    <button onClick={saveHeaderName} disabled={savingHeaderName} className="text-xs font-bold text-primary disabled:opacity-50">
+                      {savingHeaderName ? "..." : t("Lưu", "Save")}
+                    </button>
+                    <button onClick={() => setEditingHeaderName(false)} className="text-xs font-semibold text-muted-foreground">
+                      {t("Huỷ", "Cancel")}
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1 justify-end">
+                    <div className="text-sm font-bold leading-tight">{affiliate.full_name || affiliate.email}</div>
+                    <button
+                      onClick={() => { setHeaderNameInput(affiliate.full_name || ""); setEditingHeaderName(true); }}
+                      className="text-muted-foreground hover:text-primary transition"
+                      aria-label={t("Sửa tên hiển thị", "Edit display name")}
+                    >
+                      <Pencil className="w-3 h-3" />
+                    </button>
+                  </div>
+                )}
                 <div className="text-[10px] text-muted-foreground leading-tight">Affiliate</div>
               </div>
             </div>
