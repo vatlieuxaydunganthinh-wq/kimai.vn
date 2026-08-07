@@ -739,9 +739,9 @@ function Index() {
             <Sparkles className="w-4 h-4 text-primary" /> {lang === "en" ? "KIM AI" : "KIM AI"}
           </div>
           <div className="flex items-center gap-4 text-xs">
-            <a href="https://zalo.me/g/pwjvcw931" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
+            <span>
               💬 {t("Zalo Cộng Đồng", "Zalo Community")}
-            </a>
+            </span>
           </div>
           <div>© {new Date().getFullYear()} KIM AI</div>
         </div>
