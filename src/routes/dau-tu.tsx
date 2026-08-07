@@ -225,8 +225,8 @@ function PitchPage() {
               <a href="mailto:thinhqb102@gmail.com" className="inline-flex items-center gap-2 hover:text-white transition justify-center">
                 <Mail className="w-4 h-4" /> thinhqb102@gmail.com
               </a>
-              <a href="https://zalo.me/0367337799" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white transition justify-center">
-                <Phone className="w-4 h-4" /> Zalo: 0367337799
+              <a href="https://zalo.me/0982101088" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white transition justify-center">
+                <Phone className="w-4 h-4" /> Zalo: 0982101088
               </a>
             </div>
           </div>

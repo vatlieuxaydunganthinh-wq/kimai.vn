@@ -27,7 +27,7 @@ function PaypalReturnPage() {
 
     const raw = sessionStorage.getItem("paypal_pending");
     if (!raw) {
-      setErrMsg("Session expired. If payment was deducted, contact support via Zalo: 0367337799");
+      setErrMsg("Session expired. If payment was deducted, contact support via Zalo: 0982101088");
       setStatus("error");
       return;
     }
@@ -60,12 +60,12 @@ function PaypalReturnPage() {
           setProductUrl(info.productUrl ?? null);
           setStatus("success");
         } else {
-          setErrMsg((res as any).error ?? "Payment capture failed. Contact support via Zalo: 0367337799");
+          setErrMsg((res as any).error ?? "Payment capture failed. Contact support via Zalo: 0982101088");
           setStatus("error");
         }
       })
       .catch(() => {
-        setErrMsg("Network error. Contact support via Zalo: 0367337799");
+        setErrMsg("Network error. Contact support via Zalo: 0982101088");
         setStatus("error");
       });
   }, [paypalOrderId, PayerID]);

@@ -796,7 +796,7 @@ function AffiliateDashboard() {
                 )}
                 <div className="mt-5 rounded-xl bg-card border border-border p-4 text-sm text-white/60">
                   <p>{t("Bạn đang là thành viên đội ngũ", "You are a member of")} <span className="font-bold text-white">KIM AI</span> — {t("tiếp tục giới thiệu để tăng cấp độ", "keep referring to level up")}</p>
-                  <p className="mt-1">{t("Nhận hướng dẫn từng bước qua nhóm Zalo riêng ·", "Get step-by-step guidance via private Zalo group ·")} <a href="https://zalo.me/0367337799" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">{t("Liên hệ hỗ trợ →", "Contact support →")}</a></p>
+                  <p className="mt-1">{t("Nhận hướng dẫn từng bước qua nhóm Zalo riêng ·", "Get step-by-step guidance via private Zalo group ·")} <a href="https://zalo.me/0982101088" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">{t("Liên hệ hỗ trợ →", "Contact support →")}</a></p>
                 </div>
               </div>
             </>

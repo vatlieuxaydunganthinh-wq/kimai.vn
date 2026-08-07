@@ -151,7 +151,7 @@ function ShopPage() {
 
               {/* Action buttons */}
               <div className="flex gap-2 sm:pb-1">
-                <a href="https://zalo.me/0367337799" target="_blank" rel="noopener noreferrer"
+                <a href="https://zalo.me/0982101088" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-lg border border-primary text-primary px-4 py-2 text-sm font-semibold hover:bg-primary/5 transition">
                   <MessageCircle className="w-4 h-4" /> Chat
                 </a>

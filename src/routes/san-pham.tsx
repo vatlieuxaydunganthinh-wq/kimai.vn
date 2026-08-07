@@ -595,7 +595,7 @@ function ProductDetailPage() {
               {joinDate && <div className="text-xs text-muted-foreground mt-0.5">{t("Tham gia:", "Joined:")} {joinDate}</div>}
             </div>
             <div className="flex gap-2 sm:ml-auto w-full sm:w-auto">
-              <a href="https://zalo.me/0367337799" target="_blank" rel="noopener noreferrer"
+              <a href="https://zalo.me/0982101088" target="_blank" rel="noopener noreferrer"
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 rounded-lg border border-primary text-primary px-4 py-2.5 text-xs font-semibold hover:bg-primary/5 transition">
                 <MessageCircle className="w-3.5 h-3.5" /> {t("Chat ngay", "Chat Now")}
               </a>

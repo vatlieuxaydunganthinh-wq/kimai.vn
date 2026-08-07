@@ -916,7 +916,7 @@ function AdminPage() {
                   </div>
                   <div>
                     <label className="text-xs font-semibold text-muted-foreground uppercase mb-1 block">Code Ví dụ</label>
-                    <input value={editingProduct.code_example ?? ""} onChange={pf("code_example")} className="w-full rounded-lg border border-border bg-muted px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 font-mono" placeholder="LOVA0367337799" />
+                    <input value={editingProduct.code_example ?? ""} onChange={pf("code_example")} className="w-full rounded-lg border border-border bg-muted px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 font-mono" placeholder="LOVA0982101088" />
                   </div>
                   {/* Thumbnail VI */}
                   <div className="sm:col-span-2">

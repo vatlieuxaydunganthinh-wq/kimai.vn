@@ -214,8 +214,8 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
               )}
               <div className="mt-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3 text-sm text-emerald-400">
                 {payMethod === "paypal"
-                  ? <>Issues? Contact us via Zalo: <span className="font-bold">0367337799</span></>
-                  : <>Nếu chưa nhận được email, liên hệ Zalo: <span className="font-bold">0367337799</span></>}
+                  ? <>Issues? Contact us via Zalo: <span className="font-bold">0982101088</span></>
+                  : <>Nếu chưa nhận được email, liên hệ Zalo: <span className="font-bold">0982101088</span></>}
               </div>
               <button onClick={() => onOpenChange(false)} className="mt-3 w-full rounded-xl bg-emerald-500 text-white py-3 font-bold hover:bg-emerald-400 transition">
                 {payMethod === "paypal" ? "Close" : "Đóng"}

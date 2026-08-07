@@ -264,7 +264,7 @@ function AffiliatePage() {
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-foreground">{t("Số điện thoại", "Phone Number")}</label>
-                  <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="0367337799" />
+                  <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} className="mt-1 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40" placeholder="0982101088" />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-foreground">

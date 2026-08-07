@@ -12,53 +12,53 @@ const productEmailContent: Record<string, { subject: string; body: string }> = {
     subject: "San pham: Huong dan tao Landing Page — Thinh Vua App",
     body: `<h2>Huong dan tao Landing Page (Web), Trang ban hang</h2>
 <p>Cam on ban da mua san pham! Duoi day la huong dan truy cap:</p>
-<ul><li>Tai lieu huong dan chi tiet tu A-Z</li><li>Lien he Zalo <b>0367337799</b> de nhan link truy cap</li></ul>`,
+<ul><li>Tai lieu huong dan chi tiet tu A-Z</li><li>Lien he Zalo <b>0982101088</b> de nhan link truy cap</li></ul>`,
   },
   GPT: {
     subject: "San pham: Quy trinh tao Poster + ChatGPT Plus — Thinh Vua App",
     body: `<h2>Quy trinh tao Poster + Free ChatGPT Plus + Kho Poster mau</h2>
 <p>Cam on ban da mua san pham!</p>
-<ul><li>Tron bo quy trinh tao poster chuyen nghiep</li><li>Trai nghiem ChatGPT Plus mien phi</li><li>Kho poster mau da nganh nghe</li><li>Lien he Zalo <b>0367337799</b> de nhan link truy cap</li></ul>`,
+<ul><li>Tron bo quy trinh tao poster chuyen nghiep</li><li>Trai nghiem ChatGPT Plus mien phi</li><li>Kho poster mau da nganh nghe</li><li>Lien he Zalo <b>0982101088</b> de nhan link truy cap</li></ul>`,
   },
   KN: {
     subject: "San pham: Cong dong khoi nghiep cung AI — Thinh Vua App",
     body: `<h2>Gioi thieu Thinh Vua App & Cong dong khoi nghiep cung AI</h2>
 <p>Cam on ban da mua san pham!</p>
-<ul><li>Lien he Zalo <b>0367337799</b> de tham gia cong dong</li></ul>`,
+<ul><li>Lien he Zalo <b>0982101088</b> de tham gia cong dong</li></ul>`,
   },
   GPT2: {
     subject: "San pham: Full quy trinh ChatGPT Image 2 — Thinh Vua App",
     body: `<h2>Full quy trinh kiem 100TR moi thang voi ChatGPT Image 2</h2>
 <p>Cam on ban da mua san pham!</p>
-<ul><li>Tron bo quy trinh thuc chien</li><li>Lien he Zalo <b>0367337799</b> de nhan tai lieu</li></ul>`,
+<ul><li>Tron bo quy trinh thuc chien</li><li>Lien he Zalo <b>0982101088</b> de nhan tai lieu</li></ul>`,
   },
   TLA: {
     subject: "San pham: 100+ Tro ly AI — Thinh Vua App",
-    body: `<h2>Qua tang 100+ Tro ly AI cho du cac nganh nghe</h2><p>Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<h2>Qua tang 100+ Tro ly AI cho du cac nganh nghe</h2><p>Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   },
   APP: {
     subject: "San pham: 50+ App AI — Thinh Vua App",
-    body: `<h2>Qua tang 50+ App AI phuc vu du cac nganh nghe</h2><p>Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<h2>Qua tang 50+ App AI phuc vu du cac nganh nghe</h2><p>Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   },
   TLAP: {
     subject: "San pham: Combo 100+ Tro ly + 50+ App — Thinh Vua App",
-    body: `<h2>Combo 100+ Tro ly AI + 50+ App</h2><p>Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<h2>Combo 100+ Tro ly AI + 50+ App</h2><p>Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   },
   FLOW: {
     subject: "San pham: Build App tren Google Flow — Thinh Vua App",
-    body: `<h2>Full tai lieu Build App tren Google Flow tu A-Z</h2><p>Lien he Zalo <b>0367337799</b> de nhan tai lieu.</p>`,
+    body: `<h2>Full tai lieu Build App tren Google Flow tu A-Z</h2><p>Lien he Zalo <b>0982101088</b> de nhan tai lieu.</p>`,
   },
   WMP: {
     subject: "San pham: App WF-Nganh My Pham — Thinh Vua App",
-    body: `<h2>App WF-Nganh My Pham</h2><p>Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<h2>App WF-Nganh My Pham</h2><p>Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   },
   FKOL: {
     subject: "San pham: App AF-Tao KOL AI — Thinh Vua App",
-    body: `<h2>App AF-Tao KOL AI</h2><p>Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<h2>App AF-Tao KOL AI</h2><p>Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   },
   FTVA: {
     subject: "San pham: App FL-Thinh Vua App — Thinh Vua App",
-    body: `<h2>App FL-Thinh Vua App</h2><p>Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<h2>App FL-Thinh Vua App</h2><p>Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   },
 };
 
@@ -78,7 +78,7 @@ async function sendProductEmail(
 
   const emailContent = productEmailContent[productKey] ?? {
     subject: `Xac nhan thanh toan — Thinh Vua App`,
-    body: `<p>Cam on ban da thanh toan! Lien he Zalo <b>0367337799</b> de nhan san pham.</p>`,
+    body: `<p>Cam on ban da thanh toan! Lien he Zalo <b>0982101088</b> de nhan san pham.</p>`,
   };
 
   const transporter = nodemailer.createTransport({
@@ -106,7 +106,7 @@ async function sendProductEmail(
         <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
         <p style="color:#888;font-size:12px;text-align:center;">
           &copy; Thinh Vua App &mdash; AIGO Group<br>
-          Hotline/Zalo: 0367337799
+          Hotline/Zalo: 0982101088
         </p>
       </div>
     </div>
@@ -279,7 +279,7 @@ export default defineEventHandler(async (event) => {
                   <a href="https://sieuthisoai.com/affiliate-dashboard" style="display:inline-block;background:#1e293b;color:white;text-decoration:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:bold;">📊 Vào Dashboard Affiliate</a>
                 </div>
                 <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
-                <p style="color:#888;font-size:12px;text-align:center;">© Siêu Thị Số AI — AIGO Group<br>Hotline/Zalo: 0367337799</p>
+                <p style="color:#888;font-size:12px;text-align:center;">© Siêu Thị Số AI — AIGO Group<br>Hotline/Zalo: 0982101088</p>
               </div>
             </div>`,
           }).catch((e: any) => console.error("[sepay-webhook] notify-affiliate email error:", e));

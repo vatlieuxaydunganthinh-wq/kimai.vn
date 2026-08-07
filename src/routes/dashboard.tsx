@@ -129,7 +129,7 @@ function Dashboard() {
 
           {status === "rejected" && (
             <div className="mt-6 rounded-xl bg-destructive/10 border border-destructive/30 p-5 text-sm">
-              Đăng ký VIP của bạn đã bị từ chối. Vui lòng liên hệ <span className="font-semibold">0367337799</span> để được hỗ trợ.
+              Đăng ký VIP của bạn đã bị từ chối. Vui lòng liên hệ <span className="font-semibold">0982101088</span> để được hỗ trợ.
             </div>
           )}
         </div>

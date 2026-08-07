@@ -66,7 +66,7 @@ async function autoCreateAffiliate(
           <a href="https://sieuthisoai.com/affiliate-dashboard" style="display:inline-block;background:#1e293b;color:white;text-decoration:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:bold;">📊 Vào Dashboard Affiliate</a>
         </div>
         <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
-        <p style="color:#888;font-size:12px;text-align:center;">© Kim AI<br>Hotline/Zalo: 0367337799</p>
+        <p style="color:#888;font-size:12px;text-align:center;">© Kim AI<br>Hotline/Zalo: 0982101088</p>
       </div>
     </div>`,
   }).catch((e: any) => console.error("[autoCreateAffiliate] email error:", e));
@@ -331,7 +331,7 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
               </div>
               <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
               <p style="color:#888;font-size:12px;text-align:center;">
-                © Kim AI<br>Hotline/Zalo: 0367337799
+                © Kim AI<br>Hotline/Zalo: 0982101088
               </p>
             </div>
           </div>`;
@@ -406,7 +406,7 @@ export const notifyAffiliateApprovedServer = createServerFn({ method: "POST" })
 
             <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
             <p style="color:#888;font-size:12px;text-align:center;">
-              © Kim AI<br>Hotline/Zalo: 0367337799
+              © Kim AI<br>Hotline/Zalo: 0982101088
             </p>
           </div>
         </div>`,
@@ -564,7 +564,7 @@ export const capturePaypalOrder = createServerFn({ method: "POST" })
                 <p style="margin:0 0 8px;font-size:17px;font-weight:bold;color:#ea580c;">${data.productTitle}</p>
               </div>
               ${data.productUrl ? `<div style="text-align:center;margin:24px 0;"><a href="${data.productUrl}" style="background:#f97316;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">👉 Access Product</a></div>` : ""}
-              <p style="color:#888;font-size:12px;">If you have any issues, contact us via Zalo: <b>0367337799</b> or reply to this email.</p>
+              <p style="color:#888;font-size:12px;">If you have any issues, contact us via Zalo: <b>0982101088</b> or reply to this email.</p>
               <hr style="border:none;border-top:1px solid #eee;margin:16px 0;">
               <p style="color:#aaa;font-size:11px;text-align:center;">© Kim AI</p>
             </div>
@@ -723,7 +723,7 @@ export const redeemPromoCode = createServerFn({ method: "POST" })
                 <p style="margin:0;font-size:17px;font-weight:bold;color:#ea580c;">${data.productTitle}</p>
               </div>
               ${data.productUrl ? `<div style="text-align:center;margin:24px 0;"><a href="${data.productUrl}" style="background:#f97316;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">👉 Truy cập sản phẩm ngay</a></div>` : ""}
-              <p style="color:#888;font-size:12px;">Nếu có vấn đề, liên hệ Zalo: <b>0367337799</b></p>
+              <p style="color:#888;font-size:12px;">Nếu có vấn đề, liên hệ Zalo: <b>0982101088</b></p>
               <hr style="border:none;border-top:1px solid #eee;margin:16px 0;">
               <p style="color:#aaa;font-size:11px;text-align:center;">© Kim AI</p>
             </div>

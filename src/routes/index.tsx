@@ -536,10 +536,10 @@ function Index() {
                 <User className="w-4 h-4" /> {t("Dashboard Affiliate", "Affiliate Dashboard")}
               </Link>
             )}
-            <a href="tel:0367337799" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-semibold transition">
+            <a href="tel:0982101088" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-semibold transition">
               <Phone className="w-4 h-4" /> {t("Tư vấn", "Consult")}
             </a>
-            <a href="https://zalo.me/0367337799" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-semibold transition">
+            <a href="https://zalo.me/0982101088" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-semibold transition">
               <ExternalLink className="w-4 h-4" /> {t("Hỗ trợ ZALO", "Support ZALO")}
             </a>
             <a href="https://t.me/+HnMAk17nl9I3OTY1" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white text-sm font-semibold transition">
