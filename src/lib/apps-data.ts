@@ -71,7 +71,7 @@ export const enThumbnailUrls: Record<number, string> = {
   24: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020725_5265b2e5-1572-481b-90d5-bba632832b84.png",
   25: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_021208_38a68c0f-f798-482d-a7cf-33565e970c43.png",
   26: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_021818_6d01814b-47ad-4f8d-bde1-bc4044e99d10.png",
-  27: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081436_bea1ab0e-1642-4c8b-ad85-b16cd5e415eb.png",
+  27: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_022601_9cc579c3-da71-411e-88d4-bcebcbb8955b.png",
   28: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081442_7dc263d0-7b37-448c-9968-a16bd355c8c2.png",
 };
 
@@ -367,7 +367,7 @@ export const apps: AppProduct[] = [
     titleEn: "Complete Workflow: Create Any Custom ChatGPT Assistant",
     desc: "Quy trình tự tạo mọi trợ lý Chat GPT – tuỳ biến AI theo nhu cầu cá nhân và doanh nghiệp.",
     descEn: "Full workflow to build any custom ChatGPT assistant — personalize AI for individual or business needs.",
-    priceVnd: "86868", codeFormat: "TRGP<SĐT>", codeExample: "TRGP0367337799", image: sp27Thumb,
+    priceVnd: "86868", codeFormat: "TRGP<SĐT>", codeExample: "TRGP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_022451_597719a8-be99-44bc-9f5b-10b2341e9d98.png",
     productUrl: "https://youtu.be/QQNvpYbQ_M8?si=DUrWdFeH363aMnHN",
   },
   {
