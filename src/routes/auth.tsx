@@ -45,7 +45,7 @@ function AuthPage() {
 
   const handleGoogle = () => {
     setLoading(true);
-    const supabaseUrl = "https://yhedusfqtzqkuvdoyzqh.supabase.co";
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
     const redirectTo = encodeURIComponent(`${window.location.origin}/affiliate-dashboard`);
     window.location.href = `${supabaseUrl}/auth/v1/authorize?provider=google&redirect_to=${redirectTo}`;
   };
