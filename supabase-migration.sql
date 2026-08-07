@@ -4,8 +4,14 @@
 -- ============================================================
 
 -- ── ENUMS ────────────────────────────────────────────────────
-CREATE TYPE IF NOT EXISTS public.app_role AS ENUM ('admin', 'vip', 'user');
-CREATE TYPE IF NOT EXISTS public.vip_status AS ENUM ('pending', 'approved', 'rejected');
+DO $$ BEGIN
+  CREATE TYPE public.app_role AS ENUM ('admin', 'vip', 'user');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+DO $$ BEGIN
+  CREATE TYPE public.vip_status AS ENUM ('pending', 'approved', 'rejected');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
 
 -- ── PROFILES (tự động tạo khi user đăng ký) ─────────────────
 CREATE TABLE IF NOT EXISTS public.profiles (

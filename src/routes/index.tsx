@@ -181,7 +181,13 @@ function Index() {
       {/* ── TOP BAR ── */}
       <div className="bg-primary text-primary-foreground text-[11px] px-4 py-1 hidden sm:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <span>{t("Sàn sản phẩm số AI · CTY CP PHẦN MỀM AIGO GROUP", "AI Digital Products · AIGO GROUP SOFTWARE JSC")}</span>
+          <span className="flex items-center gap-1.5">
+            {t("Sàn sản phẩm số AI ·", "AI Digital Products ·")}
+            <span className="text-base sm:text-lg font-black tracking-wide leading-none">
+              <span className="text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]">KIM</span>{" "}
+              <span className="text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.95)]">AI</span>
+            </span>
+          </span>
           <div className="flex items-center gap-4">
             {currentUser ? (
               <>
