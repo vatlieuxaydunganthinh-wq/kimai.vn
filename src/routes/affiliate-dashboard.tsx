@@ -440,7 +440,6 @@ function AffiliateDashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-black">{t("Dashboard của tôi", "My Dashboard")}</h1>
-            <p className="text-sm text-muted-foreground">{t("Hoa hồng", "Commission")} {affiliate.commission_rate}% | {affiliate.email}</p>
           </div>
         </div>
 
