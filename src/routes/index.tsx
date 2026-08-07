@@ -380,36 +380,36 @@ function Index() {
             <a href="/truy-cap-app" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
               🛍️ {t("Tất Cả SP", "All Products")}
             </a>
-            <a href="/skills" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               🎓 SKILL
-            </a>
-            <a href="/truy-cap-app" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               ⚡ {t("Công Cụ AI", "AI Tools")}
-            </a>
-            <a href="/truy-cap-app" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               📖 {t("Khóa Học", "Courses")}
-            </a>
-            <a href="https://zalo.me/g/pwjvcw931" target="_blank" rel="noopener noreferrer" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               💬 {t("CSKH-ZALO", "Support-ZALO")}
-            </a>
-            <a href="https://t.me/+HnMAk17nl9I3OTY1" target="_blank" rel="noopener noreferrer" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               ✈️ {t("CSKH-Telegram", "Support-Telegram")}
-            </a>
-            <a href="/truy-cap-app" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               📐 Template
-            </a>
-            <a href="/affiliate" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               💰 Affiliate
-            </a>
-            <a href="https://www.facebook.com/share/v/1BA7huDgBA/" target="_blank" rel="noopener noreferrer" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               🎬 {t("Hướng dẫn trên điện thoại", "Mobile Guide")}
-            </a>
-            <a href="https://youtu.be/8x0LaT7uCBo?si=cphY6KXlOHyWnFMg" target="_blank" rel="noopener noreferrer" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               🖥️ {t("Hướng dẫn trên máy tính", "Desktop Guide")}
-            </a>
-            <a href="https://www.facebook.com/share/g/1GDyUEgr8Y/" target="_blank" rel="noopener noreferrer" className="shrink-0 text-white/90 hover:text-white text-xs font-semibold px-3 py-1 rounded-full hover:bg-white/15 transition whitespace-nowrap">
+            </span>
+            <span className="shrink-0 text-white/90 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap cursor-default">
               👥 {t("Cộng Đồng Facebook", "Facebook Community")}
-            </a>
+            </span>
           </div>
         </div>
       </header>
