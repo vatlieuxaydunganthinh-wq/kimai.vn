@@ -51,7 +51,7 @@ export const enThumbnailUrls: Record<number, string> = {
   4: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171213_f76a4e62-8df7-4b8f-b8aa-29fc9d46af7c.png",
   5: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171536_94938dc5-ba0d-43b0-a46c-39e509ba26ad.png",
   6: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_172022_1731a432-1932-4a17-a47b-564ccd3d052f.png",
-  7: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081222_556cf06c-5903-4941-94a7-6971ef8a0e92.png",
+  7: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_004225_cd2ca0db-c4f3-410c-b10e-84e791528a9f.png",
   8: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081229_a40828e9-a738-438b-a171-03ca012db03f.png",
   9: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081235_092fd1f3-e448-4b04-bd37-79f709c96f52.png",
   10: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081242_e2beab96-e9d6-4bcc-929c-1e22b6734663.png",
@@ -176,7 +176,7 @@ export const apps: AppProduct[] = [
     titleEn: "Combo: 100+ AI Assistants + 50+ Apps for All Industries",
     desc: "Trọn bộ combo: hơn 100 trợ lý AI và 50+ ứng dụng AI phục vụ đủ ngành nghề – tiết kiệm hơn khi mua chung.",
     descEn: "Complete combo: 100+ AI assistants and 50+ AI apps for all industries — save more when bundled together.",
-    price: "9$", priceVnd: "86000", codeFormat: "TLAP<SĐT>", codeExample: "TLAP0367337799", image: comboTlapImage,
+    price: "9$", priceVnd: "86000", codeFormat: "TLAP<SĐT>", codeExample: "TLAP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_004139_25d9a5ae-cd60-43f7-81f5-6fa9964c7eca.png",
   },
   {
     n: 8,
