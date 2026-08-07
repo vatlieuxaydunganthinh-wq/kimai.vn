@@ -33,12 +33,12 @@ export const Route = createFileRoute("/")({
       { title: "KIM AI - Sàn Sản Phẩm Số" },
       {
         name: "description",
-        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ Thịnh Vua App",
+        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ KIM AI",
       },
       { property: "og:title", content: "KIM AI - Sàn Sản Phẩm Số" },
       {
         property: "og:description",
-        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ Thịnh Vua App",
+        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ KIM AI",
       },
     ],
   }),
