@@ -60,7 +60,7 @@ export const enThumbnailUrls: Record<number, string> = {
   13: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010924_c5f06931-ff07-4379-b976-7e0739989a59.png",
   14: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_011339_8b111867-2e43-4463-9697-b712f6c382e4.png",
   15: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_011805_7052b8af-22b1-4b05-ae71-45bd08f58d11.png",
-  16: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081325_23484a25-cbf8-4f08-9433-9cdd1e7c88aa.png",
+  16: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_012314_01311b8a-9bbd-4c2f-ba44-a2f3fbae96bc.png",
   17: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081332_f6d96bba-51f8-4c5e-98c7-0cd419b4cb40.png",
   18: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081338_99824366-a7af-4636-b873-a872f9d5980e.png",
   19: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081345_bd0dd7ea-dfc1-4c36-a586-6ecabaf74b4d.png",
@@ -261,7 +261,7 @@ export const apps: AppProduct[] = [
     titleEn: "Automated Sales Page Setup Guide",
     desc: "Hướng dẫn chi tiết cách setup page bán hàng tự động – tối ưu quy trình kinh doanh online.",
     descEn: "Detailed guide to setting up an automated sales page — optimize your online business workflow.",
-    priceVnd: "33000", codeFormat: "PAGE<SĐT>", codeExample: "PAGE0367337799", image: sp16Thumb,
+    priceVnd: "33000", codeFormat: "PAGE<SĐT>", codeExample: "PAGE0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_012227_39a306a1-1326-41ae-a107-2e1bbecb1446.png",
     productUrl: "https://youtu.be/e20vbM63NKA?si=2kuDcS56k5AFGiMu",
   },
   {
