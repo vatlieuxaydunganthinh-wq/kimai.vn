@@ -20,6 +20,7 @@ import {
   Users2,
   GraduationCap,
   Globe,
+  Pencil,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -76,6 +77,21 @@ function Index() {
   const [adminDbProducts, setAdminDbProducts] = useState<DbAdminProduct[] | null>(null);
   const [sortOrder, setSortOrder] = useState<"default" | "price_asc" | "price_desc">("default");
   const [featuredPromo, setFeaturedPromo] = useState<{ code: string; product_url: string } | null>(null);
+  const [editingName, setEditingName] = useState(false);
+  const [nameInput, setNameInput] = useState("");
+  const [savingName, setSavingName] = useState(false);
+
+  const saveDisplayName = async () => {
+    const newName = nameInput.trim();
+    if (!newName) return;
+    setSavingName(true);
+    const { error } = await supabase.auth.updateUser({ data: { full_name: newName } });
+    setSavingName(false);
+    if (!error) {
+      setCurrentUser((u) => (u ? { ...u, name: newName } : u));
+      setEditingName(false);
+    }
+  };
 
   const toggleDark = () => {
     setDarkMode((v) => {
@@ -336,7 +352,41 @@ function Index() {
                 {dropdownOpen && (
                   <div className="absolute top-11 right-0 w-64 rounded-2xl border border-border bg-card shadow-xl z-50 overflow-hidden">
                     <div className="p-4 border-b border-border">
-                      <div className="font-bold text-sm">{currentUser.name}</div>
+                      {editingName ? (
+                        <div className="flex items-center gap-1.5">
+                          <input
+                            autoFocus
+                            value={nameInput}
+                            onChange={(e) => setNameInput(e.target.value)}
+                            onKeyDown={(e) => e.key === "Enter" && saveDisplayName()}
+                            className="flex-1 min-w-0 rounded-lg border border-border bg-background px-2 py-1 text-sm font-bold outline-none"
+                          />
+                          <button
+                            onClick={saveDisplayName}
+                            disabled={savingName}
+                            className="text-xs font-bold text-primary shrink-0 disabled:opacity-50"
+                          >
+                            {savingName ? "..." : t("Lưu", "Save")}
+                          </button>
+                          <button
+                            onClick={() => setEditingName(false)}
+                            className="text-xs font-semibold text-muted-foreground shrink-0"
+                          >
+                            {t("Huỷ", "Cancel")}
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-1.5">
+                          <div className="font-bold text-sm truncate">{currentUser.name}</div>
+                          <button
+                            onClick={() => { setNameInput(currentUser.name); setEditingName(true); }}
+                            className="text-muted-foreground hover:text-primary transition shrink-0"
+                            aria-label={t("Sửa tên hiển thị", "Edit display name")}
+                          >
+                            <Pencil className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      )}
                       <div className="text-xs text-muted-foreground mt-0.5">{currentUser.email}</div>
                     </div>
                     <div className="p-2 flex flex-col">
