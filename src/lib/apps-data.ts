@@ -50,7 +50,7 @@ export const enThumbnailUrls: Record<number, string> = {
   3: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_170936_0780fe43-a8c5-42fc-9fce-89991a442dea.png",
   4: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171213_f76a4e62-8df7-4b8f-b8aa-29fc9d46af7c.png",
   5: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171536_94938dc5-ba0d-43b0-a46c-39e509ba26ad.png",
-  6: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081214_31ed72a9-b5b4-43a4-8f29-8f2cc71fd2ff.png",
+  6: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_172022_1731a432-1932-4a17-a47b-564ccd3d052f.png",
   7: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081222_556cf06c-5903-4941-94a7-6971ef8a0e92.png",
   8: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081229_a40828e9-a738-438b-a171-03ca012db03f.png",
   9: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081235_092fd1f3-e448-4b04-bd37-79f709c96f52.png",
@@ -167,7 +167,7 @@ export const apps: AppProduct[] = [
     titleEn: "Gift Pack: 50+ AI Apps for All Industries",
     desc: "Tổng hợp 50+ ứng dụng AI hữu ích phục vụ đa ngành nghề, giúp tối ưu công việc và tăng năng suất.",
     descEn: "A curated list of 50+ useful AI apps serving all industries, helping you optimize work and boost productivity.",
-    price: "6$", priceVnd: "55000", codeFormat: "APP<SĐT>", codeExample: "APP0367337799", image: appAiImage,
+    price: "6$", priceVnd: "55000", codeFormat: "APP<SĐT>", codeExample: "APP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171854_758a5a9b-4473-487f-9509-ef9482c431b2.png",
     productUrl: "https://docs.google.com/spreadsheets/d/11TBW3yM-WQp_ITYyRKW1VOExcFtpILy_VQ6iiF5A2og/edit?usp=sharing",
   },
   {
