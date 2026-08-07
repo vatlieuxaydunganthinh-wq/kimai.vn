@@ -30,12 +30,12 @@ import { getFeaturedPromoServer } from "@/lib/payment-server-fns";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SIÊU THỊ SỐ AI - Sàn Sản Phẩm Số" },
+      { title: "KIM AI - Sàn Sản Phẩm Số" },
       {
         name: "description",
         content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ Thịnh Vua App",
       },
-      { property: "og:title", content: "SIÊU THỊ SỐ AI - Sàn Sản Phẩm Số" },
+      { property: "og:title", content: "KIM AI - Sàn Sản Phẩm Số" },
       {
         property: "og:description",
         content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ Thịnh Vua App",
@@ -220,7 +220,7 @@ function Index() {
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
               <span className="text-white font-extrabold text-sm leading-tight">
-                {lang === "en" ? <>AI <span className="text-yellow-300">DIGITAL</span></> : <>SIÊU THỊ SỐ <span className="text-yellow-300">AI</span></>}
+                <>KIM <span className="text-yellow-300">AI</span></>
               </span>
             </Link>
             <div className="flex items-center gap-1.5">
@@ -283,7 +283,7 @@ function Index() {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div className="text-white font-extrabold text-lg leading-tight">
-              {lang === "en" ? "AI DIGITAL SUPERMARKET" : <>SIÊU THỊ SỐ <span className="text-yellow-300">AI</span></>}
+              <>KIM <span className="text-yellow-300">AI</span></>
             </div>
           </Link>
           <form onSubmit={handleSearch} className="flex-1 flex max-w-2xl">
@@ -417,7 +417,7 @@ function Index() {
           <div className="p-5 border-b border-white/10 flex items-center justify-between">
             <div>
               <div className="font-extrabold text-lg">
-                {lang === "en" ? "AI DIGITAL SUPERMARKET" : <>SIÊU THỊ SỐ <span className="text-primary">AI</span></>}
+                <>KIM <span className="text-primary">AI</span></>
               </div>
               <div className="text-xs text-white/50 mt-0.5">{t("Sàn Sản Phẩm Số", "Digital Products Platform")}</div>
             </div>
@@ -738,7 +738,7 @@ function Index() {
       <footer className="mt-6 py-8 border-t border-border bg-card">
         <div className="px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <div className="flex items-center gap-2 font-bold text-foreground">
-            <Sparkles className="w-4 h-4 text-primary" /> {lang === "en" ? "AI DIGITAL SUPERMARKET" : "SIÊU THỊ SỐ AI"}
+            <Sparkles className="w-4 h-4 text-primary" /> {lang === "en" ? "KIM AI" : "KIM AI"}
           </div>
           <div className="flex items-center gap-4 text-xs">
             <a href="https://zalo.me/g/pwjvcw931" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">

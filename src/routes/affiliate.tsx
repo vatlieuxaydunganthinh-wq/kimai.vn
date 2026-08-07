@@ -188,7 +188,7 @@ function AffiliatePage() {
             <ArrowLeft className="w-4 h-4" /> {t("Quay lại", "Back")}
           </Link>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-lg hidden sm:inline">SIÊU THỊ SỐ <span className="text-primary">AI</span></span>
+            <span className="font-bold text-lg hidden sm:inline">KIM <span className="text-primary">AI</span></span>
             <button
               onClick={() => setLang(lang === "vi" ? "en" : "vi")}
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-bold hover:bg-accent transition"

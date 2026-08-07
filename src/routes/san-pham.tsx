@@ -8,7 +8,7 @@ import { apps, skillEnTitles } from "@/lib/apps-data";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/san-pham")({
-  head: () => ({ meta: [{ title: "Product Detail — AI Digital Supermarket" }] }),
+  head: () => ({ meta: [{ title: "Product Detail — Kim AI" }] }),
   component: ProductDetailPage,
 });
 
@@ -400,7 +400,7 @@ function ProductDetailPage() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold hover:bg-accent transition">
             <ArrowLeft className="w-4 h-4" /> {t("Quay lại", "Back")}
           </a>
-          <span className="font-bold text-sm">SIÊU THỊ SỐ <span className="text-primary">AI</span></span>
+          <span className="font-bold text-sm">KIM <span className="text-primary">AI</span></span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLang(lang === "vi" ? "en" : "vi")}

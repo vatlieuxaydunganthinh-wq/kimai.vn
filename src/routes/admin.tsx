@@ -393,7 +393,7 @@ function AdminPage() {
     ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(48, 563); ctx.lineTo(1152, 563); ctx.stroke();
     ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#059669";
-    ctx.fillText(isEn ? "AI DIGITAL MARKET" : "SIÊU THỊ SỐ AI", 48, 605);
+    ctx.fillText(isEn ? "KIM AI" : "KIM AI", 48, 605);
     ctx.font = "18px Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const siteText = "sieuthisoai.com";
     ctx.fillText(siteText, 1152 - ctx.measureText(siteText).width, 605);

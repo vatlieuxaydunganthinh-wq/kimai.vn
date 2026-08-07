@@ -10,7 +10,7 @@ import { uploadAvatarServer, getLeaderboardServer, uploadProductImageServer, not
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/affiliate-dashboard")({
-  head: () => ({ meta: [{ title: "Affiliate Dashboard — AI Digital Supermarket" }] }),
+  head: () => ({ meta: [{ title: "Affiliate Dashboard — Kim AI" }] }),
   component: AffiliateDashboard,
 });
 
@@ -304,7 +304,7 @@ function AffiliateDashboard() {
     ctx.beginPath(); ctx.moveTo(48, 563); ctx.lineTo(1152, 563); ctx.stroke();
     // Branding
     ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#059669";
-    ctx.fillText(isEn ? "AI DIGITAL MARKET" : "SIÊU THỊ SỐ AI", 48, 605);
+    ctx.fillText(isEn ? "KIM AI" : "KIM AI", 48, 605);
     ctx.font = "18px Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const siteText = "sieuthisoai.com";
     ctx.fillText(siteText, 1152 - ctx.measureText(siteText).width, 605);
@@ -402,7 +402,7 @@ function AffiliateDashboard() {
               <ArrowLeft className="w-3.5 h-3.5" /> {t("Quay lại", "Back")}
             </Link>
             <Link to="/" className="font-bold text-base sm:text-lg">
-              {t("KIẾM TIỀN AFFILIATE", "AFFILIATE EARNINGS")} <span className="text-primary">{t("SIÊU THỊ SỐ AI", "AI DIGITAL MARKET")}</span>
+              {t("KIẾM TIỀN AFFILIATE", "AFFILIATE EARNINGS")} <span className="text-primary">{t("KIM AI", "KIM AI")}</span>
             </Link>
           </div>
           <div className="flex items-center gap-3">
@@ -750,7 +750,7 @@ function AffiliateDashboard() {
                   </div>
                 )}
                 <div className="mt-5 rounded-xl bg-card border border-border p-4 text-sm text-white/60">
-                  <p>{t("Bạn đang là thành viên đội ngũ", "You are a member of")} <span className="font-bold text-white">SIÊU THỊ SỐ AI</span> — {t("tiếp tục giới thiệu để tăng cấp độ", "keep referring to level up")}</p>
+                  <p>{t("Bạn đang là thành viên đội ngũ", "You are a member of")} <span className="font-bold text-white">KIM AI</span> — {t("tiếp tục giới thiệu để tăng cấp độ", "keep referring to level up")}</p>
                   <p className="mt-1">{t("Nhận hướng dẫn từng bước qua nhóm Zalo riêng ·", "Get step-by-step guidance via private Zalo group ·")} <a href="https://zalo.me/0367337799" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">{t("Liên hệ hỗ trợ →", "Contact support →")}</a></p>
                 </div>
               </div>
@@ -939,7 +939,7 @@ function AffiliateDashboard() {
                     <button onClick={() => { clearAddForm(); setSellSection("manage"); }} className="text-xs text-muted-foreground hover:text-foreground border border-border rounded-lg px-3 py-1.5 hover:bg-accent transition">{t("Huỷ chỉnh sửa", "Cancel Edit")}</button>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground">{editingProductId ? t("Cập nhật thông tin sản phẩm của bạn.", "Update your product info.") : t("Sản phẩm tự động hiển thị ngay trên Siêu Thị Số AI sau khi đăng.", "Product appears instantly on AI Digital Supermarket after posting.")}</p>
+                <p className="text-sm text-muted-foreground">{editingProductId ? t("Cập nhật thông tin sản phẩm của bạn.", "Update your product info.") : t("Sản phẩm tự động hiển thị ngay trên Kim AI sau khi đăng.", "Product appears instantly on Kim AI after posting.")}</p>
 
                 {(!spSellerName || !spBankAccount) && (
                   <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-3 text-sm">

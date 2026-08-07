@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { apps, skillEnTitles } from "@/lib/apps-data";
 
 export const Route = createFileRoute("/skills")({
-  head: () => ({ meta: [{ title: "Skill — Tất Cả Ngành Nghề | Siêu Thị Số AI" }] }),
+  head: () => ({ meta: [{ title: "Skill — Tất Cả Ngành Nghề | Kim AI" }] }),
   component: SkillsPage,
 });
 

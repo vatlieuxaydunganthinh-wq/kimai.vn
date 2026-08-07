@@ -6,7 +6,7 @@ import { apps, enThumbnailUrls, skillEnTitles } from "@/lib/apps-data";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/danh-muc")({
-  head: () => ({ meta: [{ title: "Danh mục sản phẩm — SIÊU THỊ SỐ AI" }] }),
+  head: () => ({ meta: [{ title: "Danh mục sản phẩm — KIM AI" }] }),
   validateSearch: (search: Record<string, unknown>) => ({
     loai: ((search.loai as string) || "skill") as "skill" | "app" | "guide",
   }),
@@ -190,7 +190,7 @@ function DanhMucPage() {
               <Sparkles className="w-4 h-4 text-white" />
             </div>
             <span className="hidden sm:block text-white font-extrabold text-base leading-tight">
-              {lang === "en" ? "AI DIGITAL SUPERMARKET" : <>SIÊU THỊ SỐ <span className="text-yellow-300">AI</span></>}
+              <>KIM <span className="text-yellow-300">AI</span></>
             </span>
           </Link>
           <button

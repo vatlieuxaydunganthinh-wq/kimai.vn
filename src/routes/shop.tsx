@@ -5,7 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/shop")({
-  head: () => ({ meta: [{ title: "Shop — Siêu Thị Số AI" }] }),
+  head: () => ({ meta: [{ title: "Shop — Kim AI" }] }),
   component: ShopPage,
 });
 
@@ -110,7 +110,7 @@ function ShopPage() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold hover:bg-accent transition">
             <ArrowLeft className="w-4 h-4" /> Quay lại
           </button>
-          <span className="font-bold text-sm">SIÊU THỊ SỐ <span className="text-primary">AI</span></span>
+          <span className="font-bold text-sm">KIM <span className="text-primary">AI</span></span>
           <div className="w-24" />
         </div>
       </header>

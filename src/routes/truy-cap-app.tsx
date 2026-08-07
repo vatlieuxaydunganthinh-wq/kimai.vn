@@ -101,14 +101,14 @@ function Page() {
           <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold hover:bg-accent transition">
             <ArrowLeft className="w-4 h-4" /> Quay lại
           </Link>
-          <span className="font-bold">SIÊU THỊ SỐ <span className="text-primary">AI</span></span>
+          <span className="font-bold">KIM <span className="text-primary">AI</span></span>
         </div>
       </header>
 
       <section className="px-5 pt-16 pb-6 max-w-5xl mx-auto text-center">
         <h1 className="font-black tracking-tight font-sans leading-[1.1] flex flex-col items-center gap-2">
           <span className="block text-4xl md:text-6xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            SẢN PHẨM SIÊU THỊ SỐ AI
+            SẢN PHẨM KIM AI
           </span>
         </h1>
         <div className="mt-6 mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-primary to-primary/40" />
