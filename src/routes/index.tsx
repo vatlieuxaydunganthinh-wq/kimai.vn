@@ -743,7 +743,7 @@ function Index() {
               💬 {t("Zalo Cộng Đồng", "Zalo Community")}
             </a>
           </div>
-          <div>© {new Date().getFullYear()} AIGO Group</div>
+          <div>© {new Date().getFullYear()} KIM AI</div>
         </div>
       </footer>
     </div>

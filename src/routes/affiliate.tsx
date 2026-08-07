@@ -9,8 +9,8 @@ import { notifyAffiliateApprovedServer } from "@/lib/payment-server-fns";
 export const Route = createFileRoute("/affiliate")({
   head: () => ({
     meta: [
-      { title: "Affiliate Registration — AIGO GROUP" },
-      { name: "description", content: "Register as an Affiliate of AIGO GROUP. Share links, earn 35% commission per order." },
+      { title: "Affiliate Registration — KIM AI" },
+      { name: "description", content: "Register as an Affiliate of KIM AI. Share links, earn 35% commission per order." },
     ],
   }),
   component: AffiliatePage,
@@ -208,7 +208,7 @@ function AffiliatePage() {
             <Users className="w-4 h-4" /> {t("Chương trình Affiliate", "Affiliate Program")}
           </div>
           <h1 className="text-3xl md:text-4xl font-black">
-            {t("Kiếm tiền cùng", "Earn with")} <span className="text-primary">AIGO GROUP</span>
+            {t("Kiếm tiền cùng", "Earn with")} <span className="text-primary">KIM AI</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto">
             {t(

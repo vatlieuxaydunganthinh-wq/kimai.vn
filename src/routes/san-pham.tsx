@@ -377,7 +377,7 @@ function ProductDetailPage() {
   const videoUrl = memberProduct?.video_url ?? null;
   const isAdmin = !!adminProduct;
   const ratingKey = adminProduct ? String(adminProduct.n) : memberProduct?.product_key ?? "";
-  const shopName = isAdmin ? "Thịnh Vua App · AIGO Group" : (memberProduct?.shop_name || memberProduct?.seller_name || "");
+  const shopName = isAdmin ? "Thịnh Vua App · KIM AI" : (memberProduct?.shop_name || memberProduct?.seller_name || "");
   const sellerAvatar = isAdmin ? null : affiliateInfo?.avatar_url ?? null;
   const joinDate = isAdmin
     ? "01/2024"
