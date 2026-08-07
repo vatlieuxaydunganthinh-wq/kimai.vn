@@ -177,7 +177,7 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
 
   if (!product) return null;
 
-  const qrUrl = `https://qr.sepay.vn/img?acc=2210189178888&bank=MB&amount=${amountVnd}&des=${orderCode}`;
+  const qrUrl = `https://qr.sepay.vn/img?acc=1133556&bank=ACB&amount=${amountVnd}&des=${orderCode}`;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -242,13 +242,13 @@ export function PaymentModal({ open, onOpenChange, product, userInfo, affiliateR
                 <div className="flex justify-between">
                   <span className="text-white/50">Số TK:</span>
                   <div className="flex items-center gap-1">
-                    <span className="font-bold font-mono">2210 1891 78888</span>
-                    <button onClick={() => copy("2210189178888")} className="p-1 hover:bg-white/10 rounded"><Copy className="w-3 h-3" /></button>
+                    <span className="font-bold font-mono">1133556</span>
+                    <button onClick={() => copy("1133556")} className="p-1 hover:bg-white/10 rounded"><Copy className="w-3 h-3" /></button>
                   </div>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-white/50">Ngân hàng:</span>
-                  <span className="font-bold">MBBank · PHẠM VĂN THỊNH</span>
+                  <span className="font-bold">ACB · CÔNG TY TNHH QUỐC TẾ TECH FOR SALE</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white/50">Nội dung CK:</span>
