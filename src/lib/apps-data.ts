@@ -53,7 +53,7 @@ export const enThumbnailUrls: Record<number, string> = {
   6: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_172022_1731a432-1932-4a17-a47b-564ccd3d052f.png",
   7: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_004225_cd2ca0db-c4f3-410c-b10e-84e791528a9f.png",
   8: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_004704_9c30e884-d16d-4009-86de-9de0244fb59e.png",
-  9: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081235_092fd1f3-e448-4b04-bd37-79f709c96f52.png",
+  9: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_005120_c8ba72f6-9ba0-4596-87be-b9913a23bab6.png",
   10: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081242_e2beab96-e9d6-4bcc-929c-1e22b6734663.png",
   11: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081249_a452b79b-93d2-4010-a464-f89dcaf6a43a.png",
   12: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081256_fd3f4526-8ea1-4460-990e-cbc4e307c4ff.png",
@@ -194,7 +194,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Cosmetics Workflow App — Batch Image & Video Creator",
     desc: "Tạo ảnh/video hàng loạt chỉ bằng một cú click chuột. Ảnh/video sắc nét, cao cấp – chuẩn ngành mỹ phẩm.",
     descEn: "Generate batches of high-quality cosmetics images and videos with a single click — professional-grade output.",
-    price: "9$", priceVnd: "79000", codeFormat: "WMP<SĐT>", codeExample: "WMP0367337799", image: appWfMyPhamImage,
+    price: "9$", priceVnd: "79000", codeFormat: "WMP<SĐT>", codeExample: "WMP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_005032_d7b42ef3-c4c1-4c32-9f1b-9f5492597759.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/60a83d02-0695-44a2-96a2-25652a513ffa",
   },
   {
