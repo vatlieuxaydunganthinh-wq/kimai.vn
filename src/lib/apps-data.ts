@@ -69,7 +69,7 @@ export const enThumbnailUrls: Record<number, string> = {
   22: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_015731_66e8c754-e26b-417f-b4c4-3c3a4d3f84b0.png",
   23: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020204_38232492-bca5-40e3-8f85-03740ea83fdc.png",
   24: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020725_5265b2e5-1572-481b-90d5-bba632832b84.png",
-  25: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081421_920de085-ebb4-453c-aec6-ac80d9ae2a11.png",
+  25: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_021208_38a68c0f-f798-482d-a7cf-33565e970c43.png",
   26: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081429_2d476a4f-6d02-4408-adb5-3fe7be58fe54.png",
   27: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081436_bea1ab0e-1642-4c8b-ad85-b16cd5e415eb.png",
   28: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081442_7dc263d0-7b37-448c-9968-a16bd355c8c2.png",
@@ -349,7 +349,7 @@ export const apps: AppProduct[] = [
     titleEn: "Simple AI Tools Zoom Session for Beginners — June 6, 2026",
     desc: "Video Zoom ngày 6/6/2026 – hướng dẫn các công cụ đơn giản cho người mới bắt đầu.",
     descEn: "Zoom session recording from June 6, 2026 — simple AI tools walkthrough for complete beginners.",
-    priceVnd: "22000", codeFormat: "ZM06<SĐT>", codeExample: "ZM060367337799", image: sp25Thumb,
+    priceVnd: "22000", codeFormat: "ZM06<SĐT>", codeExample: "ZM060367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_021118_3c436446-fd5c-4845-ac64-9d804b150d79.png",
     productUrl: "https://drive.google.com/file/d/1XBN_1Dj56dcMPw9pudnf0hv4KnxtvLWY/view?usp=sharing",
   },
   {
