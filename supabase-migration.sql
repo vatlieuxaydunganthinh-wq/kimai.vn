@@ -277,16 +277,50 @@ ALTER TABLE public.promo_codes       ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.promo_code_uses   ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.product_ratings   ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.product_comments  ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.member_product_orders ENABLE ROW LEVEL SECURITY;
 
 -- Profiles: user chỉ đọc/sửa profile của mình
 CREATE POLICY "profiles_select" ON public.profiles FOR SELECT USING (auth.uid() = id);
 CREATE POLICY "profiles_update" ON public.profiles FOR UPDATE USING (auth.uid() = id);
+-- Admin: đọc/sửa toàn bộ profiles (trang quản lý thành viên)
+CREATE POLICY "profiles_admin_select_all" ON public.profiles FOR SELECT USING (public.has_role('admin', auth.uid()));
+CREATE POLICY "profiles_admin_update_all" ON public.profiles FOR UPDATE USING (public.has_role('admin', auth.uid()));
 
--- Admin products: ai cũng đọc được
+-- User roles: user đọc role của chính mình (bắt buộc để nhận diện admin/vip ở client)
+CREATE POLICY "user_roles_select_own" ON public.user_roles FOR SELECT USING (auth.uid() = user_id);
+-- Admin: toàn quyền trên user_roles (cấp/thu hồi vip, admin)
+CREATE POLICY "user_roles_admin_all" ON public.user_roles FOR ALL
+  USING (public.has_role('admin', auth.uid()))
+  WITH CHECK (public.has_role('admin', auth.uid()));
+
+-- Admin products: ai cũng đọc được, chỉ admin được thêm/sửa/xoá
 CREATE POLICY "admin_products_select" ON public.admin_products FOR SELECT USING (true);
+CREATE POLICY "admin_products_admin_insert" ON public.admin_products FOR INSERT WITH CHECK (public.has_role('admin', auth.uid()));
+CREATE POLICY "admin_products_admin_update" ON public.admin_products FOR UPDATE USING (public.has_role('admin', auth.uid()));
+CREATE POLICY "admin_products_admin_delete" ON public.admin_products FOR DELETE USING (public.has_role('admin', auth.uid()));
 
--- Member products: ai cũng đọc được
+-- Member products: ai cũng đọc được, chủ sản phẩm được thêm/sửa
 CREATE POLICY "member_products_select" ON public.member_products FOR SELECT USING (true);
+CREATE POLICY "member_products_owner_insert" ON public.member_products FOR INSERT WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "member_products_owner_update" ON public.member_products FOR UPDATE USING (auth.uid() = user_id);
+
+-- Member product orders: người bán đọc đơn của mình, admin đọc toàn bộ
+CREATE POLICY "mp_orders_owner_select" ON public.member_product_orders FOR SELECT USING (auth.uid() = seller_user_id);
+CREATE POLICY "mp_orders_admin_select" ON public.member_product_orders FOR SELECT USING (public.has_role('admin', auth.uid()));
+
+-- Product orders: chỉ admin đọc (đơn hàng chứa email/thông tin khách)
+CREATE POLICY "product_orders_admin_select" ON public.product_orders FOR SELECT USING (public.has_role('admin', auth.uid()));
+
+-- Affiliate clicks: chủ affiliate đọc clicks của mình, admin đọc toàn bộ
+CREATE POLICY "aff_clicks_owner_select" ON public.affiliate_clicks FOR SELECT USING (
+  affiliate_id IN (SELECT id FROM public.affiliates WHERE user_id = auth.uid())
+);
+CREATE POLICY "aff_clicks_admin_select" ON public.affiliate_clicks FOR SELECT USING (public.has_role('admin', auth.uid()));
+
+-- Affiliates: admin đọc toàn bộ + tạo affiliate mới; user tự đăng ký affiliate cho chính mình
+CREATE POLICY "affiliates_admin_select" ON public.affiliates FOR SELECT USING (public.has_role('admin', auth.uid()));
+CREATE POLICY "affiliates_admin_insert" ON public.affiliates FOR INSERT WITH CHECK (public.has_role('admin', auth.uid()));
+CREATE POLICY "affiliates_self_insert" ON public.affiliates FOR INSERT WITH CHECK (auth.uid() = user_id);
 
 -- Product ratings: ai cũng đọc được, user đăng nhập mới rate
 CREATE POLICY "ratings_select" ON public.product_ratings FOR SELECT USING (true);
@@ -308,6 +342,9 @@ CREATE POLICY "aff_orders_select" ON public.affiliate_orders
   FOR SELECT USING (
     affiliate_id IN (SELECT id FROM public.affiliates WHERE user_id = auth.uid())
   );
+-- Admin: duyệt/sửa trạng thái đơn affiliate
+CREATE POLICY "aff_orders_admin_update" ON public.affiliate_orders
+  FOR UPDATE USING (public.has_role('admin', auth.uid()));
 
 -- ============================================================
 -- STORAGE BUCKETS
