@@ -72,7 +72,7 @@ export const enThumbnailUrls: Record<number, string> = {
   25: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_021208_38a68c0f-f798-482d-a7cf-33565e970c43.png",
   26: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_021818_6d01814b-47ad-4f8d-bde1-bc4044e99d10.png",
   27: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_022601_9cc579c3-da71-411e-88d4-bcebcbb8955b.png",
-  28: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260802_081442_7dc263d0-7b37-448c-9968-a16bd355c8c2.png",
+  28: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_023037_e3f38521-24de-4a4a-8047-32fbeb09931d.png",
 };
 
 export const skillEnThumbnailUrls: Record<string, string> = {
@@ -376,7 +376,7 @@ export const apps: AppProduct[] = [
     titleEn: "Long Video Creator from Text Content — AI Automated",
     desc: "Chỉ cần nhập nội dung + thời lượng là ra video dài. Tự động tạo video chuyên nghiệp từ văn bản.",
     descEn: "Just enter your content and desired duration — get a professional long-form video automatically generated from text.",
-    priceVnd: "79000", codeFormat: "VDAI<SĐT>", codeExample: "VDAI0367337799", image: sp28Thumb,
+    priceVnd: "79000", codeFormat: "VDAI<SĐT>", codeExample: "VDAI0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_022950_01b94856-2b45-4dc0-a0cf-82b8c178c9d9.png",
     productUrl: "https://docs.google.com/document/d/17Y5Q9_oTjGLBgJA45_vgRngWc5cAsDDGXqa4mh0-z_c/edit?usp=sharing",
     previewUrl: "https://youtu.be/Uf7sSr7jQGU",
   },
