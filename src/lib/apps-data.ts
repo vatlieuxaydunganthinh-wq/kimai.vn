@@ -155,7 +155,7 @@ export const apps: AppProduct[] = [
     titleEn: "Gift Pack: 100+ AI Assistants for All Industries",
     desc: "Bộ sưu tập hơn 100 trợ lý AI được thiết kế chuyên biệt cho đa dạng ngành nghề – sẵn sàng dùng ngay.",
     descEn: "A curated collection of 100+ AI assistants purpose-built for diverse industries — ready to use immediately.",
-    price: "6$", priceVnd: "55000", codeFormat: "TLA<SĐT>", codeExample: "TLA0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171438_088583a4-8add-40f9-9976-4a94b84da137.png",
+    price: "6$", priceVnd: "55000", codeFormat: "TLA<SĐT>", codeExample: "TLA0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_144541_849e28e6-0ad4-4b73-b10d-2a9060a6fe20.png",
     productUrl: "https://docs.google.com/spreadsheets/d/1C-svW32rngDD5CZrfxmbg1JIUuIyCteD/edit?usp=sharing&ouid=115789862033738051198&rtpof=true&sd=true",
   },
   {
@@ -164,7 +164,7 @@ export const apps: AppProduct[] = [
     titleEn: "Gift Pack: 50+ AI Apps for All Industries",
     desc: "Tổng hợp 50+ ứng dụng AI hữu ích phục vụ đa ngành nghề, giúp tối ưu công việc và tăng năng suất.",
     descEn: "A curated list of 50+ useful AI apps serving all industries, helping you optimize work and boost productivity.",
-    price: "6$", priceVnd: "55000", codeFormat: "APP<SĐT>", codeExample: "APP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260806_171854_758a5a9b-4473-487f-9509-ef9482c431b2.png",
+    price: "6$", priceVnd: "55000", codeFormat: "APP<SĐT>", codeExample: "APP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_144800_46e7aaff-3e00-4c5f-9a42-e71ecbb3fd33.png",
     productUrl: "https://docs.google.com/spreadsheets/d/11TBW3yM-WQp_ITYyRKW1VOExcFtpILy_VQ6iiF5A2og/edit?usp=sharing",
   },
   {
@@ -173,7 +173,7 @@ export const apps: AppProduct[] = [
     titleEn: "Combo: 100+ AI Assistants + 50+ Apps for All Industries",
     desc: "Trọn bộ combo: hơn 100 trợ lý AI và 50+ ứng dụng AI phục vụ đủ ngành nghề – tiết kiệm hơn khi mua chung.",
     descEn: "Complete combo: 100+ AI assistants and 50+ AI apps for all industries — save more when bundled together.",
-    price: "9$", priceVnd: "86000", codeFormat: "TLAP<SĐT>", codeExample: "TLAP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_004139_25d9a5ae-cd60-43f7-81f5-6fa9964c7eca.png",
+    price: "9$", priceVnd: "86000", codeFormat: "TLAP<SĐT>", codeExample: "TLAP0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145128_b4209186-baaf-4b18-850f-7b5efeb7db8e.png",
   },
   {
     n: 8,
@@ -199,7 +199,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI KOL Creator App — Build Your AI Brand Ambassador",
     desc: "Bao gồm cả APP và full quy trình hướng dẫn tạo KOL phù hợp với sản phẩm dịch vụ của bạn.",
     descEn: "Includes the APP and full workflow guide to create an AI KOL tailored to your products and services.",
-    price: "9$", priceVnd: "79000", codeFormat: "FKOL<SĐT>", codeExample: "FKOL0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_005516_e2130bf8-d4e0-4ffe-9f4e-3f803278495f.png",
+    price: "9$", priceVnd: "79000", codeFormat: "FKOL<SĐT>", codeExample: "FKOL0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145558_ec5f5ce3-7b22-40b1-8d75-6987d820aa8c.png",
     productUrl: "https://docs.google.com/document/d/19xhW8z8_ilhvUDQOoSRCrXOt2REjvVrNfXX4uEGiCg8/edit?usp=sharing",
   },
   {
@@ -208,7 +208,7 @@ export const apps: AppProduct[] = [
     titleEn: "High-Quality AI Image & Video Flow App",
     desc: "Tạo ảnh/video CHẤT LƯỢNG CAO.",
     descEn: "Create HIGH-QUALITY AI-generated images and videos effortlessly.",
-    price: "6$", priceVnd: "55555", codeFormat: "FTVA<SĐT>", codeExample: "FTVA0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010017_3548b53b-f09d-49e5-ae2e-99438123b5a8.png",
+    price: "6$", priceVnd: "55555", codeFormat: "FTVA<SĐT>", codeExample: "FTVA0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145945_7e778160-2d50-45f2-9157-f4c743b6d64f.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/6d4dfaad-189a-474c-a7d3-d026143c5ff8",
   },
   {
@@ -226,7 +226,7 @@ export const apps: AppProduct[] = [
     titleEn: "Premium Cosmetics Workflow App v4 — Pro Image & Video Creator",
     desc: "Tặng mọi người app workflow cao cấp nhất ngành mỹ phẩm – tạo ảnh/video chuyên nghiệp chỉ bằng một click.",
     descEn: "The most premium cosmetics AI workflow app — create professional images and videos with a single click.",
-    priceVnd: "79000", codeFormat: "WF1<SĐT>", codeExample: "WF10367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_010842_773dcf5a-59b0-4d0d-825e-839ebd8ac09b.png",
+    priceVnd: "79000", codeFormat: "WF1<SĐT>", codeExample: "WF10367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_150328_28ad1bca-7a67-4d19-8a4d-b93d8f2eb08c.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/60a83d02-0695-44a2-96a2-25652a513ffa",
   },
   {
@@ -235,7 +235,7 @@ export const apps: AppProduct[] = [
     titleEn: "Long-Form Video Generator App — Auto-Create from Content",
     desc: "App Flow giúp tạo video dài từ nội dung có sẵn – tự động hoá quy trình sản xuất video.",
     descEn: "AI Flow app that generates long-form videos from existing content — fully automated video production pipeline.",
-    priceVnd: "79000", codeFormat: "FVID<SĐT>", codeExample: "FVID0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_011254_df997e04-b602-4743-b721-8f8b9e410ec2.png",
+    priceVnd: "79000", codeFormat: "FVID<SĐT>", codeExample: "FVID0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_151105_537424f3-1875-4170-b8d5-431c58fe50c2.png",
     productUrl: "https://docs.google.com/document/d/17Y5Q9_oTjGLBgJA45_vgRngWc5cAsDDGXqa4mh0-z_c/edit?usp=sharing",
   },
   {
@@ -244,7 +244,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Image & Video Flow Creator — Thinh Vua App v3",
     desc: "Anh Flow tạo ảnh/video Thịnh Vua App phiên bản 3 – nâng cấp chất lượng, dễ sử dụng.",
     descEn: "AI Flow image and video creator, Thinh Vua App version 3 — upgraded quality, easier to use.",
-    priceVnd: "55000", codeFormat: "AF3V<SĐT>", codeExample: "AF3V0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_011723_abf91b89-6984-4e24-9634-c8eede465965.png",
+    priceVnd: "55000", codeFormat: "AF3V<SĐT>", codeExample: "AF3V0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152235_17acaba8-b3d4-41ad-9d04-0cfb420e0730.png",
     productUrl: "https://docs.google.com/document/d/1LfwQTqo6p5wkaT8J4XiOfFdyeaQ9E5VPY7kOjzYusaA/edit?usp=sharing",
   },
   {
@@ -262,7 +262,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Image / Poster / Video Creator App AF3",
     desc: "App Flow tạo ảnh, poster, video AF3 – công cụ sáng tạo nội dung đa năng.",
     descEn: "AF3 AI Flow app for creating images, posters, and videos — a versatile content creation tool.",
-    priceVnd: "55000", codeFormat: "AFP3<SĐT>", codeExample: "AFP30367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_012635_b1c82145-c7e1-4139-8af6-ade7235d5101.png",
+    priceVnd: "55000", codeFormat: "AFP3<SĐT>", codeExample: "AFP30367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152432_ca18aa09-bbe8-48b3-9a59-7f3037a84ae2.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/eb31799a-9372-4c96-91d6-07d524cf1198",
   },
   {
@@ -271,7 +271,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Workflow App WF3 — Image, Poster & Video Creator",
     desc: "App workflow tạo ảnh/poster/video WF3 – phiên bản nâng cấp với nhiều tính năng mới.",
     descEn: "WF3 AI workflow app for images, posters, and videos — upgraded version with powerful new features.",
-    priceVnd: "79000", codeFormat: "AWF3<SĐT>", codeExample: "AWF30367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_013133_ef5ea6d4-26a1-4c1c-a9c5-a4cf5065a108.png",
+    priceVnd: "79000", codeFormat: "AWF3<SĐT>", codeExample: "AWF30367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152628_e46edd94-f7c6-491d-bc7f-6b96be1b7fde.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/6d4dfaad-189a-474c-a7d3-d026143c5ff8",
   },
   {
@@ -289,7 +289,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Yearbook & Graduation Photo / Video Creator",
     desc: "App tạo ảnh, poster, video kỷ yếu – lưu giữ kỷ niệm đẹp với AI.",
     descEn: "AI app for creating yearbook and graduation photos, posters, and videos — preserve beautiful memories with AI.",
-    priceVnd: "46000", codeFormat: "KYEU<SĐT>", codeExample: "KYEU0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_014042_da900b9c-4bf5-45ed-b110-36e9cb18c3f9.png",
+    priceVnd: "46000", codeFormat: "KYEU<SĐT>", codeExample: "KYEU0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153123_1450a61f-81a1-4921-a056-52dafdefb5b1.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/65139d18-2478-44a8-b552-7f3446422d07",
   },
   {
@@ -298,7 +298,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Business Location & Signage Review Creator",
     desc: "App review địa chỉ, cơ sở, bảng hiệu kinh doanh – quảng bá doanh nghiệp bằng AI.",
     descEn: "AI app to create review content for business locations, premises, and signage — promote your business with AI.",
-    priceVnd: "79000", codeFormat: "RVDC<SĐT>", codeExample: "RVDC0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_015213_2347ccdf-0eb3-4b84-a531-dd77f0d742a1.png",
+    priceVnd: "79000", codeFormat: "RVDC<SĐT>", codeExample: "RVDC0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153323_0ec9debb-a6ac-4691-849f-27427534c749.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/378d8584-3af5-428a-a369-0a9933aca1e6",
   },
   {
@@ -316,7 +316,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Food & Restaurant Review Creator v2",
     desc: "App review ẩm thực phiên bản 2 – nâng cấp chất lượng nội dung review ẩm thực.",
     descEn: "Food and restaurant review creator v2 — upgraded AI-quality content for food review creation.",
-    priceVnd: "79000", codeFormat: "AMT2<SĐT>", codeExample: "AMT20367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_020116_652ae3cc-ac5e-4402-ab19-464ef0cd6475.png",
+    priceVnd: "79000", codeFormat: "AMT2<SĐT>", codeExample: "AMT20367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153907_51caf2c8-2c25-4a16-b1ee-e0e774407733.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/34951af0-a207-456d-80be-eb87b80fb2ad",
   },
   {
@@ -361,7 +361,7 @@ export const apps: AppProduct[] = [
     titleEn: "Long Video Creator from Text Content — AI Automated",
     desc: "Chỉ cần nhập nội dung + thời lượng là ra video dài. Tự động tạo video chuyên nghiệp từ văn bản.",
     descEn: "Just enter your content and desired duration — get a professional long-form video automatically generated from text.",
-    priceVnd: "79000", codeFormat: "VDAI<SĐT>", codeExample: "VDAI0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_022950_01b94856-2b45-4dc0-a0cf-82b8c178c9d9.png",
+    priceVnd: "79000", codeFormat: "VDAI<SĐT>", codeExample: "VDAI0367337799", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_154450_9bc80b8d-a4d6-40ea-bcf6-9ee6ffb13173.png",
     productUrl: "https://docs.google.com/document/d/17Y5Q9_oTjGLBgJA45_vgRngWc5cAsDDGXqa4mh0-z_c/edit?usp=sharing",
   },
 ];

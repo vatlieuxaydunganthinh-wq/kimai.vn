@@ -6,6 +6,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { PaymentModal } from "@/components/PaymentModal";
 import { apps } from "@/lib/apps-data";
 
+const ACTIVE_PRODUCT_NS = [5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 28];
+
 export const Route = createFileRoute("/truy-cap-app")({
   head: () => ({
     meta: [
@@ -201,7 +203,7 @@ function Page() {
           </div>
         ))}
         {/* Admin products */}
-        {[...apps].sort((a, b) => b.n - a.n).filter((a) => {
+        {[...apps].filter((a) => ACTIVE_PRODUCT_NS.includes(a.n)).sort((a, b) => b.n - a.n).filter((a) => {
           if (!searchQuery.trim()) return true;
           const q = searchQuery.toLowerCase();
           return a.title.toLowerCase().includes(q) || a.desc.toLowerCase().includes(q);
