@@ -22,7 +22,7 @@ import {
   Globe,
   Pencil,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { apps, skillEnTitles, enThumbnailUrls } from "@/lib/apps-data";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -80,12 +80,15 @@ function Index() {
   const [editingName, setEditingName] = useState(false);
   const [nameInput, setNameInput] = useState("");
   const [savingName, setSavingName] = useState(false);
+  const currentUserIdRef = useRef<string | null>(null);
 
   const saveDisplayName = async () => {
     const newName = nameInput.trim();
-    if (!newName) return;
+    const uid = currentUserIdRef.current;
+    if (!newName || !uid) return;
     setSavingName(true);
-    const { error } = await supabase.auth.updateUser({ data: { full_name: newName } });
+    // Lưu vào bảng profiles (không dùng user_metadata vì đăng nhập Google sẽ ghi đè lại tên cũ mỗi lần login)
+    const { error } = await supabase.from("profiles").update({ full_name: newName }).eq("id", uid);
     setSavingName(false);
     if (!error) {
       setCurrentUser((u) => (u ? { ...u, name: newName } : u));
@@ -103,8 +106,14 @@ function Index() {
   useEffect(() => {
     supabase.auth.getUser().then(async ({ data }) => {
       if (data.user) {
+        currentUserIdRef.current = data.user.id;
+        const { data: profileData } = await supabase
+          .from("profiles")
+          .select("full_name")
+          .eq("id", data.user.id)
+          .maybeSingle();
         setCurrentUser({
-          name: data.user.user_metadata?.full_name || data.user.email?.split("@")[0] || "",
+          name: (profileData as any)?.full_name || data.user.user_metadata?.full_name || data.user.email?.split("@")[0] || "",
           email: data.user.email || "",
         });
         const { data: affData } = await supabase
