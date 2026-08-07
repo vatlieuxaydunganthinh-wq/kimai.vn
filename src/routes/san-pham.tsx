@@ -479,11 +479,11 @@ function ProductDetailPage() {
                   <span className="font-bold text-emerald-500 text-sm underline">{t("Đánh giá", "Rating")}</span>
                   <span className="text-yellow-400 text-sm">★</span>
                 </div>
-                {!isAdmin && memberProduct && (
+                {(isAdmin || memberProduct) && (
                   <>
                     <div className="h-4 w-px bg-border" />
                     <span className="text-xs text-muted-foreground">
-                      {t("Hoa hồng affiliate", "Affiliate commission")} <b className="text-primary">{memberProduct.commission_rate}%</b>
+                      {t("Hoa hồng affiliate", "Affiliate commission")} <b className="text-primary">{isAdmin ? 35 : memberProduct!.commission_rate}%</b>
                     </span>
                   </>
                 )}

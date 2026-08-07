@@ -231,6 +231,7 @@ function Page() {
                 <h3 className="font-bold text-sm leading-snug min-h-[2.5rem]">{a.title}</h3>
               </a>
               <p className="mt-2 text-xs text-muted-foreground line-clamp-3">{a.desc}</p>
+              <p className="mt-1 text-[10px] text-muted-foreground">Hoa hồng affiliate <b className="text-primary">35%</b></p>
 
               {a.priceVnd && (
                 <div className="mt-3 flex items-center justify-between">
