@@ -368,7 +368,7 @@ export const apps: AppProduct[] = [
     n: 1000,
     title: "SKILL AI BRAINSTORMING — KIMAI1",
     titleEn: "AI Skill: Brainstorming — Kimai1",
-    desc: "Prompt AI brainstorm ý tưởng cho content bán hàng: AI hỏi đúng câu trước khi viết, không còn đoán mò yêu cầu. Kèm ví dụ thật trước/sau, dùng ngay cho caption, đặt tên sản phẩm, trả lời khách hàng.",
+    desc: "Skill AI Brainstorm: prompt giúp AI hỏi đúng câu trước khi viết content bán hàng, không đoán sai ý bạn. Tải file .md dùng ngay, kèm ví dụ thực tế minh hoạ.",
     descEn: "AI stops guessing what you want — it asks the right question first. Includes real before/after examples for sales copy, product naming, and handling difficult customers.",
     priceVnd: "29000", codeFormat: "KIMAI1<SĐT>", codeExample: "KIMAI10982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai1.md",
