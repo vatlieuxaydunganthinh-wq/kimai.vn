@@ -712,6 +712,11 @@ function Index() {
                     {lang === "en" && p.titleEn ? p.titleEn : p.title}
                   </p>
                   <div className="text-primary font-bold text-sm">{price(p.priceVnd)}</div>
+                  {p.type === "admin" && (
+                    <div className="text-[9px] text-muted-foreground mt-0.5">
+                      {t("Hoa hồng", "Commission")} <b className="text-primary">35%</b>
+                    </div>
+                  )}
                   {r && r.count > 0 && (
                     <div className="flex items-center gap-0.5 mt-0.5">
                       {[1,2,3,4,5].map(s => <span key={s} className={`text-[11px] leading-none ${s <= Math.round(r.avg) ? "text-yellow-400" : "text-gray-300"}`}>★</span>)}

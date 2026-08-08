@@ -6,7 +6,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { PaymentModal } from "@/components/PaymentModal";
 import { apps } from "@/lib/apps-data";
 
-const ACTIVE_PRODUCT_NS = [5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 28];
+// Fallback list while admin_products (database, same source as trang chủ) is still loading
+const FALLBACK_PRODUCT_NS = [5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 28];
+
+type DbAdminProduct = { n: number; title: string; price_vnd: number; thumbnail_url: string | null; is_active: boolean; sort_order: number };
 
 export const Route = createFileRoute("/truy-cap-app")({
   head: () => ({
@@ -35,6 +38,35 @@ function Page() {
   const [searchQuery, setSearchQuery] = useState("");
   const [memberProductsList, setMemberProductsList] = useState<MemberProduct[]>([]);
   const [highlightMpKey, setHighlightMpKey] = useState<string | null>(null);
+  const [adminDbProducts, setAdminDbProducts] = useState<DbAdminProduct[] | null>(null);
+
+  useEffect(() => {
+    (supabase as any)
+      .from("admin_products")
+      .select("n,title,price_vnd,thumbnail_url,is_active,sort_order")
+      .eq("is_active", true)
+      .order("sort_order")
+      .order("n")
+      .then(({ data }: any) => {
+        if (data && data.length > 0) setAdminDbProducts(data as DbAdminProduct[]);
+      });
+  }, []);
+
+  // Cùng nguồn dữ liệu với trang chủ: title/giá/ảnh lấy từ database, các trường còn lại (mô tả, link sản phẩm, mã code) lấy từ apps-data.ts theo n
+  const displayApps: typeof apps = adminDbProducts
+    ? adminDbProducts
+        .map((p) => {
+          const base = apps.find((a) => a.n === p.n);
+          if (!base) return null;
+          return {
+            ...base,
+            title: p.title,
+            priceVnd: String(p.price_vnd),
+            image: p.thumbnail_url ?? base.image,
+          };
+        })
+        .filter((a): a is typeof apps[0] => a !== null)
+    : apps.filter((a) => FALLBACK_PRODUCT_NS.includes(a.n));
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -203,7 +235,7 @@ function Page() {
           </div>
         ))}
         {/* Admin products */}
-        {[...apps].filter((a) => ACTIVE_PRODUCT_NS.includes(a.n)).sort((a, b) => b.n - a.n).filter((a) => {
+        {[...displayApps].sort((a, b) => b.n - a.n).filter((a) => {
           if (!searchQuery.trim()) return true;
           const q = searchQuery.toLowerCase();
           return a.title.toLowerCase().includes(q) || a.desc.toLowerCase().includes(q);
