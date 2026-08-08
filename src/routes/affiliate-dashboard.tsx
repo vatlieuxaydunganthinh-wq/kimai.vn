@@ -6,7 +6,7 @@ import {
   CheckCircle2, BarChart3, Link2, Package, ArrowLeft, Shield, Sparkles, Globe, Pencil,
 } from "lucide-react";
 import { toast } from "sonner";
-import { uploadAvatarServer, getLeaderboardServer, uploadProductImageServer, notifyNewProductServer } from "@/lib/payment-server-fns";
+import { uploadAvatarServer, getLeaderboardServer, uploadProductImageServer, notifyNewProductServer, getNetworkMembersServer } from "@/lib/payment-server-fns";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/affiliate-dashboard")({
@@ -21,6 +21,7 @@ type Affiliate = {
   bank_name?: string | null; bank_account?: string | null; bank_owner?: string | null;
 };
 type Click = { id: string; product_key: string; created_at: string };
+type NetworkMember = { full_name: string | null; email: string; created_at: string; orderCount: number };
 type Order = {
   id: string; customer_name: string; customer_phone: string; customer_email: string;
   product_title: string; amount: string; status: string; commission_amount: number;
@@ -40,7 +41,8 @@ function AffiliateDashboard() {
   const [clicks, setClicks] = useState<Click[]>([]);
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<"overview" | "honor" | "partners" | "payment" | "sell">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "honor" | "partners" | "network" | "payment" | "sell">("overview");
+  const [networkMembers, setNetworkMembers] = useState<NetworkMember[]>([]);
   const [memberProducts, setMemberProducts] = useState<any[]>([]);
   const [sellSection, setSellSection] = useState<"profile" | "add" | "manage">("profile");
   const [spSellerName, setSpSellerName] = useState("");
@@ -123,14 +125,16 @@ function AffiliateDashboard() {
     setSpCccd(localStorage.getItem("seller_cccd") || "");
     setSpBio(localStorage.getItem("seller_bio") || "");
     setSpShopName(localStorage.getItem("seller_shop_name") || "");
-    const [{ data: clicksData }, { data: ordersData }, { data: mpData }] = await Promise.all([
+    const [{ data: clicksData }, { data: ordersData }, { data: mpData }, networkResult] = await Promise.all([
       (supabase as any).from("affiliate_clicks").select("*").eq("affiliate_id", aff.id).order("created_at", { ascending: false }),
       (supabase as any).from("affiliate_orders").select("*").eq("affiliate_id", aff.id).order("created_at", { ascending: false }),
       (supabase as any).from("member_products").select("*").eq("user_id", userData.user.id).order("created_at", { ascending: false }),
+      getNetworkMembersServer({ data: { refCode: aff.ref_code, affiliateId: aff.id } }).catch(() => ({ ok: false as const, members: [] })),
     ]);
     setClicks((clicksData ?? []) as Click[]);
     setOrders((ordersData ?? []) as Order[]);
     setMemberProducts(mpData ?? []);
+    setNetworkMembers((networkResult.members ?? []) as NetworkMember[]);
     const { data: mpoData } = await (supabase as any).from("member_product_orders").select("*").eq("seller_user_id", userData.user.id).order("created_at", { ascending: false });
     setMemberProductOrders(mpoData ?? []);
     setLoading(false);
@@ -505,6 +509,7 @@ function AffiliateDashboard() {
             { key: "overview" as const, label: t("📊 Tổng quan", "📊 Overview") },
             { key: "honor" as const, label: t("🏆 Vinh danh", "🏆 Leaderboard") },
             { key: "partners" as const, label: t("🤝 Đối tác", "🤝 Partners") },
+            { key: "network" as const, label: t("👥 Mạng lưới", "👥 Network") },
             { key: "payment" as const, label: t("💰 Thanh toán", "💰 Payment") },
             { key: "sell" as const, label: t("🛒 Bán SP", "🛒 Sell") },
           ]).map((tb) => (
@@ -813,6 +818,57 @@ function AffiliateDashboard() {
                 </div>
               </div>
             </>
+          );
+        })()}
+
+        {/* ── NETWORK TAB ── */}
+        {activeTab === "network" && affiliate && (() => {
+          const activeCount = networkMembers.filter((m) => m.orderCount > 0).length;
+          return (
+            <div className="rounded-xl bg-card border border-border p-5">
+              <h2 className="font-bold flex items-center gap-2 mb-1">👥 {t("Mạng lưới của bạn", "Your Network")}</h2>
+              <p className="text-xs text-muted-foreground mb-4">{t("Những người đã đăng ký tài khoản qua link giới thiệu của bạn.", "People who registered an account through your referral link.")}</p>
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <div className="rounded-xl bg-accent p-4 text-center">
+                  <div className="text-2xl font-black text-primary">{networkMembers.length}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{t("Tổng thành viên", "Total members")}</div>
+                </div>
+                <div className="rounded-xl bg-accent p-4 text-center">
+                  <div className="text-2xl font-black text-emerald-500">{activeCount}</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">{t("Đã mua hàng", "Have purchased")}</div>
+                </div>
+              </div>
+              {networkMembers.length === 0 ? (
+                <p className="text-sm text-muted-foreground text-center py-8">{t("Chưa có ai đăng ký qua link của bạn. Chia sẻ link giới thiệu để bắt đầu xây mạng lưới!", "No one has registered through your link yet. Share your referral link to start building your network!")}</p>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="text-left text-xs text-muted-foreground border-b border-border">
+                        <th className="py-2 pr-3">{t("Tên", "Name")}</th>
+                        <th className="py-2 pr-3">Email</th>
+                        <th className="py-2 pr-3 text-center">{t("Số đơn", "Orders")}</th>
+                        <th className="py-2">{t("Tham gia", "Joined")}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {networkMembers.map((m, i) => (
+                        <tr key={i} className="border-b border-border/50 last:border-0">
+                          <td className="py-2.5 pr-3 font-semibold">{m.full_name || "—"}</td>
+                          <td className="py-2.5 pr-3 text-muted-foreground font-mono text-xs">{m.email}</td>
+                          <td className="py-2.5 pr-3 text-center">
+                            {m.orderCount > 0
+                              ? <span className="inline-flex items-center gap-1 text-emerald-500 font-bold"><CheckCircle2 className="w-3.5 h-3.5" />{m.orderCount}</span>
+                              : <span className="text-muted-foreground">{t("Chưa mua", "None yet")}</span>}
+                          </td>
+                          <td className="py-2.5 text-muted-foreground">{new Date(m.created_at).toLocaleDateString("vi-VN")}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
           );
         })()}
 

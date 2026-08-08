@@ -343,6 +343,55 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
     return { ok: true as const, sent };
   });
 
+/**
+ * Returns the list of affiliates directly referred by the given ref_code (1 level only —
+ * not a multi-level tree). Uses service role because affiliates RLS only allows reading
+ * one's own row, not other people's rows by referred_by.
+ */
+export const getNetworkMembersServer = createServerFn({ method: "POST" })
+  .inputValidator((data: { refCode: string; affiliateId: string }) => data)
+  .handler(async ({ data }) => {
+    const { createClient } = await import("@supabase/supabase-js");
+    const supabaseUrl = process.env.SUPABASE_URL ?? "";
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+    if (!supabaseUrl || !supabaseServiceKey || !data.refCode) return { ok: false as const, members: [] };
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+    const [{ data: members, error }, { data: affOrders }] = await Promise.all([
+      supabase
+        .from("affiliates")
+        .select("full_name, email, created_at")
+        .eq("referred_by", data.refCode)
+        .order("created_at", { ascending: false }),
+      supabase
+        .from("affiliate_orders")
+        .select("customer_email, status")
+        .eq("affiliate_id", data.affiliateId)
+        .eq("status", "confirmed"),
+    ]);
+
+    if (error) return { ok: false as const, members: [] };
+
+    const orderCountByEmail = new Map<string, number>();
+    for (const o of affOrders ?? []) {
+      const email = (o as any).customer_email as string;
+      orderCountByEmail.set(email, (orderCountByEmail.get(email) || 0) + 1);
+    }
+
+    // Mask emails server-side — never send full addresses over the wire, even to a guessed ref_code.
+    const masked = (members ?? []).map((m: any) => {
+      const [user, domain] = String(m.email ?? "").split("@");
+      const maskedEmail = user && domain ? `${user.slice(0, 1)}${"*".repeat(Math.max(user.length - 1, 3))}@${domain}` : "";
+      return {
+        full_name: m.full_name,
+        email: maskedEmail,
+        created_at: m.created_at,
+        orderCount: orderCountByEmail.get(m.email) || 0,
+      };
+    });
+    return { ok: true as const, members: masked };
+  });
+
 export const approveAffiliateServer = createServerFn({ method: "POST" })
   .inputValidator((data: { affiliateId: string }) => data)
   .handler(async ({ data }) => {
