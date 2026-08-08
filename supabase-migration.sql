@@ -308,8 +308,9 @@ CREATE POLICY "member_products_owner_update" ON public.member_products FOR UPDAT
 CREATE POLICY "mp_orders_owner_select" ON public.member_product_orders FOR SELECT USING (auth.uid() = seller_user_id);
 CREATE POLICY "mp_orders_admin_select" ON public.member_product_orders FOR SELECT USING (public.has_role('admin', auth.uid()));
 
--- Product orders: chỉ admin đọc (đơn hàng chứa email/thông tin khách)
+-- Product orders: admin đọc toàn bộ, khách hàng đọc đúng đơn hàng của chính họ (theo email đăng nhập)
 CREATE POLICY "product_orders_admin_select" ON public.product_orders FOR SELECT USING (public.has_role('admin', auth.uid()));
+CREATE POLICY "product_orders_owner_select" ON public.product_orders FOR SELECT USING (customer_email = auth.email());
 
 -- Affiliate clicks: chủ affiliate đọc clicks của mình, admin đọc toàn bộ
 CREATE POLICY "aff_clicks_owner_select" ON public.affiliate_clicks FOR SELECT USING (

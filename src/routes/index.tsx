@@ -57,7 +57,7 @@ const adminProductsFallback = apps.map((a) => ({
   priceVnd: Number(a.priceVnd),
   image: a.image as string | null,
   imageEn: (a.thumbnailEnUrl ?? enThumbnailUrls[a.n] ?? null) as string | null,
-  productKey: null as string | null,
+  productKey: a.codeFormat.replace(/<[^>]+>/g, "") as string | null,
   sortMs: BASE_DATE + a.n * 86400000,
 }));
 
@@ -77,6 +77,7 @@ function Index() {
   const [adminDbProducts, setAdminDbProducts] = useState<DbAdminProduct[] | null>(null);
   const [sortOrder, setSortOrder] = useState<"default" | "price_asc" | "price_desc">("default");
   const [featuredPromo, setFeaturedPromo] = useState<{ code: string; product_url: string } | null>(null);
+  const [purchasedProducts, setPurchasedProducts] = useState<Record<string, string>>({});
   const [editingName, setEditingName] = useState(false);
   const [nameInput, setNameInput] = useState("");
   const [savingName, setSavingName] = useState(false);
@@ -122,6 +123,19 @@ function Index() {
           .eq("user_id", data.user.id)
           .maybeSingle();
         setHasAffiliate(!!affData);
+
+        const { data: ordersData } = await (supabase as any)
+          .from("product_orders")
+          .select("product_key, product_url")
+          .eq("customer_email", data.user.email)
+          .eq("status", "paid");
+        if (ordersData) {
+          const map: Record<string, string> = {};
+          for (const o of ordersData) {
+            if (o.product_url) map[o.product_key] = o.product_url;
+          }
+          setPurchasedProducts(map);
+        }
       }
     });
   }, []);
@@ -652,7 +666,7 @@ function Index() {
                 priceVnd: p.price_vnd,
                 image: p.thumbnail_url ?? (apps.find(a => a.n === p.n)?.image as string | null ?? null),
                 imageEn: p.thumbnail_url_en ?? enThumbnailUrls[p.n] ?? null,
-                productKey: null as string | null,
+                productKey: (apps.find(a => a.n === p.n)?.codeFormat.replace(/<[^>]+>/g, "") ?? null) as string | null,
                 sortMs: BASE_DATE + p.n * 86400000,
               }))
             : adminProductsFallback;
@@ -684,6 +698,7 @@ function Index() {
             const showEnMode = lang === "en";
             const displayImg = showEnMode && p.imageEn ? p.imageEn : p.image;
             const showEnOverlay = showEnMode && !p.imageEn && p.titleEn && p.image;
+            const purchasedUrl = p.productKey ? purchasedProducts[p.productKey] : undefined;
             return (
               <a href={href} className="group border border-border rounded-xl overflow-hidden hover:shadow-lg hover:border-primary/40 transition-all bg-background">
                 <div className="aspect-video overflow-hidden bg-muted relative">
@@ -706,6 +721,11 @@ function Index() {
                       {t("Cộng đồng", "Community")}
                     </div>
                   )}
+                  {purchasedUrl && (
+                    <div className="absolute top-2 right-2 rounded-full bg-emerald-500/95 text-white text-[9px] font-bold px-2 py-0.5 flex items-center gap-1">
+                      ✓ {t("Đã mua", "Purchased")}
+                    </div>
+                  )}
                 </div>
                 <div className="p-2">
                   <p className="text-foreground text-xs sm:text-sm font-bold line-clamp-2 leading-snug mb-1.5">
@@ -723,8 +743,8 @@ function Index() {
                       <span className="text-[9px] text-muted-foreground ml-0.5">{r.avg.toFixed(1)}</span>
                     </div>
                   )}
-                  <div className="mt-2 w-full py-1.5 bg-primary text-primary-foreground text-[10px] sm:text-xs font-bold rounded-lg text-center group-hover:opacity-90 transition">
-                    {t("Xem & Mua ngay", "View & Buy")}
+                  <div className={`mt-2 w-full py-1.5 text-[10px] sm:text-xs font-bold rounded-lg text-center group-hover:opacity-90 transition ${purchasedUrl ? "bg-emerald-500 text-white" : "bg-primary text-primary-foreground"}`}>
+                    {purchasedUrl ? t("Truy cập sản phẩm", "Access Product") : t("Xem & Mua ngay", "View & Buy")}
                   </div>
                 </div>
               </a>
