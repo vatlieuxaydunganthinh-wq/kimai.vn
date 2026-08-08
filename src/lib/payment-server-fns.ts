@@ -24,6 +24,38 @@ async function autoCreateAffiliate(
   );
 }
 
+/**
+ * Called right after a customer registers a regular account (src/routes/auth.tsx).
+ * Locks in "who referred this person" (affiliates.referred_by) immediately at signup time,
+ * instead of only at first purchase — so the lifetime referral survives even if the customer
+ * switches device/browser or clears localStorage before they actually buy anything.
+ * Every future purchase by this person then credits the referrer, no matter how long it takes.
+ */
+export const registerAffiliateOnSignupServer = createServerFn({ method: "POST" })
+  .inputValidator((data: { email: string; name: string; affiliateRef?: string | null }) => data)
+  .handler(async ({ data }) => {
+    const { createClient } = await import("@supabase/supabase-js");
+    const supabaseUrl = process.env.SUPABASE_URL ?? "";
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+    if (!supabaseUrl || !supabaseServiceKey) return { ok: false as const };
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+    const result = await createAutoActiveAffiliate(supabase, data.email, data.name, data.affiliateRef).catch((e) => {
+      console.error("[registerAffiliateOnSignupServer] error:", e);
+      return null;
+    });
+    if (!result || !result.created) return { ok: false as const };
+
+    await sendAffiliateApprovedEmail(
+      process.env.GMAIL_USER ?? "",
+      process.env.GMAIL_APP_PASSWORD ?? "",
+      data.email,
+      result.fullName,
+      result.refCode
+    );
+    return { ok: true as const };
+  });
+
 async function autoCreateCommission(
   supabase: any,
   customerEmail: string,

@@ -116,6 +116,7 @@ function AffiliatePage() {
         }
 
         if (signUpData.user) {
+          const referredBy = typeof window !== "undefined" ? localStorage.getItem("affiliate_ref") : null;
           const { error: affError } = await (supabase as any).from("affiliates").insert({
             user_id: signUpData.user.id,
             ref_code: code,
@@ -124,6 +125,7 @@ function AffiliatePage() {
             phone: phone.trim(),
             commission_rate: 35,
             status: "pending",
+            referred_by: referredBy || null,
           });
 
           if (affError) {

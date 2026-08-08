@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { registerAffiliateOnSignupServer } from "@/lib/payment-server-fns";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -72,6 +73,11 @@ function AuthPage() {
           },
         });
         if (error) throw error;
+
+        const affiliateRef = typeof window !== "undefined" ? localStorage.getItem("affiliate_ref") : null;
+        registerAffiliateOnSignupServer({
+          data: { email: email.trim(), name: fullName.trim(), affiliateRef },
+        }).catch(() => {});
 
         toast.success(t("Đăng ký thành công!", "Registration successful!"));
         navigate({ to: "/affiliate-dashboard" });
