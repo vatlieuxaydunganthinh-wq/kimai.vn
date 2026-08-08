@@ -357,6 +357,32 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
     return { ok: true as const, sent };
   });
 
+export const approveAffiliateServer = createServerFn({ method: "POST" })
+  .inputValidator((data: { affiliateId: string }) => data)
+  .handler(async ({ data }) => {
+    const { createClient } = await import("@supabase/supabase-js");
+    const supabaseUrl = process.env.SUPABASE_URL ?? "";
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+    if (!supabaseUrl || !supabaseServiceKey) return { ok: false as const, error: "Server not configured" };
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    const { data: aff, error: fetchErr } = await supabase
+      .from("affiliates")
+      .select("id, email, full_name, ref_code")
+      .eq("id", data.affiliateId)
+      .maybeSingle();
+    if (fetchErr || !aff) return { ok: false as const, error: fetchErr?.message ?? "Affiliate not found" };
+
+    const { error: updateErr } = await supabase
+      .from("affiliates")
+      .update({ status: "active" })
+      .eq("id", data.affiliateId);
+    if (updateErr) return { ok: false as const, error: updateErr.message };
+
+    return { ok: true as const, email: aff.email, name: aff.full_name ?? "", refCode: aff.ref_code };
+  });
+
 export const notifyAffiliateApprovedServer = createServerFn({ method: "POST" })
   .inputValidator((data: { toEmail: string; toName: string; refCode: string }) => data)
   .handler(async ({ data }) => {

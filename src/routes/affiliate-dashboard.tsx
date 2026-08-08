@@ -412,6 +412,19 @@ function AffiliateDashboard() {
     </div>
   );
 
+  if (affiliate.status === "pending") return (
+    <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-4">
+      <div className="max-w-md text-center">
+        <div className="w-20 h-20 rounded-full bg-amber-500/10 grid place-items-center mx-auto mb-6">
+          <Clock className="w-10 h-10 text-amber-500" />
+        </div>
+        <h1 className="text-2xl font-black mb-3">{t("Đang chờ admin duyệt", "Pending Admin Approval")}</h1>
+        <p className="text-muted-foreground mb-6">{t("Tài khoản affiliate của bạn đã đăng ký thành công và đang chờ admin duyệt. Chúng tôi sẽ gửi email kèm link affiliate ngay khi được duyệt.", "Your affiliate account has been registered and is awaiting admin approval. We'll email you the affiliate link as soon as it's approved.")}</p>
+        <Link to="/" className="px-5 py-2.5 rounded-xl border border-border text-sm font-semibold hover:bg-accent transition inline-block">{t("Trang chủ", "Home")}</Link>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-30 backdrop-blur-md bg-background/80 border-b border-border/60">

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { notifyAffiliateApprovedServer } from "@/lib/payment-server-fns";
 
 export const Route = createFileRoute("/affiliate")({
   head: () => ({
@@ -124,7 +123,7 @@ function AffiliatePage() {
             email: email.trim(),
             phone: phone.trim(),
             commission_rate: 35,
-            status: "active",
+            status: "pending",
           });
 
           if (affError) {
@@ -135,10 +134,7 @@ function AffiliatePage() {
           }
         }
 
-        toast.success(t("Đăng ký thành công! Đang vào dashboard...", "Registration successful! Redirecting to dashboard..."));
-        notifyAffiliateApprovedServer({
-          data: { toEmail: email.trim(), toName: fullName.trim() || email.split("@")[0], refCode: code },
-        }).catch(() => {});
+        toast.success(t("Đăng ký thành công! Tài khoản đang chờ admin duyệt — chúng tôi sẽ email khi được duyệt.", "Registration successful! Your account is pending admin approval — we'll email you once approved."));
         navigate({ to: "/affiliate-dashboard" });
       } else {
         const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({

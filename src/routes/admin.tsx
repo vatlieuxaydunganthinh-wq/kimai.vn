@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Shield, ArrowLeft, CheckCircle2, XCircle, Clock, Users, ShoppingCart, Link2, DollarSign, TrendingUp, Calendar, Package, Plus, Pencil, Trash2, Save, X } from "lucide-react";
 import { toast } from "sonner";
-import { deleteMemberServer, notifyAffiliateApprovedServer, listPromoCodesServer, createPromoCodeServer, updatePromoCodeServer, deletePromoCodeServer, uploadProductImageServer, fetchAndStoreImageServer, updateMemberProductEnThumbServer } from "@/lib/payment-server-fns";
+import { deleteMemberServer, notifyAffiliateApprovedServer, approveAffiliateServer, listPromoCodesServer, createPromoCodeServer, updatePromoCodeServer, deletePromoCodeServer, uploadProductImageServer, fetchAndStoreImageServer, updateMemberProductEnThumbServer } from "@/lib/payment-server-fns";
 import { apps, enThumbnailUrls, skillEnThumbnailUrls } from "@/lib/apps-data";
 
 export const Route = createFileRoute("/admin")({
@@ -305,6 +305,16 @@ function AdminPage() {
       data: { toEmail: m.email, toName: m.full_name || m.email.split("@")[0], refCode: finalCode },
     }).catch(() => {});
     void loadAffiliatesBasic();
+  };
+
+  const approveAffiliate = async (a: AffiliateInfo) => {
+    const result = await approveAffiliateServer({ data: { affiliateId: a.id } });
+    if (!result.ok) { toast.error(result.error ?? "Duyệt thất bại"); return; }
+    toast.success(`Đã duyệt ${a.full_name || a.email} thành Affiliate!`);
+    notifyAffiliateApprovedServer({
+      data: { toEmail: result.email!, toName: result.name || result.email!.split("@")[0], refCode: result.refCode! },
+    }).catch(() => {});
+    void loadAffiliates();
   };
 
   const deleteMember = async (m: Member) => {
@@ -766,11 +776,12 @@ function AdminPage() {
                         <th className="px-4 py-3">Tổng hoa hồng</th>
                         <th className="px-4 py-3">Trạng thái</th>
                         <th className="px-4 py-3">Ngày ĐK</th>
+                        <th className="px-4 py-3"></th>
                       </tr>
                     </thead>
                     <tbody>
                       {affiliates.map((a) => (
-                        <tr key={a.id} className="border-t border-border">
+                        <tr key={a.id} className={`border-t border-border ${a.status === "pending" ? "bg-amber-50" : ""}`}>
                           <td className="px-4 py-3 font-semibold">{a.full_name || "—"}</td>
                           <td className="px-4 py-3">{a.email}</td>
                           <td className="px-4 py-3 font-mono">{a.phone || "—"}</td>
@@ -783,8 +794,16 @@ function AdminPage() {
                           <td className="px-4 py-3">
                             {a.status === "active" && <span className="inline-flex items-center gap-1 text-emerald-600 font-semibold"><CheckCircle2 className="w-4 h-4" />Active</span>}
                             {a.status === "inactive" && <span className="inline-flex items-center gap-1 text-destructive font-semibold"><XCircle className="w-4 h-4" />Inactive</span>}
+                            {a.status === "pending" && <span className="inline-flex items-center gap-1 text-amber-600 font-semibold"><Clock className="w-4 h-4" />Đang chờ duyệt</span>}
                           </td>
                           <td className="px-4 py-3 text-muted-foreground">{new Date(a.created_at).toLocaleDateString("vi-VN")}</td>
+                          <td className="px-4 py-3">
+                            {a.status === "pending" && (
+                              <button onClick={() => approveAffiliate(a)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-500 transition">
+                                <CheckCircle2 className="w-3.5 h-3.5" /> Duyệt
+                              </button>
+                            )}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
