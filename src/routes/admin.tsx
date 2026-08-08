@@ -1,9 +1,9 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Shield, ArrowLeft, CheckCircle2, XCircle, Clock, Users, ShoppingCart, Link2, DollarSign, TrendingUp, Calendar, Package, Plus, Pencil, Trash2, Save, X } from "lucide-react";
+import { Shield, ArrowLeft, CheckCircle2, XCircle, Clock, Users, ShoppingCart, Link2, DollarSign, TrendingUp, Calendar, Package, Plus, Pencil, Trash2, Save, X, Mail } from "lucide-react";
 import { toast } from "sonner";
-import { deleteMemberServer, notifyAffiliateApprovedServer, approveAffiliateServer, listPromoCodesServer, createPromoCodeServer, updatePromoCodeServer, deletePromoCodeServer, uploadProductImageServer, fetchAndStoreImageServer, updateMemberProductEnThumbServer } from "@/lib/payment-server-fns";
+import { deleteMemberServer, notifyAffiliateApprovedServer, approveAffiliateServer, notifyNewProductServer, listPromoCodesServer, createPromoCodeServer, updatePromoCodeServer, deletePromoCodeServer, uploadProductImageServer, fetchAndStoreImageServer, updateMemberProductEnThumbServer } from "@/lib/payment-server-fns";
 import { apps, enThumbnailUrls, skillEnThumbnailUrls } from "@/lib/apps-data";
 
 export const Route = createFileRoute("/admin")({
@@ -315,6 +315,25 @@ function AdminPage() {
       data: { toEmail: result.email!, toName: result.name || result.email!.split("@")[0], refCode: result.refCode! },
     }).catch(() => {});
     void loadAffiliates();
+  };
+
+  const [notifying, setNotifying] = useState<number | null>(null);
+  const notifyProduct = async (p: AdminProduct) => {
+    if (!confirm(`Gửi email thông báo "${p.title}" cho toàn bộ thành viên?`)) return;
+    setNotifying(p.n);
+    const result = await notifyNewProductServer({
+      data: {
+        productTitle: p.title,
+        productKey: String(p.n),
+        sellerName: "KIM AI",
+        priceVnd: p.price_vnd,
+        thumbnailUrl: p.thumbnail_url,
+        productType: "admin",
+      },
+    });
+    setNotifying(null);
+    if (!result.ok) { toast.error(result.error ?? "Gửi thất bại"); return; }
+    toast.success(`Đã gửi thông báo cho ${result.sent} thành viên`);
   };
 
   const deleteMember = async (m: Member) => {
@@ -1134,6 +1153,14 @@ function AdminPage() {
                           </td>
                           <td className="px-3 py-2.5 text-right">
                             <div className="flex justify-end gap-1.5">
+                              <button
+                                onClick={() => notifyProduct(p)}
+                                disabled={notifying === p.n}
+                                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-amber-500/10 text-amber-600 text-xs font-semibold hover:bg-amber-500/20 transition disabled:opacity-50"
+                                title="Gửi email thông báo sản phẩm mới cho toàn bộ thành viên"
+                              >
+                                <Mail className="w-3 h-3" /> {notifying === p.n ? "Đang gửi..." : "Thông báo"}
+                              </button>
                               <button
                                 onClick={() => setEditingProduct({ ...p })}
                                 className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-primary/10 text-primary text-xs font-semibold hover:bg-primary/20 transition"

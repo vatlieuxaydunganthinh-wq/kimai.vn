@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
   // Tìm skill KIMAI tiếp theo trong hàng đợi (chưa active), n từ 1000 trở lên, theo đúng thứ tự
   const { data: nextSkill, error } = await supabase
     .from("admin_products")
-    .select("n, title, code_format")
+    .select("n, title, code_format, price_vnd, thumbnail_url")
     .eq("is_active", false)
     .gte("n", 1000)
     .lt("n", 2000)
@@ -76,6 +76,69 @@ export default defineEventHandler(async (event) => {
   }
 
   console.log(`[publish-daily-skill] Đã kích hoạt skill n=${nextSkill.n} (${nextSkill.title})`);
+
+  // Thông báo cho toàn bộ thành viên có sản phẩm mới lên nền tảng
+  if (gmailUser && gmailPass) {
+    try {
+      const { data: profilesData } = await supabase
+        .from("profiles")
+        .select("email, full_name")
+        .neq("email", gmailUser)
+        .not("email", "is", null)
+        .limit(500);
+
+      const members = (profilesData ?? [])
+        .filter((p: any) => p.email)
+        .map((p: any) => ({ email: p.email as string, name: p.full_name || (p.email as string).split("@")[0] || "Bạn" }));
+
+      if (members.length > 0) {
+        const productUrl = `https://kimai.vn/san-pham?id=${nextSkill.n}`;
+        const imgBlock = nextSkill.thumbnail_url
+          ? `<img src="${nextSkill.thumbnail_url}" alt="" style="width:100%;max-height:240px;object-fit:cover;border-radius:8px;margin-bottom:16px;">`
+          : "";
+        const transporter = nodemailer.createTransport({ service: "gmail", auth: { user: gmailUser, pass: gmailPass } });
+        const makeHtml = (memberName: string) => `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
+          <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:20px;border-radius:12px 12px 0 0;text-align:center;">
+            <h1 style="color:white;margin:0;font-size:22px;">🛍️ SẢN PHẨM MỚI TRÊN KIM AI</h1>
+          </div>
+          <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
+            <p>Xin chào <b>${memberName}</b>,</p>
+            <p>Có sản phẩm số mới vừa được đăng lên nền tảng Kim AI!</p>
+            ${imgBlock}
+            <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin:16px 0;">
+              <p style="margin:0 0 8px;font-size:18px;font-weight:bold;color:#ea580c;">${nextSkill.title}</p>
+              <p style="margin:0 0 4px;color:#666;">👤 Người bán: <b>KIM AI</b></p>
+              <p style="margin:0;color:#666;">💰 Giá: <b style="color:#ea580c;">${Number(nextSkill.price_vnd).toLocaleString("vi-VN")}đ</b></p>
+            </div>
+            <div style="text-align:center;margin:24px 0;">
+              <a href="${productUrl}" style="background:#f97316;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">👉 Xem & Mua ngay</a>
+            </div>
+            <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
+            <p style="color:#888;font-size:12px;text-align:center;">© Kim AI<br>Hotline/Zalo: 0982101088</p>
+          </div>
+        </div>`;
+
+        const BATCH = 10;
+        const list = members.slice(0, 200);
+        for (let i = 0; i < list.length; i += BATCH) {
+          const batch = list.slice(i, i + BATCH);
+          await Promise.allSettled(
+            batch.map((member) =>
+              transporter.sendMail({
+                from: `"Kim AI" <${gmailUser}>`,
+                to: member.email,
+                subject: `🛍️ Sản phẩm mới vừa lên nền tảng: ${nextSkill.title}`,
+                html: makeHtml(member.name),
+              })
+            )
+          );
+        }
+        console.log(`[publish-daily-skill] Đã gửi mail thông báo cho ${list.length} thành viên`);
+      }
+    } catch (err) {
+      console.error("[publish-daily-skill] Gửi mail thông báo thành viên lỗi:", err);
+    }
+  }
 
   return {
     success: true,

@@ -247,7 +247,7 @@ export const getLeaderboardServer = createServerFn({ method: "POST" })
   });
 
 export const notifyNewProductServer = createServerFn({ method: "POST" })
-  .inputValidator((data: { productTitle: string; productKey: string; sellerName: string; priceVnd: number; thumbnailUrl?: string | null }) => data)
+  .inputValidator((data: { productTitle: string; productKey: string; sellerName: string; priceVnd: number; thumbnailUrl?: string | null; productType?: "member" | "admin" }) => data)
   .handler(async ({ data }) => {
     const { createClient } = await import("@supabase/supabase-js");
     const nodemailer = await import("nodemailer");
@@ -289,7 +289,9 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
       if (Array.isArray(parsed) && parsed[0]) imgSrc = parsed[0];
     } catch {}
 
-    const productUrl = `https://sieuthisoai.com/san-pham?mp=${data.productKey}`;
+    const productUrl = data.productType === "admin"
+      ? `https://kimai.vn/san-pham?id=${data.productKey}`
+      : `https://kimai.vn/san-pham?mp=${data.productKey}`;
     const imgBlock = imgSrc ? `<img src="${imgSrc}" alt="" style="width:100%;max-height:240px;object-fit:cover;border-radius:8px;margin-bottom:16px;">` : "";
 
     const transporter = nodemailer.default.createTransport({
