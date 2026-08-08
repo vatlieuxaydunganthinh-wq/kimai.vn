@@ -365,8 +365,7 @@ function AffiliateDashboard() {
       const productKey = "MP" + crypto.randomUUID().replace(/-/g, "").slice(0, 6).toUpperCase();
       const { data, error } = await (supabase as any).from("member_products").insert({
         user_id: userData.user.id, seller_name: spSellerName.trim(), shop_name: spShopName.trim() || spSellerName.trim(),
-        cccd: spCccd.trim(), bank_name: spBankName.trim(), bank_account: spBankAccount.trim(),
-        bank_owner: spBankOwner.trim(), seller_bio: spBio.trim(), product_key: productKey, status: "active", ...commonFields,
+        product_key: productKey, status: "active", ...commonFields,
       }).select().single();
       if (error) { toast.error("Error: " + error.message); } else {
         setMemberProducts((prev) => [data, ...prev]); clearAddForm(); setSellSection("manage");
