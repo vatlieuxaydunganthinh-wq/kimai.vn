@@ -75,7 +75,7 @@ function Index() {
   const [communityProducts, setCommunityProducts] = useState<{ id: string; title: string; price_vnd: number; thumbnail_url: string | null; thumbnail_url_en: string | null; product_key: string; seller_name: string; shop_name: string | null; created_at: string }[]>([]);
   const [ratings, setRatings] = useState<Record<string, { avg: number; count: number }>>({});
   const [adminDbProducts, setAdminDbProducts] = useState<DbAdminProduct[] | null>(null);
-  const [sortOrder, setSortOrder] = useState<"default" | "price_asc" | "price_desc">("default");
+  const [sortOrder, setSortOrder] = useState<"default" | "price_asc" | "price_desc" | "newest">("default");
   const [featuredPromo, setFeaturedPromo] = useState<{ code: string; product_url: string } | null>(null);
   const [purchasedProducts, setPurchasedProducts] = useState<Record<string, string>>({});
   const [editingName, setEditingName] = useState(false);
@@ -673,6 +673,7 @@ function Index() {
           const allMerged = [...communityWithDate, ...effectiveAdminProducts].sort((a, b) => {
             if (sortOrder === "price_asc") return a.priceVnd - b.priceVnd;
             if (sortOrder === "price_desc") return b.priceVnd - a.priceVnd;
+            if (sortOrder === "newest") return b.sortMs - a.sortMs;
             if (a.type === "admin" && b.type === "community") return -1;
             if (a.type === "community" && b.type === "admin") return 1;
             return b.sortMs - a.sortMs;
@@ -790,6 +791,7 @@ function Index() {
                 <div className="flex gap-1.5 flex-wrap">
                   {([
                     { key: "default" as const, label: t("Mặc định", "Default"), icon: "↕" },
+                    { key: "newest" as const, label: t("Mới lên sàn", "Newest"), icon: "🆕" },
                     { key: "price_asc" as const, label: t("Giá tăng dần", "Price ↑ Low–High"), icon: "↑" },
                     { key: "price_desc" as const, label: t("Giá giảm dần", "Price ↓ High–Low"), icon: "↓" },
                   ]).map((opt) => (
