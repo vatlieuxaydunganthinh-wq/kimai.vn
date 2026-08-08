@@ -58,7 +58,7 @@ function PitchPage() {
           {[
             { icon: DollarSign, label: "Doanh thu / tháng", value: "~7 triệu đ", color: "text-emerald-400" },
             { icon: Users, label: "Thành viên đăng ký", value: "86+", color: "text-violet-400" },
-            { icon: Package, label: "Sản phẩm AI trên sàn", value: "28+", color: "text-amber-400" },
+            { icon: Package, label: "Sản phẩm AI trên nền tảng", value: "28+", color: "text-amber-400" },
             { icon: Link2, label: "Affiliate đang hoạt động", value: "Đang tăng", color: "text-sky-400" },
           ].map((m) => (
             <div key={m.label} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
@@ -78,8 +78,8 @@ function PitchPage() {
             {[
               {
                 step: "01",
-                title: "Chủ sản phẩm AI đăng sàn",
-                desc: "Các chủ sản phẩm AI (khóa học, tool, phần mềm) đăng sản phẩm lên sàn để bán hàng qua affiliate.",
+                title: "Chủ sản phẩm AI đăng lên nền tảng",
+                desc: "Các chủ sản phẩm AI (khóa học, tool, phần mềm) đăng sản phẩm lên nền tảng để bán hàng qua affiliate.",
                 color: "from-violet-600 to-violet-800",
               },
               {
@@ -90,7 +90,7 @@ function PitchPage() {
               },
               {
                 step: "03",
-                title: "Sàn thu phí / % giao dịch",
+                title: "Nền tảng thu phí / % giao dịch",
                 desc: "Nền tảng thu phí dịch vụ hoặc % mỗi giao dịch. Thanh toán VND + PayPal quốc tế.",
                 color: "from-emerald-500 to-emerald-700",
               },

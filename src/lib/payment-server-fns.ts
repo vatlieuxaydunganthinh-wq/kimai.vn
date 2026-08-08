@@ -319,7 +319,7 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
             </div>
             <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
               <p>Xin chào <b>${memberName}</b>,</p>
-              <p>Có sản phẩm số mới vừa được đăng lên sàn Kim AI!</p>
+              <p>Có sản phẩm số mới vừa được đăng lên nền tảng Kim AI!</p>
               ${imgBlock}
               <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin:16px 0;">
                 <p style="margin:0 0 8px;font-size:18px;font-weight:bold;color:#ea580c;">${data.productTitle}</p>
@@ -347,7 +347,7 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
           transporter.sendMail({
             from: `"Kim AI" <${gmailUser}>`,
             to: member.email,
-            subject: `🛍️ Sản phẩm mới vừa lên sàn: ${data.productTitle}`,
+            subject: `🛍️ Sản phẩm mới vừa lên nền tảng: ${data.productTitle}`,
             html: makeHtml(member.name),
           })
         )
@@ -382,7 +382,7 @@ export const notifyAffiliateApprovedServer = createServerFn({ method: "POST" })
         html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
           <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:24px;border-radius:12px 12px 0 0;text-align:center;">
             <h1 style="color:white;margin:0;font-size:22px;">🎉 CHÚC MỪNG!</h1>
-            <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:16px;font-weight:bold;">BẠN ĐÃ ĐƯỢC PHÊ DUYỆT LINK AFFILIATE VÀ ĐĂNG SẢN PHẨM AI LÊN SÀN</p>
+            <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:16px;font-weight:bold;">BẠN ĐÃ ĐƯỢC PHÊ DUYỆT LINK AFFILIATE VÀ ĐĂNG SẢN PHẨM AI LÊN NỀN TẢNG</p>
           </div>
           <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
             <p>Xin chào <b>${data.toName}</b>,</p>

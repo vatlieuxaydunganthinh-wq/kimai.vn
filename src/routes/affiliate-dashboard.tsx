@@ -1109,7 +1109,7 @@ function AffiliateDashboard() {
                         }}
                         className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-dashed border-violet-400/60 bg-violet-50 text-violet-700 text-sm font-semibold hover:bg-violet-100 transition ${(spGeneratingThumb || !spTitle.trim()) ? "opacity-40 cursor-not-allowed" : "cursor-pointer"}`}
                       >
-                        {spGeneratingThumb ? t("Đang tạo...", "Generating...") : `🤖 ${t("Sàn tự tạo thumbnail", "Auto-generate thumbnail")}`}
+                        {spGeneratingThumb ? t("Đang tạo...", "Generating...") : `🤖 ${t("Hệ thống tự tạo thumbnail", "Auto-generate thumbnail")}`}
                       </button>
                       {spUploadedImages.length > 0 && <span className="text-[10px] text-muted-foreground">{spUploadedImages.length}/5 {t("ảnh", "images")}</span>}
                     </div>

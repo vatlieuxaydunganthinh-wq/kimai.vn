@@ -579,7 +579,7 @@ function AdminPage() {
             <Link2 className="w-4 h-4" /> Affiliates ({affiliates.length})
           </button>
           <button onClick={() => switchTab("products")} className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition ${tab === "products" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>
-            <Package className="w-4 h-4" /> SP Sàn ({adminProducts.length})
+            <Package className="w-4 h-4" /> SP Nền Tảng ({adminProducts.length})
           </button>
           <button onClick={() => switchTab("promoCodes")} className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition ${tab === "promoCodes" ? "bg-emerald-600 text-white" : "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"}`}>
             🎁 Mã KM ({promoCodes.length})
@@ -794,7 +794,7 @@ function AdminPage() {
             )}
           </>
         ) : tab === "products" ? (
-          /* ── SP SÀNN TAB ── */
+          /* ── SP NỀN TẢNG TAB ── */
           <>
             {/* Mascot setup section */}
             <div className="mb-4 rounded-xl border border-violet-200 bg-violet-50 p-4">
@@ -820,14 +820,14 @@ function AdminPage() {
                         if (result.ok && result.url) {
                           setMascotUrl(result.url);
                           localStorage.setItem("admin_mascot_url", result.url);
-                          toast.success("Đã lưu mascot vào sàn!");
+                          toast.success("Đã lưu mascot vào hệ thống!");
                         } else toast.error("Lỗi lưu mascot: " + (result as any).error);
                       } catch (e: any) { toast.error("Error: " + e.message); }
                       setStoringMascot(false);
                     }}
                     className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition ${storingMascot ? "bg-muted text-muted-foreground cursor-not-allowed" : "bg-violet-600 text-white hover:bg-violet-500 cursor-pointer"}`}
                   >
-                    {storingMascot ? "Đang lưu..." : "⬇️ Lưu mascot vào sàn"}
+                    {storingMascot ? "Đang lưu..." : "⬇️ Lưu mascot vào hệ thống"}
                   </button>
                   {mascotUrl && (
                     <button onClick={() => { setMascotUrl(null); localStorage.removeItem("admin_mascot_url"); }} className="inline-flex items-center gap-1 px-3 py-2 rounded-lg text-xs font-bold bg-red-100 text-red-600 hover:bg-red-200 transition">
@@ -839,7 +839,7 @@ function AdminPage() {
             </div>
 
             <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
-              <h1 className="text-2xl font-black">Sản phẩm sàn ({adminProducts.length})</h1>
+              <h1 className="text-2xl font-black">Sản phẩm nền tảng ({adminProducts.length})</h1>
               <div className="flex gap-2 flex-wrap">
                 {!editingProduct && !batchGenerating && (
                   <button
@@ -1048,7 +1048,7 @@ function AdminPage() {
                   <div className="flex items-center gap-3 pt-5">
                     <label className="flex items-center gap-2 cursor-pointer select-none">
                       <input type="checkbox" checked={editingProduct.is_active ?? true} onChange={(e) => setEditingProduct(p => p ? { ...p, is_active: e.target.checked } : null)} className="w-4 h-4 rounded" />
-                      <span className="text-sm font-semibold">Hiển thị trên sàn</span>
+                      <span className="text-sm font-semibold">Hiển thị trên nền tảng</span>
                     </label>
                   </div>
                 </div>

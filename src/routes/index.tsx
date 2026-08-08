@@ -31,12 +31,12 @@ import { getFeaturedPromoServer } from "@/lib/payment-server-fns";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "KIM AI - Sàn Sản Phẩm Số" },
+      { title: "KIM AI - Nền Tảng Sản Phẩm Số" },
       {
         name: "description",
         content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ KIM AI",
       },
-      { property: "og:title", content: "KIM AI - Sàn Sản Phẩm Số" },
+      { property: "og:title", content: "KIM AI - Nền Tảng Sản Phẩm Số" },
       {
         property: "og:description",
         content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ KIM AI",
@@ -207,7 +207,7 @@ function Index() {
       <div className="bg-primary text-primary-foreground text-[11px] px-4 py-1 hidden sm:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <span className="flex items-center gap-1.5">
-            {t("Sàn sản phẩm số AI ·", "AI Digital Products ·")}
+            {t("Nền tảng sản phẩm số AI ·", "AI Digital Products ·")}
             <span className="text-base sm:text-lg font-black tracking-wide leading-none">
               <span className="text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]">KIM</span>{" "}
               <span className="text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.95)]">AI</span>
@@ -484,7 +484,7 @@ function Index() {
               <div className="font-extrabold text-lg">
                 <>KIM <span className="text-primary">AI</span></>
               </div>
-              <div className="text-xs text-white/50 mt-0.5">{t("Sàn Sản Phẩm Số", "Digital Products Platform")}</div>
+              <div className="text-xs text-white/50 mt-0.5">{t("Nền Tảng Sản Phẩm Số", "Digital Products Platform")}</div>
             </div>
             <div className="flex items-center gap-2">
               <button
