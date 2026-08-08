@@ -118,6 +118,26 @@ export const createOrder = createServerFn({ method: "POST" })
 
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
+    // Reuse an existing pending order for the same customer + product instead of creating a
+    // new one every time the payment modal is reopened/refreshed — otherwise a customer who
+    // already has a QR code on screen (or already transferred money against it) ends up on a
+    // brand new, unpaid order code and the payment they made never gets recognized.
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const { data: existingPending } = await supabase
+      .from("product_orders")
+      .select("order_code")
+      .eq("customer_email", data.customerEmail)
+      .eq("product_key", data.productKey)
+      .eq("status", "pending")
+      .gte("created_at", oneHourAgo)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    if (existingPending) {
+      return { ok: true as const, orderCode: existingPending.order_code };
+    }
+
     // Generate unique order code with retry
     let orderCode = "";
     let attempts = 0;
