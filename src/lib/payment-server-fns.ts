@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { createAutoActiveAffiliate, sendAffiliateApprovedEmail } from "./affiliate-shared";
 
 // ── Shared helpers ────────────────────────────────────────────────────────────
 
@@ -8,68 +9,19 @@ async function autoCreateAffiliate(
   name: string,
   affiliateRef?: string | null
 ): Promise<void> {
-  const { data: existingAff } = await supabase
-    .from("affiliates")
-    .select("id")
-    .eq("email", email)
-    .maybeSingle();
-  if (existingAff) return;
-
-  const namePart = name || email.split("@")[0] || "";
-  const baseCode = namePart.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 10) || "user";
-  const refCode = baseCode + Math.floor(Math.random() * 9000 + 1000);
-
-  const { data: authUsers } = await supabase.auth.admin.listUsers();
-  const matchedUser = authUsers?.users?.find((u: any) => u.email === email);
-
-  const { error: createAffErr } = await supabase.from("affiliates").insert({
-    user_id: matchedUser?.id || null,
-    ref_code: refCode,
-    full_name: namePart,
-    email,
-    phone: "",
-    commission_rate: 35,
-    status: "active",
-    referred_by: affiliateRef || null,
+  const result = await createAutoActiveAffiliate(supabase, email, name, affiliateRef).catch((e) => {
+    console.error("[autoCreateAffiliate] error:", e);
+    return null;
   });
-  if (createAffErr) { console.error("[autoCreateAffiliate] error:", createAffErr); return; }
+  if (!result || !result.created) return;
 
-  const nodemailer = await import("nodemailer");
-  const gmailUser = process.env.GMAIL_USER ?? "";
-  const gmailPass = process.env.GMAIL_APP_PASSWORD ?? "";
-  if (!gmailUser || !gmailPass) return;
-
-  const affiliateLink = `https://sieuthisoai.com/?ref=${refCode}`;
-  const transporter = nodemailer.default.createTransport({ service: "gmail", auth: { user: gmailUser, pass: gmailPass } });
-  transporter.sendMail({
-    from: `"Kim AI" <${gmailUser}>`,
-    to: email,
-    subject: `🎉 Bạn đã được duyệt Affiliate thành công — Kim AI`,
-    html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
-      <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:24px;border-radius:12px 12px 0 0;text-align:center;">
-        <h1 style="color:white;margin:0;font-size:22px;">🎉 CHÚC MỪNG!</h1>
-        <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:15px;">Bạn đã được duyệt Affiliate thành công</p>
-      </div>
-      <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
-        <p>Xin chào <b>${namePart}</b>,</p>
-        <p>Cảm ơn bạn đã mua sản phẩm! Tài khoản Affiliate của bạn đã được <b style="color:#ea580c;">kích hoạt tự động</b>.</p>
-        <div style="background:#fff7ed;border:2px solid #fed7aa;border-radius:10px;padding:18px;margin:20px 0;text-align:center;">
-          <p style="margin:0 0 6px;font-size:13px;color:#666;">🔗 Link Affiliate của bạn:</p>
-          <p style="margin:0 0 14px;font-family:monospace;font-size:14px;font-weight:bold;color:#ea580c;word-break:break-all;">${affiliateLink}</p>
-          <a href="${affiliateLink}" style="display:inline-block;background:#f97316;color:white;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:bold;font-size:15px;">👉 Lấy link & Kiếm tiền ngay</a>
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:14px;margin:16px 0;">
-          <p style="margin:0 0 8px;font-weight:bold;color:#15803d;">📹 Video hướng dẫn sử dụng:</p>
-          <a href="https://www.facebook.com/reel/1792526835066848" style="color:#15803d;font-weight:bold;">https://www.facebook.com/reel/1792526835066848</a>
-        </div>
-        <div style="text-align:center;margin:20px 0;">
-          <a href="https://sieuthisoai.com/affiliate-dashboard" style="display:inline-block;background:#1e293b;color:white;text-decoration:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:bold;">📊 Vào Dashboard Affiliate</a>
-        </div>
-        <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
-        <p style="color:#888;font-size:12px;text-align:center;">© Kim AI<br>Hotline/Zalo: 0982101088</p>
-      </div>
-    </div>`,
-  }).catch((e: any) => console.error("[autoCreateAffiliate] email error:", e));
+  await sendAffiliateApprovedEmail(
+    process.env.GMAIL_USER ?? "",
+    process.env.GMAIL_APP_PASSWORD ?? "",
+    email,
+    result.fullName,
+    result.refCode
+  );
 }
 
 async function autoCreateCommission(

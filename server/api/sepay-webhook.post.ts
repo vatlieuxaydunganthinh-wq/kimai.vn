@@ -5,6 +5,7 @@ import { defineEventHandler, readBody, getHeader } from "h3";
 import { createClient } from "@supabase/supabase-js";
 // @ts-ignore
 import nodemailer from "nodemailer";
+import { createAutoActiveAffiliate, sendAffiliateApprovedEmail } from "../../src/lib/affiliate-shared";
 
 // Product email content mapping (by product number/key)
 const productEmailContent: Record<string, { subject: string; body: string }> = {
@@ -219,72 +220,25 @@ export default defineEventHandler(async (event) => {
 
   // Auto-create affiliate record for buyer after first purchase
   if (matchedOrder.customer_email) {
-    const { data: existingAff } = await supabase
-      .from("affiliates")
-      .select("id")
-      .eq("email", matchedOrder.customer_email)
-      .maybeSingle();
-
-    if (!existingAff) {
-      const namePart = matchedOrder.customer_name || matchedOrder.customer_email.split("@")[0] || "";
-      const baseCode = namePart.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 10) || "user";
-      const refCode = baseCode + Math.floor(Math.random() * 9000 + 1000);
-
-      const { data: authUsers } = await supabase.auth.admin.listUsers();
-      const matchedUser = authUsers?.users?.find((u: any) => u.email === matchedOrder.customer_email);
-
-      const { error: createAffErr } = await supabase.from("affiliates").insert({
-        user_id: matchedUser?.id || null,
-        ref_code: refCode,
-        full_name: namePart,
-        email: matchedOrder.customer_email,
-        phone: "",
-        commission_rate: 35,
-        status: "active",
-        referred_by: matchedOrder.affiliate_ref || null,
-      });
-
-      if (createAffErr) {
-        console.error("[sepay-webhook] Auto-create affiliate error:", createAffErr);
-      } else {
-        console.log(`[sepay-webhook] Auto-created affiliate for ${matchedOrder.customer_email} ref=${refCode}`);
-        // Gửi email thông báo duyệt affiliate thành công
-        const gmailUser2 = process.env.GMAIL_USER ?? "";
-        const gmailPass2 = process.env.GMAIL_APP_PASSWORD ?? "";
-        if (gmailUser2 && gmailPass2) {
-          const affiliateLink = `https://sieuthisoai.com/?ref=${refCode}`;
-          const transporter2 = nodemailer.createTransport({ service: "gmail", auth: { user: gmailUser2, pass: gmailPass2 } });
-          transporter2.sendMail({
-            from: `"Siêu Thị Số AI" <${gmailUser2}>`,
-            to: matchedOrder.customer_email,
-            subject: `🎉 Bạn đã được duyệt Affiliate thành công — Siêu Thị Số AI`,
-            html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
-              <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:24px;border-radius:12px 12px 0 0;text-align:center;">
-                <h1 style="color:white;margin:0;font-size:22px;">🎉 CHÚC MỪNG!</h1>
-                <p style="color:rgba(255,255,255,0.9);margin:8px 0 0;font-size:15px;">Bạn đã được duyệt Affiliate thành công</p>
-              </div>
-              <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
-                <p>Xin chào <b>${namePart}</b>,</p>
-                <p>Cảm ơn bạn đã mua sản phẩm! Tài khoản Affiliate của bạn đã được <b style="color:#ea580c;">kích hoạt tự động</b>.</p>
-                <div style="background:#fff7ed;border:2px solid #fed7aa;border-radius:10px;padding:18px;margin:20px 0;text-align:center;">
-                  <p style="margin:0 0 6px;font-size:13px;color:#666;">🔗 Link Affiliate của bạn:</p>
-                  <p style="margin:0 0 14px;font-family:monospace;font-size:14px;font-weight:bold;color:#ea580c;word-break:break-all;">${affiliateLink}</p>
-                  <a href="${affiliateLink}" style="display:inline-block;background:#f97316;color:white;text-decoration:none;padding:12px 28px;border-radius:8px;font-weight:bold;font-size:15px;">👉 Lấy link & Kiếm tiền ngay</a>
-                </div>
-                <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:14px;margin:16px 0;">
-                  <p style="margin:0 0 8px;font-weight:bold;color:#15803d;">📹 Video hướng dẫn sử dụng:</p>
-                  <a href="https://www.facebook.com/reel/1792526835066848" style="color:#15803d;font-weight:bold;">https://www.facebook.com/reel/1792526835066848</a>
-                </div>
-                <div style="text-align:center;margin:20px 0;">
-                  <a href="https://sieuthisoai.com/affiliate-dashboard" style="display:inline-block;background:#1e293b;color:white;text-decoration:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:bold;">📊 Vào Dashboard Affiliate</a>
-                </div>
-                <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
-                <p style="color:#888;font-size:12px;text-align:center;">© Siêu Thị Số AI — AIGO Group<br>Hotline/Zalo: 0982101088</p>
-              </div>
-            </div>`,
-          }).catch((e: any) => console.error("[sepay-webhook] notify-affiliate email error:", e));
-        }
+    try {
+      const result = await createAutoActiveAffiliate(
+        supabase,
+        matchedOrder.customer_email,
+        matchedOrder.customer_name || "",
+        matchedOrder.affiliate_ref
+      );
+      if (result.created) {
+        console.log(`[sepay-webhook] Auto-created affiliate for ${matchedOrder.customer_email} ref=${result.refCode}`);
+        await sendAffiliateApprovedEmail(
+          process.env.GMAIL_USER ?? "",
+          process.env.GMAIL_APP_PASSWORD ?? "",
+          matchedOrder.customer_email,
+          result.fullName,
+          result.refCode
+        );
       }
+    } catch (e) {
+      console.error("[sepay-webhook] Auto-create affiliate error:", e);
     }
   }
 
