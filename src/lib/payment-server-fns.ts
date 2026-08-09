@@ -413,12 +413,14 @@ export const getNetworkMembersServer = createServerFn({ method: "POST" })
       }
     }
 
-    // Mask emails server-side — never send full addresses over the wire, even to a guessed ref_code.
+    // Mask name + email server-side — never send full identifying info over the wire, even to a guessed ref_code.
     const masked = (members ?? []).map((m: any) => {
       const [user, domain] = String(m.email ?? "").split("@");
       const maskedEmail = user && domain ? `${user.slice(0, 1)}${"*".repeat(Math.max(user.length - 1, 3))}@${domain}` : "";
+      const namePart = String(m.full_name ?? "").trim().split(/\s+/).pop() ?? "";
+      const maskedName = namePart ? `${namePart.slice(0, 2)}***` : "";
       return {
-        full_name: m.full_name,
+        full_name: maskedName,
         email: maskedEmail,
         created_at: m.created_at,
         orderCount: orderCountByEmail.get(m.email) || 0,

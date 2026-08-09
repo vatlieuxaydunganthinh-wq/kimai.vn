@@ -508,7 +508,7 @@ function AffiliateDashboard() {
             { key: "overview" as const, label: t("📊 Tổng quan", "📊 Overview") },
             { key: "honor" as const, label: t("🏆 Vinh danh", "🏆 Leaderboard") },
             { key: "partners" as const, label: t("🤝 Đối tác", "🤝 Partners") },
-            { key: "network" as const, label: t("👥 Mạng lưới", "👥 Network") },
+            { key: "network" as const, label: t("👥 Mạng lưới", "👥 Network") + (networkMembers.length > 0 ? ` (${networkMembers.length})` : "") },
             { key: "payment" as const, label: t("💰 Thanh toán", "💰 Payment") },
             { key: "sell" as const, label: t("🛒 Bán SP", "🛒 Sell") },
           ]).map((tb) => (
@@ -823,55 +823,103 @@ function AffiliateDashboard() {
         {/* ── NETWORK TAB ── */}
         {activeTab === "network" && affiliate && (() => {
           const activeCount = networkMembers.filter((m) => m.orderCount > 0).length;
+          const totalOrders = networkMembers.reduce((s, m) => s + m.orderCount, 0);
+          const bought = networkMembers.filter((m) => m.orderCount > 0);
+          const notBought = networkMembers.filter((m) => m.orderCount === 0);
+          const refLink = `${window.location.origin}/?ref=${affiliate.ref_code}`;
           return (
-            <div className="rounded-xl bg-card border border-border p-5">
-              <h2 className="font-bold flex items-center gap-2 mb-1">👥 {t("Mạng lưới của bạn", "Your Network")}</h2>
-              <p className="text-xs text-muted-foreground mb-4">{t("Những người đã đăng ký tài khoản qua link giới thiệu của bạn.", "People who registered an account through your referral link.")}</p>
-              <div className="grid grid-cols-2 gap-3 mb-5">
-                <div className="rounded-xl bg-accent p-4 text-center">
-                  <div className="text-2xl font-black text-primary">{networkMembers.length}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{t("Tổng thành viên", "Total members")}</div>
+            <>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="rounded-xl bg-card border border-border p-4 text-center">
+                  <div className="text-2xl font-black">{networkMembers.length}</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5 font-semibold uppercase tracking-wide">{t("Tổng thành viên", "Total members")}</div>
                 </div>
-                <div className="rounded-xl bg-accent p-4 text-center">
-                  <div className="text-2xl font-black text-emerald-500">{activeCount}</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">{t("Đã mua hàng", "Have purchased")}</div>
+                <div className="rounded-xl bg-primary/10 border border-primary/30 p-4 text-center">
+                  <div className="text-2xl font-black text-primary">{activeCount}</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5 font-semibold uppercase tracking-wide">{t("Đã mua hàng", "Have purchased")}</div>
+                </div>
+                <div className="rounded-xl bg-card border border-border p-4 text-center">
+                  <div className="text-2xl font-black text-emerald-500">{totalOrders}</div>
+                  <div className="text-[11px] text-muted-foreground mt-0.5 font-semibold uppercase tracking-wide">{t("Tổng đơn mạng", "Total network orders")}</div>
                 </div>
               </div>
-              {networkMembers.length === 0 ? (
-                <p className="text-sm text-muted-foreground text-center py-8">{t("Chưa có ai đăng ký qua link của bạn. Chia sẻ link giới thiệu để bắt đầu xây mạng lưới!", "No one has registered through your link yet. Share your referral link to start building your network!")}</p>
-              ) : (
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="text-left text-xs text-muted-foreground border-b border-border">
-                        <th className="py-2 pr-3">{t("Tên", "Name")}</th>
-                        <th className="py-2 pr-3">Email</th>
-                        <th className="py-2 pr-3 text-center">{t("Lượt click", "Clicks")}</th>
-                        <th className="py-2 pr-3 text-center">{t("Số đơn", "Orders")}</th>
-                        <th className="py-2">{t("Tham gia", "Joined")}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {networkMembers.map((m, i) => (
-                        <tr key={i} className="border-b border-border/50 last:border-0">
-                          <td className="py-2.5 pr-3 font-semibold">{m.full_name || "—"}</td>
-                          <td className="py-2.5 pr-3 text-muted-foreground font-mono text-xs">{m.email}</td>
-                          <td className="py-2.5 pr-3 text-center">
-                            <span className="inline-flex items-center gap-1 text-muted-foreground font-bold"><MousePointerClick className="w-3.5 h-3.5" />{m.clickCount}</span>
-                          </td>
-                          <td className="py-2.5 pr-3 text-center">
-                            {m.orderCount > 0
-                              ? <span className="inline-flex items-center gap-1 text-emerald-500 font-bold"><CheckCircle2 className="w-3.5 h-3.5" />{m.orderCount}</span>
-                              : <span className="text-muted-foreground">{t("Chưa mua", "None yet")}</span>}
-                          </td>
-                          <td className="py-2.5 text-muted-foreground">{new Date(m.created_at).toLocaleDateString("vi-VN")}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+
+              <div className="rounded-xl bg-card border border-border p-5">
+                <h2 className="font-bold flex items-center gap-2 mb-1"><Link2 className="w-4 h-4" /> {t("Link mời đăng ký", "Invite Link")}</h2>
+                <p className="text-xs text-muted-foreground mb-3">{t("Chia sẻ link này để người mới đăng ký tài khoản trực tiếp dưới bạn — tự động nhận hoa hồng trọn đời từ họ.", "Share this link so new people register directly under you — automatically earn lifetime commission from them.")}</p>
+                <div className="flex items-center gap-2 rounded-lg bg-accent p-3">
+                  <code className="flex-1 text-sm text-primary font-semibold truncate">{refLink}</code>
+                  <button
+                    onClick={() => { navigator.clipboard.writeText(refLink); toast.success(t("Đã sao chép!", "Copied!")); }}
+                    className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-bold hover:opacity-90 transition"
+                  >
+                    <Copy className="w-3.5 h-3.5" /> {t("Sao chép", "Copy")}
+                  </button>
                 </div>
-              )}
-            </div>
+                <p className="text-xs text-muted-foreground mt-2">💡 {t("Khi ai đó click link → đăng ký tài khoản → mọi lần mua sau này bạn đều có hoa hồng tự động.", "When someone clicks the link → registers an account → every future purchase automatically earns you commission.")}</p>
+              </div>
+
+              <div className="rounded-xl bg-card border border-border p-5">
+                <h2 className="font-bold flex items-center gap-2 mb-4">📦 {t("Danh sách thành viên dưới bạn", "Members Under You")}</h2>
+
+                {networkMembers.length === 0 ? (
+                  <p className="text-sm text-muted-foreground text-center py-8">{t("Chưa có ai đăng ký qua link của bạn. Chia sẻ link giới thiệu để bắt đầu xây mạng lưới!", "No one has registered through your link yet. Share your referral link to start building your network!")}</p>
+                ) : (
+                  <div className="space-y-5">
+                    {bought.length > 0 && (
+                      <div>
+                        <div className="text-xs font-bold text-emerald-500 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> {t("Đã mua hàng", "Purchased")} ({bought.length})
+                        </div>
+                        <div className="space-y-2">
+                          {bought.map((m, i) => (
+                            <div key={i} className="flex items-center justify-between rounded-xl bg-emerald-500/5 border border-emerald-500/20 p-3">
+                              <div className="flex items-center gap-3 min-w-0">
+                                <div className="w-9 h-9 rounded-full bg-emerald-500/15 text-emerald-600 grid place-items-center font-bold shrink-0">{(m.full_name || "?")[0]}</div>
+                                <div className="min-w-0">
+                                  <div className="font-semibold text-sm truncate">{m.full_name || "—"}</div>
+                                  <div className="text-xs text-muted-foreground font-mono truncate">{m.email}</div>
+                                </div>
+                              </div>
+                              <div className="text-right shrink-0 ml-3">
+                                <div className="text-emerald-500 font-bold text-sm flex items-center gap-1 justify-end"><ShoppingCart className="w-3.5 h-3.5" /> {m.orderCount} {t("đơn", "orders")}</div>
+                                <div className="text-[11px] text-muted-foreground mt-0.5">{new Date(m.created_at).toLocaleDateString("vi-VN")}</div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {notBought.length > 0 && (
+                      <div>
+                        <div className="text-xs font-bold text-muted-foreground uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5" /> {t("Chưa mua hàng", "Not Purchased Yet")} ({notBought.length})
+                        </div>
+                        <div className="space-y-2">
+                          {notBought.map((m, i) => (
+                            <div key={i} className="flex items-center justify-between rounded-xl bg-accent p-3">
+                              <div className="flex items-center gap-3 min-w-0">
+                                <div className="w-9 h-9 rounded-full bg-muted text-muted-foreground grid place-items-center font-bold shrink-0">{(m.full_name || "?")[0]}</div>
+                                <div className="min-w-0">
+                                  <div className="font-semibold text-sm truncate">{m.full_name || "—"}</div>
+                                  <div className="text-xs text-muted-foreground font-mono truncate">{m.email}</div>
+                                </div>
+                              </div>
+                              <div className="text-right shrink-0 ml-3">
+                                <span className="text-xs text-muted-foreground bg-muted rounded-full px-2.5 py-1">{t("Chưa mua", "Not yet")}</span>
+                                <div className="text-[11px] text-muted-foreground mt-1">{new Date(m.created_at).toLocaleDateString("vi-VN")}</div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-3">💡 {t("Nhắn tin chăm sóc những người này — họ đã đăng ký, chỉ cần thêm động lực để mua!", "Reach out to these people — they've registered, they just need a little push to buy!")}</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </>
           );
         })()}
 
