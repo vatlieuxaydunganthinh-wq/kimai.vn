@@ -155,7 +155,7 @@ export const apps: AppProduct[] = [
     titleEn: "Gift Pack: 100+ AI Assistants for All Industries",
     desc: "Bộ sưu tập hơn 100 trợ lý AI được thiết kế chuyên biệt cho đa dạng ngành nghề – sẵn sàng dùng ngay.",
     descEn: "A curated collection of 100+ AI assistants purpose-built for diverse industries — ready to use immediately.",
-    price: "6$", priceVnd: "55000", codeFormat: "TLA<SĐT>", codeExample: "TLA0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_144541_849e28e6-0ad4-4b73-b10d-2a9060a6fe20.png",
+    price: "6$", priceVnd: "1999999", codeFormat: "TLA<SĐT>", codeExample: "TLA0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_144541_849e28e6-0ad4-4b73-b10d-2a9060a6fe20.png",
     productUrl: "https://docs.google.com/spreadsheets/d/1C-svW32rngDD5CZrfxmbg1JIUuIyCteD/edit?usp=sharing&ouid=115789862033738051198&rtpof=true&sd=true",
   },
   {
@@ -164,7 +164,7 @@ export const apps: AppProduct[] = [
     titleEn: "Gift Pack: 50+ AI Apps for All Industries",
     desc: "Tổng hợp 50+ ứng dụng AI hữu ích phục vụ đa ngành nghề, giúp tối ưu công việc và tăng năng suất.",
     descEn: "A curated list of 50+ useful AI apps serving all industries, helping you optimize work and boost productivity.",
-    price: "6$", priceVnd: "55000", codeFormat: "APP<SĐT>", codeExample: "APP0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_144800_46e7aaff-3e00-4c5f-9a42-e71ecbb3fd33.png",
+    price: "6$", priceVnd: "1999999", codeFormat: "APP<SĐT>", codeExample: "APP0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_144800_46e7aaff-3e00-4c5f-9a42-e71ecbb3fd33.png",
     productUrl: "https://docs.google.com/spreadsheets/d/11TBW3yM-WQp_ITYyRKW1VOExcFtpILy_VQ6iiF5A2og/edit?usp=sharing",
   },
   {
@@ -173,7 +173,7 @@ export const apps: AppProduct[] = [
     titleEn: "Combo: 100+ AI Assistants + 50+ Apps for All Industries",
     desc: "Trọn bộ combo: hơn 100 trợ lý AI và 50+ ứng dụng AI phục vụ đủ ngành nghề – tiết kiệm hơn khi mua chung.",
     descEn: "Complete combo: 100+ AI assistants and 50+ AI apps for all industries — save more when bundled together.",
-    price: "9$", priceVnd: "86000", codeFormat: "TLAP<SĐT>", codeExample: "TLAP0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145128_b4209186-baaf-4b18-850f-7b5efeb7db8e.png",
+    price: "9$", priceVnd: "1999999", codeFormat: "TLAP<SĐT>", codeExample: "TLAP0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145128_b4209186-baaf-4b18-850f-7b5efeb7db8e.png",
   },
   {
     n: 8,
@@ -190,7 +190,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Cosmetics Workflow App — Batch Image & Video Creator",
     desc: "Tạo ảnh/video hàng loạt chỉ bằng một cú click chuột. Ảnh/video sắc nét, cao cấp – chuẩn ngành mỹ phẩm.",
     descEn: "Generate batches of high-quality cosmetics images and videos with a single click — professional-grade output.",
-    price: "9$", priceVnd: "79000", codeFormat: "WMP<SĐT>", codeExample: "WMP0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_135740_54ef507d-5ff9-4ead-a14d-4938760d6b8c.png",
+    price: "9$", priceVnd: "1999999", codeFormat: "WMP<SĐT>", codeExample: "WMP0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_135740_54ef507d-5ff9-4ead-a14d-4938760d6b8c.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/60a83d02-0695-44a2-96a2-25652a513ffa",
   },
   {
@@ -199,7 +199,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI KOL Creator App — Build Your AI Brand Ambassador",
     desc: "Bao gồm cả APP và full quy trình hướng dẫn tạo KOL phù hợp với sản phẩm dịch vụ của bạn.",
     descEn: "Includes the APP and full workflow guide to create an AI KOL tailored to your products and services.",
-    price: "9$", priceVnd: "79000", codeFormat: "FKOL<SĐT>", codeExample: "FKOL0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145558_ec5f5ce3-7b22-40b1-8d75-6987d820aa8c.png",
+    price: "9$", priceVnd: "1999999", codeFormat: "FKOL<SĐT>", codeExample: "FKOL0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145558_ec5f5ce3-7b22-40b1-8d75-6987d820aa8c.png",
     productUrl: "https://docs.google.com/document/d/19xhW8z8_ilhvUDQOoSRCrXOt2REjvVrNfXX4uEGiCg8/edit?usp=sharing",
   },
   {
@@ -208,7 +208,7 @@ export const apps: AppProduct[] = [
     titleEn: "High-Quality AI Image & Video Flow App",
     desc: "Tạo ảnh/video CHẤT LƯỢNG CAO.",
     descEn: "Create HIGH-QUALITY AI-generated images and videos effortlessly.",
-    price: "6$", priceVnd: "55555", codeFormat: "FTVA<SĐT>", codeExample: "FTVA0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145945_7e778160-2d50-45f2-9157-f4c743b6d64f.png",
+    price: "6$", priceVnd: "1999999", codeFormat: "FTVA<SĐT>", codeExample: "FTVA0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_145945_7e778160-2d50-45f2-9157-f4c743b6d64f.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/6d4dfaad-189a-474c-a7d3-d026143c5ff8",
   },
   {
@@ -226,7 +226,7 @@ export const apps: AppProduct[] = [
     titleEn: "Premium Cosmetics Workflow App v4 — Pro Image & Video Creator",
     desc: "Tặng mọi người app workflow cao cấp nhất ngành mỹ phẩm – tạo ảnh/video chuyên nghiệp chỉ bằng một click.",
     descEn: "The most premium cosmetics AI workflow app — create professional images and videos with a single click.",
-    priceVnd: "79000", codeFormat: "WF1<SĐT>", codeExample: "WF10982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_150328_28ad1bca-7a67-4d19-8a4d-b93d8f2eb08c.png",
+    priceVnd: "1999999", codeFormat: "WF1<SĐT>", codeExample: "WF10982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_150328_28ad1bca-7a67-4d19-8a4d-b93d8f2eb08c.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/60a83d02-0695-44a2-96a2-25652a513ffa",
   },
   {
@@ -235,7 +235,7 @@ export const apps: AppProduct[] = [
     titleEn: "Long-Form Video Generator App — Auto-Create from Content",
     desc: "App Flow giúp tạo video dài từ nội dung có sẵn – tự động hoá quy trình sản xuất video.",
     descEn: "AI Flow app that generates long-form videos from existing content — fully automated video production pipeline.",
-    priceVnd: "79000", codeFormat: "FVID<SĐT>", codeExample: "FVID0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_151105_537424f3-1875-4170-b8d5-431c58fe50c2.png",
+    priceVnd: "1999999", codeFormat: "FVID<SĐT>", codeExample: "FVID0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_151105_537424f3-1875-4170-b8d5-431c58fe50c2.png",
     productUrl: "https://docs.google.com/document/d/17Y5Q9_oTjGLBgJA45_vgRngWc5cAsDDGXqa4mh0-z_c/edit?usp=sharing",
   },
   {
@@ -244,7 +244,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Image & Video Flow Creator — Thinh Vua App v3",
     desc: "Anh Flow tạo ảnh/video Thịnh Vua App phiên bản 3 – nâng cấp chất lượng, dễ sử dụng.",
     descEn: "AI Flow image and video creator, Thinh Vua App version 3 — upgraded quality, easier to use.",
-    priceVnd: "55000", codeFormat: "AF3V<SĐT>", codeExample: "AF3V0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152235_17acaba8-b3d4-41ad-9d04-0cfb420e0730.png",
+    priceVnd: "1999999", codeFormat: "AF3V<SĐT>", codeExample: "AF3V0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152235_17acaba8-b3d4-41ad-9d04-0cfb420e0730.png",
     productUrl: "https://docs.google.com/document/d/1LfwQTqo6p5wkaT8J4XiOfFdyeaQ9E5VPY7kOjzYusaA/edit?usp=sharing",
   },
   {
@@ -262,7 +262,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Image / Poster / Video Creator App AF3",
     desc: "App Flow tạo ảnh, poster, video AF3 – công cụ sáng tạo nội dung đa năng.",
     descEn: "AF3 AI Flow app for creating images, posters, and videos — a versatile content creation tool.",
-    priceVnd: "55000", codeFormat: "AFP3<SĐT>", codeExample: "AFP30982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152432_ca18aa09-bbe8-48b3-9a59-7f3037a84ae2.png",
+    priceVnd: "1999999", codeFormat: "AFP3<SĐT>", codeExample: "AFP30982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152432_ca18aa09-bbe8-48b3-9a59-7f3037a84ae2.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/eb31799a-9372-4c96-91d6-07d524cf1198",
   },
   {
@@ -271,7 +271,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Workflow App WF3 — Image, Poster & Video Creator",
     desc: "App workflow tạo ảnh/poster/video WF3 – phiên bản nâng cấp với nhiều tính năng mới.",
     descEn: "WF3 AI workflow app for images, posters, and videos — upgraded version with powerful new features.",
-    priceVnd: "79000", codeFormat: "AWF3<SĐT>", codeExample: "AWF30982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152628_e46edd94-f7c6-491d-bc7f-6b96be1b7fde.png",
+    priceVnd: "1999999", codeFormat: "AWF3<SĐT>", codeExample: "AWF30982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_152628_e46edd94-f7c6-491d-bc7f-6b96be1b7fde.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/6d4dfaad-189a-474c-a7d3-d026143c5ff8",
   },
   {
@@ -280,7 +280,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Food & Restaurant Review Content Creator",
     desc: "App review ẩm thực – tạo nội dung review nhà hàng, quán ăn chuyên nghiệp bằng AI.",
     descEn: "AI-powered food and restaurant review app — create professional review content for restaurants and eateries.",
-    priceVnd: "55000", codeFormat: "AMTH<SĐT>", codeExample: "AMTH0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_141526_20bf4a17-f480-41cd-b985-ef5675766dab.png",
+    priceVnd: "1999999", codeFormat: "AMTH<SĐT>", codeExample: "AMTH0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_141526_20bf4a17-f480-41cd-b985-ef5675766dab.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/34951af0-a207-456d-80be-eb87b80fb2ad",
   },
   {
@@ -289,7 +289,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Yearbook & Graduation Photo / Video Creator",
     desc: "App tạo ảnh, poster, video kỷ yếu – lưu giữ kỷ niệm đẹp với AI.",
     descEn: "AI app for creating yearbook and graduation photos, posters, and videos — preserve beautiful memories with AI.",
-    priceVnd: "46000", codeFormat: "KYEU<SĐT>", codeExample: "KYEU0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153123_1450a61f-81a1-4921-a056-52dafdefb5b1.png",
+    priceVnd: "1999999", codeFormat: "KYEU<SĐT>", codeExample: "KYEU0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153123_1450a61f-81a1-4921-a056-52dafdefb5b1.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/65139d18-2478-44a8-b552-7f3446422d07",
   },
   {
@@ -298,7 +298,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Business Location & Signage Review Creator",
     desc: "App review địa chỉ, cơ sở, bảng hiệu kinh doanh – quảng bá doanh nghiệp bằng AI.",
     descEn: "AI app to create review content for business locations, premises, and signage — promote your business with AI.",
-    priceVnd: "79000", codeFormat: "RVDC<SĐT>", codeExample: "RVDC0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153323_0ec9debb-a6ac-4691-849f-27427534c749.png",
+    priceVnd: "1999999", codeFormat: "RVDC<SĐT>", codeExample: "RVDC0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153323_0ec9debb-a6ac-4691-849f-27427534c749.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/378d8584-3af5-428a-a369-0a9933aca1e6",
   },
   {
@@ -307,7 +307,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Interior Design Creator App",
     desc: "App nội thất – tạo ảnh thiết kế nội thất chuyên nghiệp bằng AI, phù hợp cho kiến trúc sư và nhà thiết kế.",
     descEn: "AI interior design app — create professional interior design images, perfect for architects and designers.",
-    priceVnd: "79000", codeFormat: "NOTH<SĐT>", codeExample: "NOTH0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_142119_6b28339c-55c6-4213-bdbb-9dc6464e10b6.png",
+    priceVnd: "1999999", codeFormat: "NOTH<SĐT>", codeExample: "NOTH0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_142119_6b28339c-55c6-4213-bdbb-9dc6464e10b6.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/b422bca7-ff9f-4dd4-b6de-48b265268bf7",
   },
   {
@@ -316,7 +316,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Food & Restaurant Review Creator v2",
     desc: "App review ẩm thực phiên bản 2 – nâng cấp chất lượng nội dung review ẩm thực.",
     descEn: "Food and restaurant review creator v2 — upgraded AI-quality content for food review creation.",
-    priceVnd: "79000", codeFormat: "AMT2<SĐT>", codeExample: "AMT20982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153907_51caf2c8-2c25-4a16-b1ee-e0e774407733.png",
+    priceVnd: "1999999", codeFormat: "AMT2<SĐT>", codeExample: "AMT20982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_153907_51caf2c8-2c25-4a16-b1ee-e0e774407733.png",
     productUrl: "https://labs.google/fx/tools/flow/shared/tool/34951af0-a207-456d-80be-eb87b80fb2ad",
   },
   {
@@ -361,7 +361,7 @@ export const apps: AppProduct[] = [
     titleEn: "Long Video Creator from Text Content — AI Automated",
     desc: "Chỉ cần nhập nội dung + thời lượng là ra video dài. Tự động tạo video chuyên nghiệp từ văn bản.",
     descEn: "Just enter your content and desired duration — get a professional long-form video automatically generated from text.",
-    priceVnd: "79000", codeFormat: "VDAI<SĐT>", codeExample: "VDAI0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_154450_9bc80b8d-a4d6-40ea-bcf6-9ee6ffb13173.png",
+    priceVnd: "1999999", codeFormat: "VDAI<SĐT>", codeExample: "VDAI0982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260807_154450_9bc80b8d-a4d6-40ea-bcf6-9ee6ffb13173.png",
     productUrl: "https://docs.google.com/document/d/17Y5Q9_oTjGLBgJA45_vgRngWc5cAsDDGXqa4mh0-z_c/edit?usp=sharing",
   },
   {
@@ -370,7 +370,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Brainstorming — Kimai1",
     desc: "Bạn gõ 1 câu ngắn cho AI, nhận về bài viết chung chung — sửa đi sửa lại 4-5 lần vẫn chưa đúng ý?\n\nVấn đề không phải AI kém, mà là AI làm ngay khi chưa hiểu rõ bạn cần gì.\n\nThay vì để AI đoán mò, skill này bắt AI:\n✅ Hỏi đúng 4 câu quan trọng trước khi bắt tay viết\n✅ Hỏi từng câu một, không dồn dập gây rối\n✅ Chỉ làm sau khi đã đủ thông tin — ra bản đầu đã sát ý\n\nĐóng gói sẵn thành prompt copy-dán, dùng ngay cho content bán hàng, đặt tên sản phẩm, trả lời khách hàng.",
     descEn: "AI stops guessing what you want — it asks the right question first. Includes real before/after examples for sales copy, product naming, and handling difficult customers.",
-    priceVnd: "29000", codeFormat: "KIMAI1<SĐT>", codeExample: "KIMAI10982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI1<SĐT>", codeExample: "KIMAI10982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai1.md",
   },
   {
@@ -379,7 +379,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Brand Guidelines — Kimai2",
     desc: "Nhờ AI tạo 5 tấm ảnh liên tiếp mà tấm nào cũng lệch màu, lệch font thương hiệu?\n\nAI không tự nhớ bộ nhận diện của bạn — trừ khi bạn dặn nó nhớ 1 lần duy nhất.\n\nThay vì nhắc lại màu sắc, font chữ mỗi lần yêu cầu, skill này giúp AI:\n✅ Nhớ đúng màu, đúng font, đúng giọng văn thương hiệu\n✅ Áp dụng tự động cho mọi ảnh/thiết kế tạo ra sau\n✅ Không còn cảnh lệch pha giữa các lần tạo nội dung\n\nDán 1 lần, dùng mãi cho toàn bộ nội dung thương hiệu của bạn.",
     descEn: "Every AI-generated image and poster matches your brand colors and fonts on the first try — no more inconsistent output. Paste it once, it applies to everything after.",
-    priceVnd: "29000", codeFormat: "KIMAI2<SĐT>", codeExample: "KIMAI20982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI2<SĐT>", codeExample: "KIMAI20982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai2.md",
   },
   {
@@ -388,7 +388,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Writing Plans — Kimai3",
     desc: "Giao việc nhiều bước cho AI, nó làm luôn một mạch rồi bạn mới phát hiện đi sai hướng từ đầu?\n\nKhông có kế hoạch trước, sai một bước là phải làm lại từ đầu.\n\nThay vì để AI \"làm trước tính sau\", skill này bắt AI:\n✅ Viết kế hoạch từng bước, có tiêu chí hoàn thành rõ ràng\n✅ Dừng lại chờ bạn duyệt trước khi thực thi\n✅ Tránh đi lạc hướng giữa chừng, tốn công làm lại\n\nÁp dụng được cho mọi việc nhiều bước: content, thiết kế, tổ chức sự kiện.",
     descEn: "AI writes a step-by-step plan and waits for your approval before touching anything — no more rework from missing direction up front.",
-    priceVnd: "29000", codeFormat: "KIMAI3<SĐT>", codeExample: "KIMAI30982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI3<SĐT>", codeExample: "KIMAI30982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai3.md",
   },
   {
@@ -397,7 +397,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Frontend Design — Kimai4",
     desc: "Nhờ AI thiết kế giao diện mà web nào cũng na ná nhau — cùng bố cục, cùng màu tím-xanh quen thuộc?\n\nGiao diện AI mặc định thường dùng chung 1 công thức, thiếu cá tính riêng.\n\nThay vì nhận giao diện đại trà, skill này buộc AI:\n✅ Đề xuất hướng phong cách + bảng màu có lý do rõ ràng trước khi code\n✅ Ưu tiên khoảng trắng thoáng, phân cấp thông tin dễ nhìn\n✅ Chỉ code sau khi bạn duyệt hướng thiết kế\n\nDùng ngay cho landing page, app, dashboard cần có \"chất riêng\".",
     descEn: "AI designs interfaces with color and layout choices you actually control — no more websites that all look the same.",
-    priceVnd: "29000", codeFormat: "KIMAI4<SĐT>", codeExample: "KIMAI40982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI4<SĐT>", codeExample: "KIMAI40982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai4.md",
   },
   {
@@ -406,7 +406,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Systematic Debugging — Kimai5",
     desc: "Gặp lỗi là sửa đại rồi thử lại, xong lỗi cũ biến mất nhưng lỗi mới lại xuất hiện chỗ khác?\n\nSửa mà không biết nguyên nhân gốc thì chỉ đang vá tạm, không giải quyết tận gốc.\n\nThay vì đoán mò, skill này bắt AI:\n✅ Liệt kê 2-3 giả thuyết nguyên nhân trước khi đề xuất sửa\n✅ Kiểm tra loại trừ từng giả thuyết một cách có hệ thống\n✅ Chỉ sửa sau khi đã xác định đúng nguyên nhân gốc\n\nDùng được cho cả lỗi code lẫn lỗi quy trình vận hành (đơn hàng, thanh toán sai).",
     descEn: "AI finds the real root cause before proposing a fix — no more patching one spot and breaking another. A clear 4-step process, ready to use.",
-    priceVnd: "29000", codeFormat: "KIMAI5<SĐT>", codeExample: "KIMAI50982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI5<SĐT>", codeExample: "KIMAI50982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai5.md",
   },
   {
@@ -415,7 +415,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Canvas Design — Kimai6",
     desc: "Nhờ AI vẽ ảnh mà không kiểm soát được chi tiết — muốn chỉnh 1 chỗ nhỏ là phải tạo lại từ đầu?\n\nẢnh sinh từ mô hình ngẫu nhiên rất khó chỉnh sửa chính xác từng phần.\n\nThay vì tạo ảnh may rủi, skill này cho AI vẽ trực tiếp bằng code:\n✅ Ra file PNG/PDF sắc nét, đúng bố cục yêu cầu\n✅ Chỉnh sửa được từng chi tiết nhỏ mà không cần làm lại toàn bộ\n✅ Xuất nhiều kích thước khác nhau từ cùng 1 bố cục\n\nPhù hợp làm poster, thiệp mời, sơ đồ minh hoạ cần độ chính xác cao.",
     descEn: "AI draws directly with code into sharp PNG/PDF files you can edit detail by detail — no more relying on random image-generation luck.",
-    priceVnd: "29000", codeFormat: "KIMAI6<SĐT>", codeExample: "KIMAI60982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI6<SĐT>", codeExample: "KIMAI60982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai6.md",
   },
   {
@@ -424,7 +424,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Test-Driven Development — Kimai7",
     desc: "Giao việc cho AI xong, đến lúc nhận lại mới ngã ngửa vì kết quả không đúng như kỳ vọng?\n\nKhông có tiêu chí rõ ràng từ đầu, \"xong\" của AI và \"xong\" của bạn là hai chuyện khác nhau.\n\nThay vì để AI tự quyết thế nào là đạt, skill này bắt AI:\n✅ Viết ra tiêu chí đạt/không đạt cụ thể trước khi bắt tay làm\n✅ Tự đối chiếu kết quả với từng tiêu chí sau khi hoàn thành\n✅ Báo cáo rõ đạt hay chưa, không tự nhận \"xong\" khi chưa chắc\n\nHiệu quả nhất khi giao việc lặp lại nhiều lần: viết nhiều bài, tạo nhiều ảnh.",
     descEn: "Define pass/fail criteria before starting — you know for certain when work is truly done, no more back-and-forth on 'is this good enough'.",
-    priceVnd: "29000", codeFormat: "KIMAI7<SĐT>", codeExample: "KIMAI70982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI7<SĐT>", codeExample: "KIMAI70982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai7.md",
   },
   {
@@ -433,7 +433,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Internal Comms — Kimai8",
     desc: "Viết thông báo nội bộ mà nhân viên đọc xong vẫn phải nhắn lại hỏi \"vậy giờ phải làm gì\"?\n\nThông báo thiếu hành động cụ thể thì coi như chưa truyền đạt được gì.\n\nThay vì viết thông báo chung chung, skill này bắt AI:\n✅ Tóm tắt ngay 1-2 câu đầu bài, không bắt người đọc đoán ý\n✅ Nêu rõ hành động cụ thể cần làm + hạn chót nếu có\n✅ Đúng giọng điệu bạn chọn: thân thiện, trang trọng hay dứt khoát\n\nDùng cho thông báo chính sách mới, bản tin tuần gửi team hoặc cộng đồng affiliate.",
     descEn: "Internal announcements get a clear structure: summary up front, a specific action, a real deadline — read once, understood immediately.",
-    priceVnd: "29000", codeFormat: "KIMAI8<SĐT>", codeExample: "KIMAI80982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI8<SĐT>", codeExample: "KIMAI80982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai8.md",
   },
   {
@@ -442,7 +442,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Executing Plans — Kimai9",
     desc: "Có kế hoạch tốt trong đầu nhưng giao cho AI làm thì bị nhảy cóc, bỏ sót bước quan trọng?\n\nKế hoạch hay mà thực thi lộn xộn thì kết quả vẫn thất bại như thường.\n\nThay vì để AI làm dồn một lượt, skill này bắt AI:\n✅ Thực hiện đúng thứ tự từng bước trong kế hoạch đã duyệt\n✅ Báo cáo ngắn gọn sau mỗi bước: đã làm gì, kết quả ra sao\n✅ Dừng lại xin ý kiến ở những bước có rủi ro cao\n\nBạn luôn nắm được tiến độ thật, không bị bất ngờ ở phút cuối.",
     descEn: "AI executes an approved plan step by step, reports progress, and pauses for input at critical points — you always know the real status.",
-    priceVnd: "29000", codeFormat: "KIMAI9<SĐT>", codeExample: "KIMAI90982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI9<SĐT>", codeExample: "KIMAI90982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai9.md",
   },
   {
@@ -451,7 +451,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Theme Factory — Kimai10",
     desc: "Mở phần mềm chọn màu mà ngồi cả tiếng vẫn chưa ra được bộ màu vừa ý cho thương hiệu?\n\nChọn màu/font từ con số 0 tốn thời gian mà kết quả vẫn thiếu chuyên nghiệp.\n\nThay vì tự mò mẫm, skill này cho AI:\n✅ Đề xuất trọn bộ màu chính - phụ - nhấn kèm mã HEX cụ thể\n✅ Gợi ý cặp font tiêu đề + nội dung hài hoà với bảng màu\n✅ Giải thích lý do chọn từng màu, không chọn ngẫu nhiên\n\nCó ngay theme chuyên nghiệp theo đúng ngành của bạn trong vài phút.",
     descEn: "Get a professional, cohesive color and font pairing matched to your industry instantly — skip the guesswork of starting from zero.",
-    priceVnd: "29000", codeFormat: "KIMAI10<SĐT>", codeExample: "KIMAI100982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI10<SĐT>", codeExample: "KIMAI100982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai10.md",
   },
   {
@@ -460,7 +460,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Requesting Code Review — Kimai11",
     desc: "Nhờ đồng nghiệp review mà chỉ nhận lại câu \"ổn đó\" — không biết thực sự ổn ở đâu, chưa ổn ở đâu?\n\nYêu cầu review thiếu ngữ cảnh thì người review cũng chỉ trả lời qua loa được.\n\nThay vì hỏi chung chung, skill này giúp bạn yêu cầu AI:\n✅ Review theo thứ tự ưu tiên: vấn đề nghiêm trọng trước, góp ý nhỏ sau\n✅ Với mỗi vấn đề, nêu rõ ở đâu — vì sao — cách sửa\n✅ Đóng vai người phản biện độc lập, không khen cho qua chuyện\n\nPhản hồi bạn nhận được đi thẳng vào vấn đề thật, không còn chung chung.",
     descEn: "Prepare review requests with full context up front — reviewers stop asking clarifying questions and give feedback that actually matters.",
-    priceVnd: "29000", codeFormat: "KIMAI11<SĐT>", codeExample: "KIMAI110982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI11<SĐT>", codeExample: "KIMAI110982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai11.md",
   },
   {
@@ -469,7 +469,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Web Artifacts Builder — Kimai12",
     desc: "Cần 1 công cụ nội bộ nhỏ (tính hoa hồng, form khảo sát) mà thuê lập trình viên thì quá tốn kém?\n\nViệc nhỏ mà chờ thuê ngoài làm thì vừa chậm vừa tốn chi phí không cần thiết.\n\nThay vì thuê ngoài cho việc nhỏ, skill này cho AI:\n✅ Dựng nguyên 1 web app dùng được ngay trong 1 lần trò chuyện\n✅ Không cần biết code, không cần cài đặt gì thêm\n✅ Giao diện responsive, dùng tốt trên cả điện thoại\n\nPhù hợp làm dashboard nội bộ, công cụ tính toán, form thu thập dữ liệu nhanh.",
     descEn: "AI builds a working web app in a single conversation — no coding knowledge needed, no developer required for small tools.",
-    priceVnd: "29000", codeFormat: "KIMAI12<SĐT>", codeExample: "KIMAI120982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI12<SĐT>", codeExample: "KIMAI120982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai12.md",
   },
   {
@@ -478,7 +478,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Receiving Code Review — Kimai13",
     desc: "Nhận góp ý từ sếp/khách hàng, sửa theo ngay — xong phát hiện góp ý đó vốn dĩ sai từ đầu?\n\nLàm theo mọi góp ý mà không kiểm chứng dễ khiến bạn sửa lỗi này sinh lỗi khác.\n\nThay vì áp dụng mù quáng, skill này bắt AI:\n✅ Đánh giá từng góp ý có đúng về logic/kỹ thuật hay không\n✅ Xem xét ảnh hưởng tới các phần liên quan trước khi sửa\n✅ Chỉ ra góp ý có vấn đề thay vì âm thầm làm theo\n\nĐặc biệt hữu ích khi nhận nhiều góp ý trái chiều cùng lúc.",
     descEn: "Every piece of feedback gets evaluated before you act on it — no more blindly applying bad advice and creating a new bug.",
-    priceVnd: "29000", codeFormat: "KIMAI13<SĐT>", codeExample: "KIMAI130982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI13<SĐT>", codeExample: "KIMAI130982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai13.md",
   },
   {
@@ -487,7 +487,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: MCP Builder — Kimai14",
     desc: "Muốn AI tự tra đơn hàng, cập nhật kho hàng giúp bạn mà không biết bắt đầu từ đâu?\n\nAI mặc định chỉ trò chuyện suông — muốn nó \"hành động\" thật thì cần 1 cầu nối.\n\nThay vì copy-paste dữ liệu qua lại thủ công, skill này hướng dẫn bạn:\n✅ Dựng cầu nối (MCP server) để AI thao tác trực tiếp với hệ thống của bạn\n✅ Xác định rõ AI được phép đọc/ghi những gì\n✅ Giới hạn quyền ở mức tối thiểu cần thiết, tránh rủi ro\n\nTừng bước rõ ràng để AI có thể tự tra cứu, cập nhật dữ liệu thay bạn.",
     descEn: "Connect AI directly to your own systems to look up orders and update data automatically — no more manual copy-paste between tools.",
-    priceVnd: "29000", codeFormat: "KIMAI14<SĐT>", codeExample: "KIMAI140982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI14<SĐT>", codeExample: "KIMAI140982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai14.md",
   },
   {
@@ -496,7 +496,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Git Worktrees — Kimai15",
     desc: "Muốn thử 1 hướng mới nhưng sợ lỡ tay làm hỏng bản đang chạy ổn định cho khách hàng?\n\nThử nghiệm trực tiếp trên bản chính luôn tiềm ẩn rủi ro không đáng có.\n\nThay vì thử liều trên bản chính, skill này hướng dẫn bạn:\n✅ Tạo 1 bản sao làm việc riêng biệt, hoàn toàn tách biệt\n✅ Thử nghiệm thoải mái không ảnh hưởng bản đang phục vụ khách\n✅ Chỉ merge ngược lại sau khi đã kiểm tra kỹ càng\n\nAn tâm thử nghiệm ý tưởng mới mà không đánh cược vào bản đang chạy thật.",
     descEn: "Test a new direction safely in parallel — without touching the stable version currently serving real customers.",
-    priceVnd: "29000", codeFormat: "KIMAI15<SĐT>", codeExample: "KIMAI150982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI15<SĐT>", codeExample: "KIMAI150982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai15.md",
   },
   {
@@ -505,7 +505,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Algorithmic Art — Kimai16",
     desc: "Cần hoạ tiết trang trí độc quyền cho thương hiệu mà không biết thuê thiết kế ở đâu cho nhanh?\n\nHoạ tiết đặt ngoài vừa tốn thời gian chờ vừa khó xin chỉnh sửa nhiều lần.\n\nThay vì đặt thiết kế từng cái một, skill này cho AI:\n✅ Tạo hoạ tiết bằng thuật toán — độc quyền, không đụng hàng\n✅ Đổi 1 tham số là ra ngay hàng loạt biến thể mới\n✅ Xuất file độ phân giải cao, dùng được cả cho in ấn\n\nCó ngay hoạ tiết riêng cho thương hiệu mà không cần chờ đặt thiết kế.",
     descEn: "Generate exclusive patterns with algorithms — change one parameter and get a whole new set of variations instantly.",
-    priceVnd: "29000", codeFormat: "KIMAI16<SĐT>", codeExample: "KIMAI160982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI16<SĐT>", codeExample: "KIMAI160982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai16.md",
   },
   {
@@ -514,7 +514,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Finishing a Branch — Kimai17",
     desc: "Task đã làm xong 90% rồi bỏ đó, vì không rõ bước cuối cùng để \"thực sự xong\" là gì?\n\nViệc dở dang không dọn dẹp sẽ chồng chất, gây rối cho những lần làm sau.\n\nThay vì để việc treo lơ lửng, skill này giúp bạn:\n✅ Có checklist rõ ràng để chốt dứt điểm: kiểm tra lại, gộp bản chính, dọn dẹp\n✅ So sánh ưu nhược điểm từng lựa chọn hoàn tất\n✅ Không còn tình trạng \"gần xong\" kéo dài mãi không dứt\n\nÁp dụng cho cả việc code lẫn các dự án nhỏ nói chung.",
     descEn: "A clear checklist to close out work for good: verify, merge, clean up — nothing left half-finished and forgotten.",
-    priceVnd: "29000", codeFormat: "KIMAI17<SĐT>", codeExample: "KIMAI170982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI17<SĐT>", codeExample: "KIMAI170982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai17.md",
   },
   {
@@ -523,7 +523,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Doc Co-authoring — Kimai18",
     desc: "Nhờ AI viết cả 1 tài liệu dài từ đầu đến cuối, đọc lại thấy đúng ý AI chứ không phải ý mình?\n\nAI viết 1 mạch dễ ra văn phong chung chung, mất đi giọng nói riêng của bạn.\n\nThay vì để AI viết hết rồi mới sửa toàn bộ, skill này giúp bạn:\n✅ Cùng AI phác thảo dàn ý trước, duyệt xong mới viết nội dung\n✅ Viết từng phần một, góp ý ngay sau mỗi phần\n✅ Giữ đúng giọng văn của bạn trong suốt tài liệu\n\nPhù hợp cho tài liệu quan trọng: đề xuất kinh doanh, hợp đồng, báo cáo.",
     descEn: "Co-write important documents section by section with instant feedback — the final result still sounds like you, not like AI.",
-    priceVnd: "29000", codeFormat: "KIMAI18<SĐT>", codeExample: "KIMAI180982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI18<SĐT>", codeExample: "KIMAI180982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai18.md",
   },
   {
@@ -532,7 +532,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Subagent-Driven Development — Kimai19",
     desc: "Việc lớn có 5 phần độc lập mà giao AI làm tuần tự từng phần, chờ mòn mỏi mới xong?\n\nLàm tuần tự những việc vốn không phụ thuộc nhau là đang lãng phí thời gian.\n\nThay vì xếp hàng chờ từng phần, skill này giúp bạn:\n✅ Chia việc lớn thành các phần thực sự độc lập\n✅ Giao nhiều AI làm song song cùng lúc\n✅ Tổng hợp lại đảm bảo nhất quán văn phong, định dạng\n\nViệc vốn mất cả buổi giờ rút ngắn đáng kể nhờ làm song song.",
     descEn: "Split large tasks across multiple AI agents working in parallel — finish significantly faster than doing everything one step at a time.",
-    priceVnd: "29000", codeFormat: "KIMAI19<SĐT>", codeExample: "KIMAI190982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI19<SĐT>", codeExample: "KIMAI190982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai19.md",
   },
   {
@@ -541,7 +541,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Claude API — Kimai20",
     desc: "Muốn có chatbot AI riêng cho fanpage/website mà nghĩ cần cả đội kỹ thuật mới làm được?\n\nTích hợp AI vào sản phẩm nghe có vẻ phức tạp nhưng thực ra có thể tự làm.\n\nThay vì thuê ngoài, skill này hướng dẫn bạn từng bước:\n✅ Cách gọi API AI vào đúng chỗ trong sản phẩm của bạn\n✅ Viết prompt hệ thống giới hạn đúng phạm vi trả lời\n✅ Xử lý an toàn, tránh AI trả lời sai lệch thông tin\n\nCó ngay chatbot chăm sóc khách hàng hoặc công cụ tự động hoá nội dung.",
     descEn: "A step-by-step guide to embedding AI directly into your product — chat, automation — no dedicated tech team required.",
-    priceVnd: "29000", codeFormat: "KIMAI20<SĐT>", codeExample: "KIMAI200982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI20<SĐT>", codeExample: "KIMAI200982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai20.md",
   },
   {
@@ -550,7 +550,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Writing Skills — Kimai21",
     desc: "Cứ mỗi lần nhờ AI làm 1 việc quen thuộc là phải giải thích lại từ đầu, mất thời gian lặp lại?\n\nViệc lặp đi lặp lại mà không đóng gói lại thì mãi mãi vẫn tốn công như lần đầu.\n\nThay vì giải thích lại mỗi lần, skill này hướng dẫn bạn:\n✅ Đóng gói quy trình quen thuộc thành 1 skill có cấu trúc rõ ràng\n✅ Viết sẵn prompt lõi copy-dán dùng lại được ngay\n✅ Test trên vài tình huống thực tế trước khi dùng chính thức\n\nDán 1 lần, dùng mãi mãi — không phải giải thích lại từ đầu nữa.",
     descEn: "Package any process you repeat often into a reusable skill — write it once, stop re-explaining it to AI every single time.",
-    priceVnd: "29000", codeFormat: "KIMAI21<SĐT>", codeExample: "KIMAI210982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI21<SĐT>", codeExample: "KIMAI210982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai21.md",
   },
   {
@@ -559,7 +559,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: GIF Creator — Kimai22",
     desc: "Cần 1 GIF động vui nhộn để thả vào nhóm chat mà lục mãi trên mạng không thấy cái nào ưng?\n\nTìm GIF có sẵn trên mạng vừa mất thời gian vừa không đúng ý muốn truyền tải.\n\nThay vì tìm kiếm mất công, skill này cho AI:\n✅ Tạo GIF động ngắn đúng cảm xúc bạn mô tả\n✅ Tối ưu đúng dung lượng cho từng nền tảng (Zalo, Facebook story)\n✅ Không lo file nặng, vỡ hình khi đăng lên\n\nCó ngay GIF độc quyền chỉ trong vài phút, không cần tìm kiếm đâu xa.",
     descEn: "Create short animated GIFs sized correctly for each platform — no more oversized files or broken images when you post.",
-    priceVnd: "29000", codeFormat: "KIMAI22<SĐT>", codeExample: "KIMAI220982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI22<SĐT>", codeExample: "KIMAI220982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai22.md",
   },
   {
@@ -568,7 +568,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Using Superpowers — Kimai23",
     desc: "Sở hữu cả bộ 27 skill AI mà mỗi lần cần lại phải nhớ xem nên dùng cái nào cho đúng?\n\nCó nhiều công cụ mà không nhớ hết thì cũng như không có, dễ bỏ phí.\n\nThay vì tự nhớ và chọn thủ công, skill này giúp AI:\n✅ Tự kiểm tra tình huống hiện tại khớp với skill nào trong bộ bạn có\n✅ Chủ động đề xuất skill phù hợp trước khi bắt tay làm\n✅ Nói rõ vì sao chọn skill đó trước khi áp dụng\n\nKhông cần nhớ hết 27 skill — AI tự biết lúc nào nên dùng cái nào.",
     descEn: "AI automatically picks the right skill from your collection — you don't need to remember all 27 to find the one you need.",
-    priceVnd: "29000", codeFormat: "KIMAI23<SĐT>", codeExample: "KIMAI230982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI23<SĐT>", codeExample: "KIMAI230982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai23.md",
   },
   {
@@ -577,7 +577,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Webapp Testing — Kimai24",
     desc: "Ra mắt tính năng mới mà không kịp test hết các luồng, để khách hàng phát hiện lỗi trước mình?\n\nTest thủ công từng nút bấm vừa mất thời gian vừa dễ bỏ sót trường hợp.\n\nThay vì tự bấm thử từng luồng, skill này cho AI:\n✅ Tự thao tác thử website như 1 người dùng thật\n✅ Kiểm tra các luồng quan trọng: đăng ký, mua hàng, thanh toán\n✅ Báo lỗi kèm đúng bước để tái hiện lại vấn đề\n\nPhát hiện sự cố trước khi khách hàng là người phát hiện ra nó.",
     descEn: "AI walks through your website like a real customer and reports bugs with exact reproduction steps — catch issues before customers do.",
-    priceVnd: "29000", codeFormat: "KIMAI24<SĐT>", codeExample: "KIMAI240982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI24<SĐT>", codeExample: "KIMAI240982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai24.md",
   },
   {
@@ -586,7 +586,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Dispatching Parallel Agents — Kimai25",
     desc: "Có 5 việc độc lập cần làm mà giao AI xử lý từng cái một, ngồi chờ hết cả buổi?\n\nXử lý tuần tự những việc không liên quan nhau là đang lãng phí thời gian chờ.\n\nThay vì xếp hàng lần lượt, skill này giúp bạn:\n✅ Xác nhận các việc thực sự độc lập, không phụ thuộc nhau\n✅ Giao nhiều AI xử lý song song cùng lúc\n✅ Tổng hợp kết quả cuối cùng nhất quán, đầy đủ\n\nViệc vốn mất cả buổi giờ xong chỉ trong vài phút nhờ chạy song song.",
     descEn: "Hand independent tasks to multiple AI agents running simultaneously — what used to take a whole afternoon now takes minutes.",
-    priceVnd: "29000", codeFormat: "KIMAI25<SĐT>", codeExample: "KIMAI250982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI25<SĐT>", codeExample: "KIMAI250982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai25.md",
   },
   {
@@ -595,7 +595,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Skill Creator — Kimai26",
     desc: "Muốn tự tạo 1 skill AI riêng cho ngành của mình mà không biết viết sao cho AI hiểu đúng ý?\n\nViết prompt tuỳ hứng mỗi lần một kiểu thì AI hiểu sai là chuyện thường xảy ra.\n\nThay vì viết prompt ngẫu hứng, skill này (bộ hướng dẫn chính thức) giúp bạn:\n✅ Cấu trúc đúng chuẩn: vấn đề giải quyết — khi nào dùng — các bước cụ thể\n✅ Có ví dụ minh hoạ input/output rõ ràng\n✅ Test lại trên vài tình huống trước khi dùng chính thức\n\nTự thiết kế skill AI đúng chuẩn ngay từ lần đầu, không cần thử sai nhiều lần.",
     descEn: "The official guide to designing a new AI skill correctly — clear enough that AI gets it right on the very first try.",
-    priceVnd: "29000", codeFormat: "KIMAI26<SĐT>", codeExample: "KIMAI260982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI26<SĐT>", codeExample: "KIMAI260982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai26.md",
   },
   {
@@ -604,7 +604,7 @@ export const apps: AppProduct[] = [
     titleEn: "AI Skill: Verification Before Completion — Kimai27",
     desc: "AI báo \"đã xong việc\" mà kiểm tra lại thì hoá ra chưa xong thật — mất luôn niềm tin để giao việc tiếp?\n\nBáo cáo hoàn thành mà không xác minh thì chẳng khác gì lời hứa suông.\n\nThay vì tin ngay lời báo \"đã xong\", skill này bắt AI:\n✅ Bắt buộc kiểm tra lại kết quả thực tế trước khi báo hoàn thành\n✅ Đưa bằng chứng cụ thể: kết quả chạy thử, số liệu, đối chiếu yêu cầu\n✅ Nói rõ đang ở trạng thái nào nếu chưa chắc chắn, không báo khống\n\nĐặc biệt quan trọng với việc liên quan tới tiền bạc, hợp đồng, thông tin gửi khách.",
     descEn: "Real evidence is required before anything gets marked 'done' — no more false completion reports eroding your trust in the results.",
-    priceVnd: "29000", codeFormat: "KIMAI27<SĐT>", codeExample: "KIMAI270982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
+    priceVnd: "199000", codeFormat: "KIMAI27<SĐT>", codeExample: "KIMAI270982101088", image: "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260808_095623_d67477d1-c4d3-45e6-aba0-13f7ca6df998.png",
     productUrl: "https://oaxbgqyimtyxhwyepcqs.supabase.co/storage/v1/object/public/skill-files/kimai27.md",
   },
 ];
