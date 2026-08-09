@@ -21,7 +21,7 @@ type Affiliate = {
   bank_name?: string | null; bank_account?: string | null; bank_owner?: string | null;
 };
 type Click = { id: string; product_key: string; created_at: string };
-type NetworkMember = { full_name: string | null; email: string; created_at: string; orderCount: number };
+type NetworkMember = { full_name: string | null; email: string; created_at: string; orderCount: number; clickCount: number };
 type Order = {
   id: string; customer_name: string; customer_phone: string; customer_email: string;
   product_title: string; amount: string; status: string; commission_amount: number;
@@ -846,6 +846,7 @@ function AffiliateDashboard() {
                       <tr className="text-left text-xs text-muted-foreground border-b border-border">
                         <th className="py-2 pr-3">{t("Tên", "Name")}</th>
                         <th className="py-2 pr-3">Email</th>
+                        <th className="py-2 pr-3 text-center">{t("Lượt click", "Clicks")}</th>
                         <th className="py-2 pr-3 text-center">{t("Số đơn", "Orders")}</th>
                         <th className="py-2">{t("Tham gia", "Joined")}</th>
                       </tr>
@@ -855,6 +856,9 @@ function AffiliateDashboard() {
                         <tr key={i} className="border-b border-border/50 last:border-0">
                           <td className="py-2.5 pr-3 font-semibold">{m.full_name || "—"}</td>
                           <td className="py-2.5 pr-3 text-muted-foreground font-mono text-xs">{m.email}</td>
+                          <td className="py-2.5 pr-3 text-center">
+                            <span className="inline-flex items-center gap-1 text-muted-foreground font-bold"><MousePointerClick className="w-3.5 h-3.5" />{m.clickCount}</span>
+                          </td>
                           <td className="py-2.5 pr-3 text-center">
                             {m.orderCount > 0
                               ? <span className="inline-flex items-center gap-1 text-emerald-500 font-bold"><CheckCircle2 className="w-3.5 h-3.5" />{m.orderCount}</span>

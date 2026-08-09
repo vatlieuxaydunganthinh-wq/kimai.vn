@@ -380,7 +380,7 @@ export const getNetworkMembersServer = createServerFn({ method: "POST" })
     const [{ data: members, error }, { data: affOrders }] = await Promise.all([
       supabase
         .from("affiliates")
-        .select("full_name, email, created_at")
+        .select("id, full_name, email, created_at")
         .eq("referred_by", data.refCode)
         .order("created_at", { ascending: false }),
       supabase
@@ -398,6 +398,21 @@ export const getNetworkMembersServer = createServerFn({ method: "POST" })
       orderCountByEmail.set(email, (orderCountByEmail.get(email) || 0) + 1);
     }
 
+    // Each network member may themselves be an affiliate with their own ref link —
+    // count how many clicks their own link has gotten.
+    const memberIds = (members ?? []).map((m: any) => m.id);
+    const clickCountById = new Map<string, number>();
+    if (memberIds.length > 0) {
+      const { data: clicks } = await supabase
+        .from("affiliate_clicks")
+        .select("affiliate_id")
+        .in("affiliate_id", memberIds);
+      for (const c of clicks ?? []) {
+        const id = (c as any).affiliate_id as string;
+        clickCountById.set(id, (clickCountById.get(id) || 0) + 1);
+      }
+    }
+
     // Mask emails server-side — never send full addresses over the wire, even to a guessed ref_code.
     const masked = (members ?? []).map((m: any) => {
       const [user, domain] = String(m.email ?? "").split("@");
@@ -407,6 +422,7 @@ export const getNetworkMembersServer = createServerFn({ method: "POST" })
         email: maskedEmail,
         created_at: m.created_at,
         orderCount: orderCountByEmail.get(m.email) || 0,
+        clickCount: clickCountById.get(m.id) || 0,
       };
     });
     return { ok: true as const, members: masked };
