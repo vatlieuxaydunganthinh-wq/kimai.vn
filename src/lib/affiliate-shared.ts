@@ -5,7 +5,11 @@
 
 export function generateAffiliateRefCode(name: string, fallbackEmail: string): string {
   const namePart = name || fallbackEmail.split("@")[0] || "";
-  const baseCode = namePart.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 10) || "user";
+  // Strip Vietnamese diacritics (NFD normalize + drop combining marks) before slugifying,
+  // otherwise names like "Thịnh Phạm" collapse to near-identical base codes ("thnhphm") for
+  // every signup sharing a first name, making ref_code collisions far more likely.
+  const stripped = namePart.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d");
+  const baseCode = stripped.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 10) || "user";
   return baseCode + Math.floor(Math.random() * 9000 + 1000);
 }
 
@@ -32,27 +36,41 @@ export async function createAutoActiveAffiliate(
   }
 
   const namePart = name || email.split("@")[0] || "";
-  const refCode = generateAffiliateRefCode(name, email);
 
-  const { data: authUsers } = await supabase.auth.admin.listUsers();
-  const matchedUser = authUsers?.users?.find((u: any) => u.email === email);
-
-  const { error: createAffErr } = await supabase.from("affiliates").insert({
-    user_id: matchedUser?.id || null,
-    ref_code: refCode,
-    full_name: namePart,
-    email,
-    phone: "",
-    commission_rate: 35,
-    status: "active",
-    referred_by: referredBy || null,
-  });
-  if (createAffErr) {
-    console.error("[createAutoActiveAffiliate] error:", createAffErr);
-    throw createAffErr;
+  let matchedUserId: string | null = null;
+  try {
+    const { data: authUsers } = await supabase.auth.admin.listUsers();
+    matchedUserId = authUsers?.users?.find((u: any) => u.email === email)?.id ?? null;
+  } catch (e) {
+    console.error("[createAutoActiveAffiliate] listUsers failed (non-fatal, continuing without user_id):", e);
   }
 
-  return { created: true, refCode, fullName: namePart };
+  // ref_code has a UNIQUE constraint — retry with a fresh random suffix on collision instead
+  // of failing the whole signup silently (this is what orphaned real registrations before).
+  let lastError: any = null;
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const refCode = generateAffiliateRefCode(name, email);
+    const { error: createAffErr } = await supabase.from("affiliates").insert({
+      user_id: matchedUserId,
+      ref_code: refCode,
+      full_name: namePart,
+      email,
+      phone: "",
+      commission_rate: 35,
+      status: "active",
+      referred_by: referredBy || null,
+    });
+    if (!createAffErr) {
+      return { created: true, refCode, fullName: namePart };
+    }
+    lastError = createAffErr;
+    // Only retry on a ref_code uniqueness collision — any other error should surface immediately.
+    if (createAffErr.code !== "23505") break;
+    console.warn(`[createAutoActiveAffiliate] ref_code collision on "${refCode}", retrying (attempt ${attempt + 1})`);
+  }
+
+  console.error("[createAutoActiveAffiliate] error:", lastError);
+  throw lastError;
 }
 
 /** Shared HTML email sent whenever an affiliate account becomes active (auto or admin-approved). */
