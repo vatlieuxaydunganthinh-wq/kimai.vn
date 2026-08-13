@@ -33,6 +33,8 @@ const PRODUCTS = [
   { key: "matmatudo", name: "Mat Ma Tu Do", price: 686000, url: "phongmenlyai.com" },
 ];
 const GUARANTEE_DAYS = 15;
+// Tạm khoá tính năng đăng/sửa sản phẩm của thành viên theo yêu cầu admin — đổi lại true để mở lại.
+const MEMBER_PRODUCT_LISTING_OPEN = false;
 
 function AffiliateDashboard() {
   const navigate = useNavigate();
@@ -339,6 +341,10 @@ function AffiliateDashboard() {
   };
 
   const submitProduct = async () => {
+    if (!MEMBER_PRODUCT_LISTING_OPEN) {
+      toast.error(t("Tính năng đăng sản phẩm đang tạm khoá.", "Product listing is temporarily locked."));
+      return;
+    }
     if (!spTitle.trim() || !spProductUrl.trim() || !spPriceVnd.trim() || !spSellerName.trim()) {
       toast.error(t("Vui lòng điền đầy đủ thông tin bắt buộc", "Please fill all required fields"));
       return;
@@ -1096,7 +1102,15 @@ function AffiliateDashboard() {
               </div>
             )}
 
-            {sellSection === "add" && (
+            {sellSection === "add" && !MEMBER_PRODUCT_LISTING_OPEN && (
+              <div className="rounded-xl bg-card border border-border p-8 text-center space-y-2">
+                <div className="text-3xl">🔒</div>
+                <h3 className="font-bold text-base">{t("Tính năng đăng sản phẩm đang tạm khoá", "Product listing is temporarily locked")}</h3>
+                <p className="text-sm text-muted-foreground max-w-md mx-auto">{t("Admin đang tạm dừng nhận đăng sản phẩm mới. Vui lòng quay lại sau — chúng tôi sẽ mở lại sớm.", "Admin has temporarily paused new product listings. Please check back later — we'll reopen soon.")}</p>
+              </div>
+            )}
+
+            {sellSection === "add" && MEMBER_PRODUCT_LISTING_OPEN && (
               <div className="rounded-xl bg-card border border-border p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-base">{editingProductId ? `✏️ ${t("Chỉnh sửa sản phẩm", "Edit Product")}` : `➕ ${t("Đưa sản phẩm số lên bán", "List Digital Product")}`}</h3>
