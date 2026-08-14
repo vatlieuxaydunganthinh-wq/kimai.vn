@@ -5,10 +5,11 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { PaymentModal } from "@/components/PaymentModal";
 import { apps, skillEnTitles } from "@/lib/apps-data";
+import { AnAnMark } from "@/components/Logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/san-pham")({
-  head: () => ({ meta: [{ title: "Product Detail — Kim AI" }] }),
+  head: () => ({ meta: [{ title: "Product Detail — AnAn" }] }),
   component: ProductDetailPage,
 });
 
@@ -377,7 +378,7 @@ function ProductDetailPage() {
   const videoUrl = memberProduct?.video_url ?? null;
   const isAdmin = !!adminProduct;
   const ratingKey = adminProduct ? String(adminProduct.n) : memberProduct?.product_key ?? "";
-  const shopName = isAdmin ? "Affiliate · KIM AI" : (memberProduct?.shop_name || memberProduct?.seller_name || "");
+  const shopName = isAdmin ? "Affiliate · AnAn" : (memberProduct?.shop_name || memberProduct?.seller_name || "");
   const sellerAvatar = isAdmin ? null : affiliateInfo?.avatar_url ?? null;
   const joinDate = isAdmin
     ? "01/2024"
@@ -401,7 +402,8 @@ function ProductDetailPage() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold hover:bg-accent transition">
             <ArrowLeft className="w-4 h-4" /> {t("Quay lại", "Back")}
           </a>
-          <span className="font-bold text-sm">KIM <span className="text-primary">AI</span></span>
+          <AnAnMark className="w-5 h-5 text-primary shrink-0" />
+          <span className="font-bold text-sm">An<span className="text-primary">An</span></span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLang(lang === "vi" ? "en" : "vi")}

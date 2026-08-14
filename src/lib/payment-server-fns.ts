@@ -321,11 +321,11 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
 
     const makeHtml = (memberName: string) => `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
             <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:20px;border-radius:12px 12px 0 0;text-align:center;">
-              <h1 style="color:white;margin:0;font-size:22px;">🛍️ SẢN PHẨM MỚI TRÊN KIM AI</h1>
+              <h1 style="color:white;margin:0;font-size:22px;">🛍️ SẢN PHẨM MỚI TRÊN AnAn</h1>
             </div>
             <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
               <p>Xin chào <b>${memberName}</b>,</p>
-              <p>Có sản phẩm số mới vừa được đăng lên nền tảng Kim AI!</p>
+              <p>Có sản phẩm số mới vừa được đăng lên nền tảng AnAn!</p>
               ${imgBlock}
               <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin:16px 0;">
                 <p style="margin:0 0 8px;font-size:18px;font-weight:bold;color:#ea580c;">${data.productTitle}</p>
@@ -337,7 +337,7 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
               </div>
               <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
               <p style="color:#888;font-size:12px;text-align:center;">
-                © Kim AI<br>Hotline/Zalo: 0982101088
+                © AnAn<br>Hotline/Zalo: 0982101088
               </p>
             </div>
           </div>`;
@@ -351,7 +351,7 @@ export const notifyNewProductServer = createServerFn({ method: "POST" })
       const results = await Promise.allSettled(
         batch.map((member) =>
           transporter.sendMail({
-            from: `"Kim AI" <${gmailUser}>`,
+            from: `"AnAn" <${gmailUser}>`,
             to: member.email,
             subject: `🛍️ Sản phẩm mới vừa lên nền tảng: ${data.productTitle}`,
             html: makeHtml(member.name),
@@ -475,9 +475,9 @@ export const notifyAffiliateApprovedServer = createServerFn({ method: "POST" })
 
     try {
       await transporter.sendMail({
-        from: `"Kim AI" <${gmailUser}>`,
+        from: `"AnAn" <${gmailUser}>`,
         to: data.toEmail,
-        subject: `🎉 CHÚC MỪNG! Bạn đã được phê duyệt Link Affiliate — Kim AI`,
+        subject: `🎉 CHÚC MỪNG! Bạn đã được phê duyệt Link Affiliate — AnAn`,
         html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
           <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:24px;border-radius:12px 12px 0 0;text-align:center;">
             <h1 style="color:white;margin:0;font-size:22px;">🎉 CHÚC MỪNG!</h1>
@@ -486,7 +486,7 @@ export const notifyAffiliateApprovedServer = createServerFn({ method: "POST" })
           <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
             <p>Xin chào <b>${data.toName}</b>,</p>
             <p style="font-size:16px;font-weight:bold;color:#ea580c;">HÃY BẮT ĐẦU AFFILIATE VÀ BÁN HÀNG ĐỂ KIẾM TIỀN TỪ NGÀY HÔM NAY NHÉ! 🚀</p>
-            <p>Tài khoản Affiliate của bạn đã được <b style="color:#ea580c;">kích hoạt thành công</b> trên Kim AI!</p>
+            <p>Tài khoản Affiliate của bạn đã được <b style="color:#ea580c;">kích hoạt thành công</b> trên AnAn!</p>
 
             <div style="background:#fff7ed;border:2px solid #fed7aa;border-radius:10px;padding:18px;margin:20px 0;text-align:center;">
               <p style="margin:0 0 6px;font-size:13px;color:#666;">🔗 Link Affiliate của bạn:</p>
@@ -505,7 +505,7 @@ export const notifyAffiliateApprovedServer = createServerFn({ method: "POST" })
 
             <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
             <p style="color:#888;font-size:12px;text-align:center;">
-              © Kim AI<br>Hotline/Zalo: 0982101088
+              © AnAn<br>Hotline/Zalo: 0982101088
             </p>
           </div>
         </div>`,
@@ -580,7 +580,7 @@ export const createPaypalOrder = createServerFn({ method: "POST" })
         intent: "CAPTURE",
         purchase_units: [{ amount: { currency_code: "USD", value: data.amountUsd.toFixed(2) }, description: data.productTitle }],
         application_context: {
-          brand_name: "Kim AI",
+          brand_name: "AnAn",
           user_action: "PAY_NOW",
           return_url: data.returnUrl,
           cancel_url: data.cancelUrl,
@@ -649,7 +649,7 @@ export const capturePaypalOrder = createServerFn({ method: "POST" })
       if (gmailUser && gmailPass) {
         const transporter = nodemailer.default.createTransport({ service: "gmail", auth: { user: gmailUser, pass: gmailPass } });
         await transporter.sendMail({
-          from: `"Kim AI" <${gmailUser}>`,
+          from: `"AnAn" <${gmailUser}>`,
           to: data.customerEmail,
           subject: `✅ Payment Confirmed – ${data.productTitle}`,
           html: `<div style="font-family:sans-serif;max-width:580px;margin:0 auto;padding:20px;">
@@ -665,7 +665,7 @@ export const capturePaypalOrder = createServerFn({ method: "POST" })
               ${data.productUrl ? `<div style="text-align:center;margin:24px 0;"><a href="${data.productUrl}" style="background:#f97316;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">👉 Access Product</a></div>` : ""}
               <p style="color:#888;font-size:12px;">If you have any issues, contact us via Zalo: <b>0982101088</b> or reply to this email.</p>
               <hr style="border:none;border-top:1px solid #eee;margin:16px 0;">
-              <p style="color:#aaa;font-size:11px;text-align:center;">© Kim AI</p>
+              <p style="color:#aaa;font-size:11px;text-align:center;">© AnAn</p>
             </div>
           </div>`,
         });
@@ -808,7 +808,7 @@ export const redeemPromoCode = createServerFn({ method: "POST" })
       if (gmailUser && gmailPass) {
         const transporter = nodemailer.default.createTransport({ service: "gmail", auth: { user: gmailUser, pass: gmailPass } });
         await transporter.sendMail({
-          from: `"Kim AI" <${gmailUser}>`,
+          from: `"AnAn" <${gmailUser}>`,
           to: data.email,
           subject: `🎁 Mở khoá thành công — ${data.productTitle}`,
           html: `<div style="font-family:sans-serif;max-width:580px;margin:0 auto;padding:20px;">
@@ -824,7 +824,7 @@ export const redeemPromoCode = createServerFn({ method: "POST" })
               ${data.productUrl ? `<div style="text-align:center;margin:24px 0;"><a href="${data.productUrl}" style="background:#f97316;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">👉 Truy cập sản phẩm ngay</a></div>` : ""}
               <p style="color:#888;font-size:12px;">Nếu có vấn đề, liên hệ Zalo: <b>0982101088</b></p>
               <hr style="border:none;border-top:1px solid #eee;margin:16px 0;">
-              <p style="color:#aaa;font-size:11px;text-align:center;">© Kim AI</p>
+              <p style="color:#aaa;font-size:11px;text-align:center;">© AnAn</p>
             </div>
           </div>`,
         });

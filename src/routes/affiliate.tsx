@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AnAnMark } from "@/components/Logo";
 
 export const Route = createFileRoute("/affiliate")({
   head: () => ({
     meta: [
-      { title: "Affiliate Registration — KIM AI" },
-      { name: "description", content: "Register as an Affiliate of KIM AI. Share links, earn 35% commission per order." },
+      { title: "Affiliate Registration — AnAn" },
+      { name: "description", content: "Register as an Affiliate of AnAn. Share links, earn 35% commission per order." },
     ],
   }),
   component: AffiliatePage,
@@ -186,7 +187,8 @@ function AffiliatePage() {
             <ArrowLeft className="w-4 h-4" /> {t("Quay lại", "Back")}
           </Link>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-lg hidden sm:inline">KIM <span className="text-primary">AI</span></span>
+            <AnAnMark className="w-6 h-6 text-primary shrink-0" />
+            <span className="font-bold text-lg hidden sm:inline">An<span className="text-primary">An</span></span>
             <button
               onClick={() => setLang(lang === "vi" ? "en" : "vi")}
               className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-bold hover:bg-accent transition"
@@ -206,7 +208,7 @@ function AffiliatePage() {
             <Users className="w-4 h-4" /> {t("Chương trình Affiliate", "Affiliate Program")}
           </div>
           <h1 className="text-3xl md:text-4xl font-black">
-            {t("Kiếm tiền cùng", "Earn with")} <span className="text-primary">KIM AI</span>
+            {t("Kiếm tiền cùng", "Earn with")} <span className="text-primary">AnAn</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto">
             {t(

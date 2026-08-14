@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import { ArrowLeft, Sparkles, Globe } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { apps, enThumbnailUrls, skillEnTitles } from "@/lib/apps-data";
+import { AnAnMark } from "@/components/Logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/danh-muc")({
-  head: () => ({ meta: [{ title: "Danh mục sản phẩm — KIM AI" }] }),
+  head: () => ({ meta: [{ title: "Danh mục sản phẩm — AnAn" }] }),
   validateSearch: (search: Record<string, unknown>) => ({
     loai: ((search.loai as string) || "skill") as "skill" | "app" | "guide",
   }),
@@ -187,10 +188,10 @@ function DanhMucPage() {
           </Link>
           <Link to="/" className="flex items-center gap-1.5">
             <div className="w-8 h-8 rounded-lg bg-white/20 grid place-items-center">
-              <Sparkles className="w-4 h-4 text-white" />
+              <AnAnMark className="w-5 h-5 text-white" />
             </div>
             <span className="hidden sm:block text-white font-extrabold text-base leading-tight">
-              <>KIM <span className="text-yellow-300">AI</span></>
+              <>An<span className="text-yellow-300">An</span></>
             </span>
           </Link>
           <button

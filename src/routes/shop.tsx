@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import { ArrowLeft, MessageCircle, Store, Star, Package, Users, Clock, MapPin, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { AnAnMark } from "@/components/Logo";
 
 export const Route = createFileRoute("/shop")({
-  head: () => ({ meta: [{ title: "Shop — Kim AI" }] }),
+  head: () => ({ meta: [{ title: "Shop — AnAn" }] }),
   component: ShopPage,
 });
 
@@ -110,7 +111,8 @@ function ShopPage() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold hover:bg-accent transition">
             <ArrowLeft className="w-4 h-4" /> Quay lại
           </button>
-          <span className="font-bold text-sm">KIM <span className="text-primary">AI</span></span>
+          <AnAnMark className="w-5 h-5 text-primary shrink-0" />
+          <span className="font-bold text-sm">An<span className="text-primary">An</span></span>
           <div className="w-24" />
         </div>
       </header>

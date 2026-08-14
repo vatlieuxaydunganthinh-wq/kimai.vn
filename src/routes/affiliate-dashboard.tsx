@@ -10,7 +10,7 @@ import { uploadAvatarServer, getLeaderboardServer, uploadProductImageServer, not
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Route = createFileRoute("/affiliate-dashboard")({
-  head: () => ({ meta: [{ title: "Affiliate Dashboard — Kim AI" }] }),
+  head: () => ({ meta: [{ title: "Affiliate Dashboard — AnAn" }] }),
   component: AffiliateDashboard,
 });
 
@@ -33,8 +33,6 @@ const PRODUCTS = [
   { key: "matmatudo", name: "Mat Ma Tu Do", price: 686000, url: "phongmenlyai.com" },
 ];
 const GUARANTEE_DAYS = 15;
-// Tạm khoá tính năng đăng/sửa sản phẩm của thành viên theo yêu cầu admin — đổi lại true để mở lại.
-const MEMBER_PRODUCT_LISTING_OPEN = false;
 
 function AffiliateDashboard() {
   const navigate = useNavigate();
@@ -328,7 +326,7 @@ function AffiliateDashboard() {
     ctx.beginPath(); ctx.moveTo(48, 563); ctx.lineTo(1152, 563); ctx.stroke();
     // Branding
     ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#059669";
-    ctx.fillText(isEn ? "KIM AI" : "KIM AI", 48, 605);
+    ctx.fillText(isEn ? "AnAn" : "AnAn", 48, 605);
     ctx.font = "18px Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const siteText = "sieuthisoai.com";
     ctx.fillText(siteText, 1152 - ctx.measureText(siteText).width, 605);
@@ -341,10 +339,6 @@ function AffiliateDashboard() {
   };
 
   const submitProduct = async () => {
-    if (!MEMBER_PRODUCT_LISTING_OPEN) {
-      toast.error(t("Tính năng đăng sản phẩm đang tạm khoá.", "Product listing is temporarily locked."));
-      return;
-    }
     if (!spTitle.trim() || !spProductUrl.trim() || !spPriceVnd.trim() || !spSellerName.trim()) {
       toast.error(t("Vui lòng điền đầy đủ thông tin bắt buộc", "Please fill all required fields"));
       return;
@@ -443,7 +437,7 @@ function AffiliateDashboard() {
               <ArrowLeft className="w-3.5 h-3.5" /> {t("Quay lại", "Back")}
             </Link>
             <Link to="/" className="font-bold text-base sm:text-lg">
-              {t("KIẾM TIỀN AFFILIATE", "AFFILIATE EARNINGS")} <span className="text-primary">{t("KIM AI", "KIM AI")}</span>
+              {t("KIẾM TIỀN AFFILIATE", "AFFILIATE EARNINGS")} <span className="text-primary">{t("AnAn", "AnAn")}</span>
             </Link>
           </div>
           <div className="flex items-center gap-3">
@@ -818,7 +812,7 @@ function AffiliateDashboard() {
                   </div>
                 )}
                 <div className="mt-5 rounded-xl bg-card border border-border p-4 text-sm text-white/60">
-                  <p>{t("Bạn đang là thành viên đội ngũ", "You are a member of")} <span className="font-bold text-white">KIM AI</span> — {t("tiếp tục giới thiệu để tăng cấp độ", "keep referring to level up")}</p>
+                  <p>{t("Bạn đang là thành viên đội ngũ", "You are a member of")} <span className="font-bold text-white">AnAn</span> — {t("tiếp tục giới thiệu để tăng cấp độ", "keep referring to level up")}</p>
                   <p className="mt-1">{t("Nhận hướng dẫn từng bước qua nhóm Zalo riêng ·", "Get step-by-step guidance via private Zalo group ·")} <a href="https://zalo.me/0982101088" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">{t("Liên hệ hỗ trợ →", "Contact support →")}</a></p>
                 </div>
               </div>
@@ -1102,15 +1096,7 @@ function AffiliateDashboard() {
               </div>
             )}
 
-            {sellSection === "add" && !MEMBER_PRODUCT_LISTING_OPEN && (
-              <div className="rounded-xl bg-card border border-border p-8 text-center space-y-2">
-                <div className="text-3xl">🔒</div>
-                <h3 className="font-bold text-base">{t("Tính năng đăng sản phẩm đang tạm khoá", "Product listing is temporarily locked")}</h3>
-                <p className="text-sm text-muted-foreground max-w-md mx-auto">{t("Admin đang tạm dừng nhận đăng sản phẩm mới. Vui lòng quay lại sau — chúng tôi sẽ mở lại sớm.", "Admin has temporarily paused new product listings. Please check back later — we'll reopen soon.")}</p>
-              </div>
-            )}
-
-            {sellSection === "add" && MEMBER_PRODUCT_LISTING_OPEN && (
+            {sellSection === "add" && (
               <div className="rounded-xl bg-card border border-border p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-base">{editingProductId ? `✏️ ${t("Chỉnh sửa sản phẩm", "Edit Product")}` : `➕ ${t("Đưa sản phẩm số lên bán", "List Digital Product")}`}</h3>
@@ -1118,7 +1104,7 @@ function AffiliateDashboard() {
                     <button onClick={() => { clearAddForm(); setSellSection("manage"); }} className="text-xs text-muted-foreground hover:text-foreground border border-border rounded-lg px-3 py-1.5 hover:bg-accent transition">{t("Huỷ chỉnh sửa", "Cancel Edit")}</button>
                   )}
                 </div>
-                <p className="text-sm text-muted-foreground">{editingProductId ? t("Cập nhật thông tin sản phẩm của bạn.", "Update your product info.") : t("Sản phẩm tự động hiển thị ngay trên Kim AI sau khi đăng.", "Product appears instantly on Kim AI after posting.")}</p>
+                <p className="text-sm text-muted-foreground">{editingProductId ? t("Cập nhật thông tin sản phẩm của bạn.", "Update your product info.") : t("Sản phẩm tự động hiển thị ngay trên AnAn sau khi đăng.", "Product appears instantly on AnAn after posting.")}</p>
 
                 {(!spSellerName || !spBankAccount) && (
                   <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-3 text-sm">

@@ -28,7 +28,7 @@ export const sendProductEmail = createServerFn({ method: "POST" })
           ${data.html}
           <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
           <p style="color:#888;font-size:12px;text-align:center;">
-            © KIM AI<br>
+            © AnAn<br>
             Hotline/Zalo: 0982101088
           </p>
         </div>

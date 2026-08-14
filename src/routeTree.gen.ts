@@ -11,15 +11,20 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WorkshopRouteImport } from './routes/workshop'
 import { Route as TruyCapAppRouteImport } from './routes/truy-cap-app'
+import { Route as SkillsRouteImport } from './routes/skills'
+import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SanPhamRouteImport } from './routes/san-pham'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as PaypalReturnRouteImport } from './routes/paypal-return'
 import { Route as KienThucRouteImport } from './routes/kien-thuc'
 import { Route as KhoiNghiepRouteImport } from './routes/khoi-nghiep'
 import { Route as KenhAffiliateRouteImport } from './routes/kenh-affiliate'
 import { Route as HocVienRouteImport } from './routes/hoc-vien'
 import { Route as HocAiRouteImport } from './routes/hoc-ai'
 import { Route as GioiThieuRouteImport } from './routes/gioi-thieu'
+import { Route as DauTuRouteImport } from './routes/dau-tu'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DanhMucRouteImport } from './routes/danh-muc'
 import { Route as CongCuAiRouteImport } from './routes/cong-cu-ai'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AffiliateDashboardRouteImport } from './routes/affiliate-dashboard'
@@ -38,6 +43,16 @@ const TruyCapAppRoute = TruyCapAppRouteImport.update({
   path: '/truy-cap-app',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SkillsRoute = SkillsRouteImport.update({
+  id: '/skills',
+  path: '/skills',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SanPhamRoute = SanPhamRouteImport.update({
   id: '/san-pham',
   path: '/san-pham',
@@ -46,6 +61,11 @@ const SanPhamRoute = SanPhamRouteImport.update({
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaypalReturnRoute = PaypalReturnRouteImport.update({
+  id: '/paypal-return',
+  path: '/paypal-return',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KienThucRoute = KienThucRouteImport.update({
@@ -78,9 +98,19 @@ const GioiThieuRoute = GioiThieuRouteImport.update({
   path: '/gioi-thieu',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DauTuRoute = DauTuRouteImport.update({
+  id: '/dau-tu',
+  path: '/dau-tu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DanhMucRoute = DanhMucRouteImport.update({
+  id: '/danh-muc',
+  path: '/danh-muc',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CongCuAiRoute = CongCuAiRouteImport.update({
@@ -127,15 +157,20 @@ export interface FileRoutesByFullPath {
   '/affiliate-dashboard': typeof AffiliateDashboardRoute
   '/auth': typeof AuthRoute
   '/cong-cu-ai': typeof CongCuAiRoute
+  '/danh-muc': typeof DanhMucRoute
   '/dashboard': typeof DashboardRoute
+  '/dau-tu': typeof DauTuRoute
   '/gioi-thieu': typeof GioiThieuRoute
   '/hoc-ai': typeof HocAiRoute
   '/hoc-vien': typeof HocVienRoute
   '/kenh-affiliate': typeof KenhAffiliateRoute
   '/khoi-nghiep': typeof KhoiNghiepRoute
   '/kien-thuc': typeof KienThucRoute
+  '/paypal-return': typeof PaypalReturnRoute
   '/reset-password': typeof ResetPasswordRoute
   '/san-pham': typeof SanPhamRoute
+  '/shop': typeof ShopRoute
+  '/skills': typeof SkillsRoute
   '/truy-cap-app': typeof TruyCapAppRoute
   '/workshop': typeof WorkshopRoute
   '/affiliate-products/$partner': typeof AffiliateProductsPartnerRoute
@@ -147,15 +182,20 @@ export interface FileRoutesByTo {
   '/affiliate-dashboard': typeof AffiliateDashboardRoute
   '/auth': typeof AuthRoute
   '/cong-cu-ai': typeof CongCuAiRoute
+  '/danh-muc': typeof DanhMucRoute
   '/dashboard': typeof DashboardRoute
+  '/dau-tu': typeof DauTuRoute
   '/gioi-thieu': typeof GioiThieuRoute
   '/hoc-ai': typeof HocAiRoute
   '/hoc-vien': typeof HocVienRoute
   '/kenh-affiliate': typeof KenhAffiliateRoute
   '/khoi-nghiep': typeof KhoiNghiepRoute
   '/kien-thuc': typeof KienThucRoute
+  '/paypal-return': typeof PaypalReturnRoute
   '/reset-password': typeof ResetPasswordRoute
   '/san-pham': typeof SanPhamRoute
+  '/shop': typeof ShopRoute
+  '/skills': typeof SkillsRoute
   '/truy-cap-app': typeof TruyCapAppRoute
   '/workshop': typeof WorkshopRoute
   '/affiliate-products/$partner': typeof AffiliateProductsPartnerRoute
@@ -168,15 +208,20 @@ export interface FileRoutesById {
   '/affiliate-dashboard': typeof AffiliateDashboardRoute
   '/auth': typeof AuthRoute
   '/cong-cu-ai': typeof CongCuAiRoute
+  '/danh-muc': typeof DanhMucRoute
   '/dashboard': typeof DashboardRoute
+  '/dau-tu': typeof DauTuRoute
   '/gioi-thieu': typeof GioiThieuRoute
   '/hoc-ai': typeof HocAiRoute
   '/hoc-vien': typeof HocVienRoute
   '/kenh-affiliate': typeof KenhAffiliateRoute
   '/khoi-nghiep': typeof KhoiNghiepRoute
   '/kien-thuc': typeof KienThucRoute
+  '/paypal-return': typeof PaypalReturnRoute
   '/reset-password': typeof ResetPasswordRoute
   '/san-pham': typeof SanPhamRoute
+  '/shop': typeof ShopRoute
+  '/skills': typeof SkillsRoute
   '/truy-cap-app': typeof TruyCapAppRoute
   '/workshop': typeof WorkshopRoute
   '/affiliate-products/$partner': typeof AffiliateProductsPartnerRoute
@@ -190,15 +235,20 @@ export interface FileRouteTypes {
     | '/affiliate-dashboard'
     | '/auth'
     | '/cong-cu-ai'
+    | '/danh-muc'
     | '/dashboard'
+    | '/dau-tu'
     | '/gioi-thieu'
     | '/hoc-ai'
     | '/hoc-vien'
     | '/kenh-affiliate'
     | '/khoi-nghiep'
     | '/kien-thuc'
+    | '/paypal-return'
     | '/reset-password'
     | '/san-pham'
+    | '/shop'
+    | '/skills'
     | '/truy-cap-app'
     | '/workshop'
     | '/affiliate-products/$partner'
@@ -210,15 +260,20 @@ export interface FileRouteTypes {
     | '/affiliate-dashboard'
     | '/auth'
     | '/cong-cu-ai'
+    | '/danh-muc'
     | '/dashboard'
+    | '/dau-tu'
     | '/gioi-thieu'
     | '/hoc-ai'
     | '/hoc-vien'
     | '/kenh-affiliate'
     | '/khoi-nghiep'
     | '/kien-thuc'
+    | '/paypal-return'
     | '/reset-password'
     | '/san-pham'
+    | '/shop'
+    | '/skills'
     | '/truy-cap-app'
     | '/workshop'
     | '/affiliate-products/$partner'
@@ -230,15 +285,20 @@ export interface FileRouteTypes {
     | '/affiliate-dashboard'
     | '/auth'
     | '/cong-cu-ai'
+    | '/danh-muc'
     | '/dashboard'
+    | '/dau-tu'
     | '/gioi-thieu'
     | '/hoc-ai'
     | '/hoc-vien'
     | '/kenh-affiliate'
     | '/khoi-nghiep'
     | '/kien-thuc'
+    | '/paypal-return'
     | '/reset-password'
     | '/san-pham'
+    | '/shop'
+    | '/skills'
     | '/truy-cap-app'
     | '/workshop'
     | '/affiliate-products/$partner'
@@ -251,15 +311,20 @@ export interface RootRouteChildren {
   AffiliateDashboardRoute: typeof AffiliateDashboardRoute
   AuthRoute: typeof AuthRoute
   CongCuAiRoute: typeof CongCuAiRoute
+  DanhMucRoute: typeof DanhMucRoute
   DashboardRoute: typeof DashboardRoute
+  DauTuRoute: typeof DauTuRoute
   GioiThieuRoute: typeof GioiThieuRoute
   HocAiRoute: typeof HocAiRoute
   HocVienRoute: typeof HocVienRoute
   KenhAffiliateRoute: typeof KenhAffiliateRoute
   KhoiNghiepRoute: typeof KhoiNghiepRoute
   KienThucRoute: typeof KienThucRoute
+  PaypalReturnRoute: typeof PaypalReturnRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SanPhamRoute: typeof SanPhamRoute
+  ShopRoute: typeof ShopRoute
+  SkillsRoute: typeof SkillsRoute
   TruyCapAppRoute: typeof TruyCapAppRoute
   WorkshopRoute: typeof WorkshopRoute
   AffiliateProductsPartnerRoute: typeof AffiliateProductsPartnerRoute
@@ -281,6 +346,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TruyCapAppRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/skills': {
+      id: '/skills'
+      path: '/skills'
+      fullPath: '/skills'
+      preLoaderRoute: typeof SkillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/san-pham': {
       id: '/san-pham'
       path: '/san-pham'
@@ -293,6 +372,13 @@ declare module '@tanstack/react-router' {
       path: '/reset-password'
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paypal-return': {
+      id: '/paypal-return'
+      path: '/paypal-return'
+      fullPath: '/paypal-return'
+      preLoaderRoute: typeof PaypalReturnRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kien-thuc': {
@@ -337,11 +423,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GioiThieuRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dau-tu': {
+      id: '/dau-tu'
+      path: '/dau-tu'
+      fullPath: '/dau-tu'
+      preLoaderRoute: typeof DauTuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/danh-muc': {
+      id: '/danh-muc'
+      path: '/danh-muc'
+      fullPath: '/danh-muc'
+      preLoaderRoute: typeof DanhMucRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cong-cu-ai': {
@@ -403,15 +503,20 @@ const rootRouteChildren: RootRouteChildren = {
   AffiliateDashboardRoute: AffiliateDashboardRoute,
   AuthRoute: AuthRoute,
   CongCuAiRoute: CongCuAiRoute,
+  DanhMucRoute: DanhMucRoute,
   DashboardRoute: DashboardRoute,
+  DauTuRoute: DauTuRoute,
   GioiThieuRoute: GioiThieuRoute,
   HocAiRoute: HocAiRoute,
   HocVienRoute: HocVienRoute,
   KenhAffiliateRoute: KenhAffiliateRoute,
   KhoiNghiepRoute: KhoiNghiepRoute,
   KienThucRoute: KienThucRoute,
+  PaypalReturnRoute: PaypalReturnRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SanPhamRoute: SanPhamRoute,
+  ShopRoute: ShopRoute,
+  SkillsRoute: SkillsRoute,
   TruyCapAppRoute: TruyCapAppRoute,
   WorkshopRoute: WorkshopRoute,
   AffiliateProductsPartnerRoute: AffiliateProductsPartnerRoute,

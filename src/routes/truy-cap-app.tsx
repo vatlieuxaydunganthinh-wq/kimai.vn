@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { PaymentModal } from "@/components/PaymentModal";
 import { apps } from "@/lib/apps-data";
+import { AnAnMark } from "@/components/Logo";
 
 // Fallback list while admin_products (database, same source as trang chủ) is still loading
 const FALLBACK_PRODUCT_NS = [5, 6, 7, 9, 10, 11, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 28];
@@ -135,14 +136,15 @@ function Page() {
           <Link to="/" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold hover:bg-accent transition">
             <ArrowLeft className="w-4 h-4" /> Quay lại
           </Link>
-          <span className="font-bold">KIM <span className="text-primary">AI</span></span>
+          <AnAnMark className="w-5 h-5 text-primary shrink-0" />
+          <span className="font-bold">An<span className="text-primary">An</span></span>
         </div>
       </header>
 
       <section className="px-5 pt-16 pb-6 max-w-5xl mx-auto text-center">
         <h1 className="font-black tracking-tight font-sans leading-[1.1] flex flex-col items-center gap-2">
           <span className="block text-4xl md:text-6xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            SẢN PHẨM KIM AI
+            SẢN PHẨM AnAn
           </span>
         </h1>
         <div className="mt-6 mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-primary to-primary/40" />

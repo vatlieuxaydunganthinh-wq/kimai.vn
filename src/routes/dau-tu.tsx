@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TrendingUp, Users, Package, Link2, Shield, Zap, DollarSign, CheckCircle2, Mail, Phone, ChevronRight } from "lucide-react";
 
 export const Route = createFileRoute("/dau-tu")({
-  head: () => ({ meta: [{ title: "Cơ hội Đầu tư & Hợp tác — Kim AI" }] }),
+  head: () => ({ meta: [{ title: "Cơ hội Đầu tư & Hợp tác — AnAn" }] }),
   component: PitchPage,
 });
 
@@ -13,7 +13,7 @@ function PitchPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent("Quan tâm đầu tư / mua lại Kim AI");
+    const subject = encodeURIComponent("Quan tâm đầu tư / mua lại AnAn");
     const body = encodeURIComponent(
       `Họ tên: ${form.name}\nEmail: ${form.email}\nSĐT: ${form.phone}\n\nNội dung:\n${form.message}`
     );
@@ -234,7 +234,7 @@ function PitchPage() {
       </section>
 
       <footer className="text-center pb-10 text-white/20 text-xs">
-        © 2025 Kim AI · Thịnh Vua App
+        © 2025 AnAn · Thịnh Vua App
       </footer>
     </div>
   );

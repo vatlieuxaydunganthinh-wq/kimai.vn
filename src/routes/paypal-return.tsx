@@ -4,7 +4,7 @@ import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { capturePaypalOrder } from "@/lib/payment-server-fns";
 
 export const Route = createFileRoute("/paypal-return")({
-  head: () => ({ meta: [{ title: "Payment Processing — Kim AI" }] }),
+  head: () => ({ meta: [{ title: "Payment Processing — AnAn" }] }),
   validateSearch: (search: Record<string, unknown>) => ({
     token: (search.token as string) ?? "",
     PayerID: (search.PayerID as string) ?? "",

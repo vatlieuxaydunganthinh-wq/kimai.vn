@@ -1,6 +1,6 @@
 // Nitro API route: GET /api/publish-daily-skill
 // Chạy hàng ngày lúc 8h sáng (Vercel Cron)
-// Tự động kích hoạt (is_active = true) skill KIMAI tiếp theo trong hàng đợi (n >= 1000, đã xếp thứ tự kimai1 → kimai27)
+// Tự động kích hoạt (is_active = true) skill ANAN tiếp theo trong hàng đợi (n >= 1000, đã xếp thứ tự kimai1 → kimai27)
 
 import { defineEventHandler, getHeader } from "h3";
 import { createClient } from "@supabase/supabase-js";
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
 
   const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-  // Tìm skill KIMAI tiếp theo trong hàng đợi (chưa active), n từ 1000 trở lên, theo đúng thứ tự
+  // Tìm skill ANAN tiếp theo trong hàng đợi (chưa active), n từ 1000 trở lên, theo đúng thứ tự
   const { data: nextSkill, error } = await supabase
     .from("admin_products")
     .select("n, title, code_format, price_vnd, thumbnail_url")
@@ -64,7 +64,7 @@ export default defineEventHandler(async (event) => {
         auth: { user: gmailUser, pass: gmailPass },
       });
       await transporter.sendMail({
-        from: `"Kim AI" <${gmailUser}>`,
+        from: `"AnAn" <${gmailUser}>`,
         to: gmailUser,
         subject: `🤖 Đã tự động đăng skill mới: ${nextSkill.title}`,
         html: `<p>Skill <b>${nextSkill.title}</b> (mã <b>${nextSkill.code_format}</b>) vừa được tự động kích hoạt lên kimai.vn lúc 8h sáng nay.</p>
@@ -99,22 +99,22 @@ export default defineEventHandler(async (event) => {
         const transporter = nodemailer.createTransport({ service: "gmail", auth: { user: gmailUser, pass: gmailPass } });
         const makeHtml = (memberName: string) => `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
           <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:20px;border-radius:12px 12px 0 0;text-align:center;">
-            <h1 style="color:white;margin:0;font-size:22px;">🛍️ SẢN PHẨM MỚI TRÊN KIM AI</h1>
+            <h1 style="color:white;margin:0;font-size:22px;">🛍️ SẢN PHẨM MỚI TRÊN AnAn</h1>
           </div>
           <div style="background:#fff;border:1px solid #eee;border-top:none;padding:24px;border-radius:0 0 12px 12px;">
             <p>Xin chào <b>${memberName}</b>,</p>
-            <p>Có sản phẩm số mới vừa được đăng lên nền tảng Kim AI!</p>
+            <p>Có sản phẩm số mới vừa được đăng lên nền tảng AnAn!</p>
             ${imgBlock}
             <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin:16px 0;">
               <p style="margin:0 0 8px;font-size:18px;font-weight:bold;color:#ea580c;">${nextSkill.title}</p>
-              <p style="margin:0 0 4px;color:#666;">👤 Người bán: <b>KIM AI</b></p>
+              <p style="margin:0 0 4px;color:#666;">👤 Người bán: <b>AnAn</b></p>
               <p style="margin:0;color:#666;">💰 Giá: <b style="color:#ea580c;">${Number(nextSkill.price_vnd).toLocaleString("vi-VN")}đ</b></p>
             </div>
             <div style="text-align:center;margin:24px 0;">
               <a href="${productUrl}" style="background:#f97316;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:16px;">👉 Xem & Mua ngay</a>
             </div>
             <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
-            <p style="color:#888;font-size:12px;text-align:center;">© Kim AI<br>Hotline/Zalo: 0982101088</p>
+            <p style="color:#888;font-size:12px;text-align:center;">© AnAn<br>Hotline/Zalo: 0982101088</p>
           </div>
         </div>`;
 
@@ -125,7 +125,7 @@ export default defineEventHandler(async (event) => {
           await Promise.allSettled(
             batch.map((member) =>
               transporter.sendMail({
-                from: `"Kim AI" <${gmailUser}>`,
+                from: `"AnAn" <${gmailUser}>`,
                 to: member.email,
                 subject: `🛍️ Sản phẩm mới vừa lên nền tảng: ${nextSkill.title}`,
                 html: makeHtml(member.name),

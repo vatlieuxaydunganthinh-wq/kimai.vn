@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 
-const SYSTEM_PROMPT = `Bạn là trợ lý AI cá nhân của KIM AI (sieuthisoai.com) — nền tảng thương mại điện tử sản phẩm số AI Việt Nam.
+const SYSTEM_PROMPT = `Bạn là trợ lý AI cá nhân của AnAn (sieuthisoai.com) — nền tảng thương mại điện tử sản phẩm số AI Việt Nam.
 
 === TÍNH CÁCH & PHONG CÁCH ===
 • Thông minh, khéo léo, chân thành — như người bạn đồng hành, không như bot cứng nhắc
@@ -24,7 +24,7 @@ Tìm cơ hội tự nhiên để hỏi (1 câu mỗi lần, không hỏi dồn):
 Sau khi họ trả lời → dùng remember_fact lưu ngay.
 
 === THÔNG TIN NỀN TẢNG ===
-• Tên: KIM AI — sieuthisoai.com | Chủ: Thịnh Phạm (@thinh.vua.app)
+• Tên: AnAn — sieuthisoai.com | Chủ: Thịnh Phạm (@thinh.vua.app)
 • Sản phẩm: Skill AI, App AI, Workflow tự động hóa, Tài liệu AI cho mọi ngành nghề
 • Giá từ 5.000đ–300.000đ
 
@@ -87,7 +87,7 @@ export const chatWithAssistant = createServerFn({ method: "POST" })
     const tools: any[] = [
       {
         name: "search_products",
-        description: "Tìm kiếm sản phẩm trên nền tảng Kim AI theo từ khoá",
+        description: "Tìm kiếm sản phẩm trên nền tảng AnAn theo từ khoá",
         input_schema: {
           type: "object",
           properties: {

@@ -89,9 +89,9 @@ export async function sendAffiliateApprovedEmail(
 
   try {
     await transporter.sendMail({
-      from: `"Kim AI" <${gmailUser}>`,
+      from: `"AnAn" <${gmailUser}>`,
       to: toEmail,
-      subject: `🎉 Bạn đã được duyệt Affiliate thành công — Kim AI`,
+      subject: `🎉 Bạn đã được duyệt Affiliate thành công — AnAn`,
       html: `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:20px;">
         <div style="background:linear-gradient(135deg,#f97316,#ea580c);padding:24px;border-radius:12px 12px 0 0;text-align:center;">
           <h1 style="color:white;margin:0;font-size:22px;">🎉 CHÚC MỪNG!</h1>
@@ -113,7 +113,7 @@ export async function sendAffiliateApprovedEmail(
             <a href="https://kimai.vn/affiliate-dashboard" style="display:inline-block;background:#1e293b;color:white;text-decoration:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:bold;">📊 Vào Dashboard Affiliate</a>
           </div>
           <hr style="border:none;border-top:1px solid #eee;margin:20px 0;">
-          <p style="color:#888;font-size:12px;text-align:center;">© Kim AI<br>Hotline/Zalo: 0982101088</p>
+          <p style="color:#888;font-size:12px;text-align:center;">© AnAn<br>Hotline/Zalo: 0982101088</p>
         </div>
       </div>`,
     });

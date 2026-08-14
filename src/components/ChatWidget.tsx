@@ -64,7 +64,7 @@ export function ChatWidget() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "assistant",
-      content: "Xin chào! 👋 Tôi là trợ lý AI của **Kim AI** — và tôi học hỏi từ mỗi cuộc trò chuyện để ngày càng hiểu bạn hơn.\n\nTôi có thể tìm sản phẩm, hướng dẫn mua hàng, giải thích affiliate, hoặc đơn giản là trò chuyện. Bạn cần gì?",
+      content: "Xin chào! 👋 Tôi là trợ lý AI của **AnAn** — và tôi học hỏi từ mỗi cuộc trò chuyện để ngày càng hiểu bạn hơn.\n\nTôi có thể tìm sản phẩm, hướng dẫn mua hàng, giải thích affiliate, hoặc đơn giản là trò chuyện. Bạn cần gì?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -153,7 +153,7 @@ export function ChatWidget() {
               <Bot className="w-5 h-5" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-bold text-sm leading-none">Trợ lý Kim AI</p>
+              <p className="font-bold text-sm leading-none">Trợ lý AnAn</p>
               <MemoryBadge count={memoryCount} />
               {memoryCount === 0 && (
                 <p className="text-[11px] text-white/70 mt-0.5">AI · Học từ mỗi cuộc trò chuyện</p>

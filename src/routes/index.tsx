@@ -25,21 +25,22 @@ import {
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { apps, skillEnTitles, enThumbnailUrls } from "@/lib/apps-data";
+import { AnAnMark } from "@/components/Logo";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getFeaturedPromoServer } from "@/lib/payment-server-fns";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "KIM AI - Nền Tảng Sản Phẩm Số" },
+      { title: "AnAn - Nền Tảng Sản Phẩm Số" },
       {
         name: "description",
-        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ KIM AI",
+        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ AnAn",
       },
-      { property: "og:title", content: "KIM AI - Nền Tảng Sản Phẩm Số" },
+      { property: "og:title", content: "AnAn - Nền Tảng Sản Phẩm Số" },
       {
         property: "og:description",
-        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ KIM AI",
+        content: "Mua sắm sản phẩm số AI – công cụ, app, khóa học, workflow từ AnAn",
       },
     ],
   }),
@@ -262,10 +263,10 @@ function Index() {
           <div className="flex items-center justify-between mb-2">
             <Link to="/" className="flex items-center gap-1.5">
               <div className="w-8 h-8 rounded-lg bg-white/20 grid place-items-center shrink-0">
-                <Sparkles className="w-4 h-4 text-white" />
+                <AnAnMark className="w-5 h-5 text-white" />
               </div>
               <span className="text-white font-extrabold text-sm leading-tight">
-                <>KIM <span className="text-yellow-300">AI</span></>
+                <>An<span className="text-yellow-300">An</span></>
               </span>
             </Link>
             <div className="flex items-center gap-1.5">
@@ -325,10 +326,10 @@ function Index() {
         <div className="hidden sm:flex max-w-7xl mx-auto px-4 py-3 items-center gap-3">
           <Link to="/" className="shrink-0 flex items-center gap-1.5">
             <div className="w-9 h-9 rounded-lg bg-white/20 grid place-items-center">
-              <Sparkles className="w-5 h-5 text-white" />
+              <AnAnMark className="w-6 h-6 text-white" />
             </div>
             <div className="text-white font-extrabold text-lg leading-tight">
-              <>KIM <span className="text-yellow-300">AI</span></>
+              <>An<span className="text-yellow-300">An</span></>
             </div>
           </Link>
           <form onSubmit={handleSearch} className="flex-1 flex max-w-2xl">
@@ -496,7 +497,7 @@ function Index() {
           <div className="p-5 border-b border-white/10 flex items-center justify-between">
             <div>
               <div className="font-extrabold text-lg">
-                <>KIM <span className="text-primary">AI</span></>
+                <>An<span className="text-primary">An</span></>
               </div>
               <div className="text-xs text-white/50 mt-0.5">{t("Nền Tảng Sản Phẩm Số", "Digital Products Platform")}</div>
             </div>
@@ -822,14 +823,14 @@ function Index() {
       <footer className="mt-6 py-8 border-t border-border bg-card">
         <div className="px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
           <div className="flex items-center gap-2 font-bold text-foreground">
-            <Sparkles className="w-4 h-4 text-primary" /> {lang === "en" ? "KIM AI" : "KIM AI"}
+            <Sparkles className="w-4 h-4 text-primary" /> {lang === "en" ? "AnAn" : "AnAn"}
           </div>
           <div className="flex items-center gap-4 text-xs">
             <span>
               💬 {t("Zalo Cộng Đồng", "Zalo Community")}
             </span>
           </div>
-          <div>© {new Date().getFullYear()} KIM AI</div>
+          <div>© {new Date().getFullYear()} AnAn</div>
         </div>
       </footer>
     </div>

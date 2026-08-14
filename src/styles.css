@@ -9,15 +9,15 @@
   100% { background-position: 200% 50%; }
 }
 @keyframes promo-glow {
-  0%, 100% { box-shadow: 0 0 14px 3px rgba(16,185,129,0.5), 0 2px 10px rgba(0,0,0,0.15); }
-  50% { box-shadow: 0 0 30px 10px rgba(16,185,129,0.85), 0 2px 18px rgba(0,0,0,0.2); }
+  0%, 100% { box-shadow: 0 0 14px 3px rgba(10,133,110,0.5), 0 2px 10px rgba(0,0,0,0.15); }
+  50% { box-shadow: 0 0 30px 10px rgba(10,133,110,0.85), 0 2px 18px rgba(0,0,0,0.2); }
 }
 @keyframes promo-badge {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
 .promo-banner {
-  background: linear-gradient(90deg, #064e3b, #059669, #10b981, #059669, #064e3b);
+  background: linear-gradient(90deg, #06423a, #0a856e, #349983, #0a856e, #06423a);
   background-size: 200% 100%;
   animation: promo-shimmer 2.5s linear infinite, promo-glow 2s ease-in-out infinite;
   color: white;
@@ -41,6 +41,35 @@
  */
 
 @theme inline {
+  /*
+   * ── BẢNG MÀU THƯƠNG HIỆU AnAn ──────────────────────────────────────────
+   * Dải này GHI ĐÈ bảng emerald mặc định của Tailwind. Trong mã nguồn có
+   * ~163 chỗ viết cứng class emerald-* nằm rải rác 15 file; ghi đè ở đây
+   * khiến toàn bộ chúng đổi sang màu AnAn mà không phải sửa từng chỗ.
+   *
+   * 3 bậc neo đúng bằng màu trong brand guideline AnAn:
+   *   emerald-200 = #BDE3DC  (màu phụ trợ)
+   *   emerald-600 = #0A856E  (màu chính)
+   *   emerald-900 = #06423A  (màu đậm)
+   * Các bậc còn lại nội suy quanh hue ~175–183, đã kiểm tra cả 11 bậc nằm
+   * trong gamut sRGB và độ sáng giảm đơn điệu.
+   *
+   * LƯU Ý: không ghi đè dải amber/gold ở đây. Guideline AnAn chỉ có 3 màu
+   * xanh trên; các class amber và yellow trong mã nguồn cố ý dùng vàng
+   * mặc định của Tailwind làm màu nhấn (nút Dashboard, chữ "An" thứ hai).
+   */
+  --color-emerald-50:  oklch(0.979 0.012 183);
+  --color-emerald-100: oklch(0.95 0.024 183);
+  --color-emerald-200: oklch(0.8867 0.0408 182.97);
+  --color-emerald-300: oklch(0.808 0.065 181);
+  --color-emerald-400: oklch(0.7 0.088 178);
+  --color-emerald-500: oklch(0.618 0.098 176);
+  --color-emerald-600: oklch(0.5514 0.1024 174.58);
+  --color-emerald-700: oklch(0.472 0.08 176);
+  --color-emerald-800: oklch(0.404 0.068 178);
+  --color-emerald-900: oklch(0.3414 0.0585 181.08);
+  --color-emerald-950: oklch(0.253 0.045 182);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -83,6 +112,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/*
+ * Light mode: nền kem ấm trung tính, chữ xám đậm, mọi điểm nhấn dùng
+ * màu chính AnAn #0A856E.
+ */
 :root {
   --radius: 0.875rem;
   --background: oklch(0.98 0.012 85);
@@ -91,34 +124,38 @@
   --card-foreground: oklch(0.18 0.012 250);
   --popover: oklch(1 0.006 85);
   --popover-foreground: oklch(0.18 0.012 250);
-  --primary: oklch(0.5 0.11 162);
+  --primary: oklch(0.5514 0.1024 174.58);
   --primary-foreground: oklch(0.98 0.012 85);
   --secondary: oklch(0.95 0.015 85);
   --secondary-foreground: oklch(0.18 0.012 250);
   --muted: oklch(0.95 0.012 85);
   --muted-foreground: oklch(0.5 0.015 250);
-  --accent: oklch(0.93 0.035 165);
+  --accent: oklch(0.93 0.03 183);
   --accent-foreground: oklch(0.18 0.012 250);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.9 0.012 85);
   --input: oklch(0.9 0.012 85);
-  --ring: oklch(0.5 0.11 162);
-  --chart-1: oklch(0.5 0.11 162);
-  --chart-2: oklch(0.65 0.15 165);
+  --ring: oklch(0.5514 0.1024 174.58);
+  --chart-1: oklch(0.5514 0.1024 174.58);
+  --chart-2: oklch(0.7 0.088 178);
   --chart-3: oklch(0.35 0.03 250);
-  --chart-4: oklch(0.75 0.12 160);
-  --chart-5: oklch(0.4 0.08 165);
+  --chart-4: oklch(0.808 0.065 181);
+  --chart-5: oklch(0.404 0.068 178);
   --sidebar: oklch(0.18 0.012 250);
   --sidebar-foreground: oklch(0.98 0.012 85);
-  --sidebar-primary: oklch(0.5 0.11 162);
+  --sidebar-primary: oklch(0.5514 0.1024 174.58);
   --sidebar-primary-foreground: oklch(0.98 0.012 85);
   --sidebar-accent: oklch(0.26 0.015 250);
   --sidebar-accent-foreground: oklch(0.98 0.012 85);
   --sidebar-border: oklch(0.3 0.015 250);
-  --sidebar-ring: oklch(0.5 0.11 162);
+  --sidebar-ring: oklch(0.5514 0.1024 174.58);
 }
 
+/*
+ * Dark mode: nền xám trung tính. Màu chính sáng lên một bậc (tương đương
+ * emerald-400) để giữ đủ tương phản chữ/nút trên nền tối.
+ */
 .dark {
   --background: oklch(0.16 0.012 250);
   --foreground: oklch(0.98 0.012 85);
@@ -126,32 +163,32 @@
   --card-foreground: oklch(0.98 0.012 85);
   --popover: oklch(0.21 0.014 250);
   --popover-foreground: oklch(0.98 0.012 85);
-  --primary: oklch(0.65 0.15 165);
+  --primary: oklch(0.7 0.088 178);
   --primary-foreground: oklch(0.16 0.012 250);
   --secondary: oklch(0.28 0.015 250);
   --secondary-foreground: oklch(0.98 0.012 85);
   --muted: oklch(0.28 0.015 250);
   --muted-foreground: oklch(0.7 0.015 85);
-  --accent: oklch(0.3 0.03 165);
+  --accent: oklch(0.3 0.03 180);
   --accent-foreground: oklch(0.98 0.012 85);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.65 0.15 165);
-  --chart-1: oklch(0.65 0.15 165);
-  --chart-2: oklch(0.5 0.11 162);
+  --ring: oklch(0.7 0.088 178);
+  --chart-1: oklch(0.7 0.088 178);
+  --chart-2: oklch(0.5514 0.1024 174.58);
   --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.75 0.12 160);
-  --chart-5: oklch(0.4 0.08 165);
+  --chart-4: oklch(0.808 0.065 181);
+  --chart-5: oklch(0.404 0.068 178);
   --sidebar: oklch(0.14 0.012 250);
   --sidebar-foreground: oklch(0.98 0.012 85);
-  --sidebar-primary: oklch(0.65 0.15 165);
+  --sidebar-primary: oklch(0.7 0.088 178);
   --sidebar-primary-foreground: oklch(0.16 0.012 250);
   --sidebar-accent: oklch(0.28 0.015 250);
   --sidebar-accent-foreground: oklch(0.98 0.012 85);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.65 0.15 165);
+  --sidebar-ring: oklch(0.7 0.088 178);
 }
 
 @layer base {

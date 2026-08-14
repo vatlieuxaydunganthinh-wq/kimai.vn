@@ -5,6 +5,7 @@ import { Shield, ArrowLeft, CheckCircle2, XCircle, Clock, Users, ShoppingCart, L
 import { toast } from "sonner";
 import { deleteMemberServer, notifyAffiliateApprovedServer, approveAffiliateServer, notifyNewProductServer, listPromoCodesServer, createPromoCodeServer, updatePromoCodeServer, deletePromoCodeServer, uploadProductImageServer, fetchAndStoreImageServer, updateMemberProductEnThumbServer } from "@/lib/payment-server-fns";
 import { apps, enThumbnailUrls, skillEnThumbnailUrls } from "@/lib/apps-data";
+import { generateHiggsfieldImage, higgsfieldStatusServer, buildHiggsfieldPrompt, HF_DEFAULT_STYLE } from "@/lib/higgsfield-server-fns";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({ meta: [{ title: "Quản trị — Thịnh Vua App" }] }),
@@ -121,6 +122,13 @@ function AdminPage() {
   const [storingMascot, setStoringMascot] = useState(false);
   // MayA — 9:16 portrait, empty top half designed for text overlay (job 20d97a55)
   const HIGGSFIELD_MASCOT = "https://d8j0ntlcm91z4.cloudfront.net/user_34DrzROVtzmncohERRhpheIFTqb/hf_20260729_101321_20d97a55-a2fe-475d-b5cb-95ee363924f5.png";
+  // Higgsfield API — sinh thumbnail thẳng từ prompt (src/lib/higgsfield-server-fns.ts)
+  const [hfConfigured, setHfConfigured] = useState<boolean | null>(null);
+  const [hfStyle, setHfStyle] = useState<string>(() => localStorage.getItem("admin_hf_style") || HF_DEFAULT_STYLE);
+  const [hfRatio, setHfRatio] = useState<string>(() => localStorage.getItem("admin_hf_ratio") || "1:1");
+  const [hfGenerating, setHfGenerating] = useState(false);
+  const [hfBatchRunning, setHfBatchRunning] = useState(false);
+  const [hfBatchProgress, setHfBatchProgress] = useState<{ current: number; total: number; label: string } | null>(null);
   const [promoCodes, setPromoCodes] = useState<PromoCode[]>([]);
   const [promoForm, setPromoForm] = useState({ code: "", productKey: "", maxUses: "", expiresAt: "", note: "", productUrl: "" });
   const [promoSaving, setPromoSaving] = useState(false);
@@ -264,7 +272,10 @@ function AdminPage() {
     setTabLoading(true);
     if (newTab === "orders") await Promise.all([loadOrders(), loadProductOrders()]);
     if (newTab === "affiliates") await loadAffiliates();
-    if (newTab === "products") await loadAdminProducts();
+    if (newTab === "products") {
+      await loadAdminProducts();
+      higgsfieldStatusServer().then(r => setHfConfigured(r.configured)).catch(() => setHfConfigured(false));
+    }
     if (newTab === "promoCodes") await loadPromoCodes();
     setLoadedTabs(prev => new Set([...prev, newTab]));
     setTabLoading(false);
@@ -325,7 +336,7 @@ function AdminPage() {
       data: {
         productTitle: p.title,
         productKey: String(p.n),
-        sellerName: "KIM AI",
+        sellerName: "AnAn",
         priceVnd: p.price_vnd,
         thumbnailUrl: p.thumbnail_url,
         productType: "admin",
@@ -422,7 +433,7 @@ function AdminPage() {
     ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(48, 563); ctx.lineTo(1152, 563); ctx.stroke();
     ctx.font = "bold 26px Arial, sans-serif"; ctx.fillStyle = "#059669";
-    ctx.fillText(isEn ? "KIM AI" : "KIM AI", 48, 605);
+    ctx.fillText(isEn ? "AnAn" : "AnAn", 48, 605);
     ctx.font = "18px Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.45)";
     const siteText = "sieuthisoai.com";
     ctx.fillText(siteText, 1152 - ctx.measureText(siteText).width, 605);
@@ -579,6 +590,78 @@ function AdminPage() {
     setSkillBatchGenerating(false);
     setSkillBatchProgress(null);
     toast.success(`Đã import xong ${done}/${entries.length} Higgsfield EN thumbnail cho skill!`);
+  };
+
+  // ── Higgsfield API: sinh ảnh mới thay vì import URL dán tay ──────────────
+  /** Tên + mô tả tiếng Anh của SP (apps-data), fallback về dữ liệu trong DB. */
+  const enTextFor = (n: number, fallbackTitle: string, fallbackDesc?: string | null) => {
+    const app = apps.find(a => a.n === n);
+    return {
+      title: app?.titleEn || fallbackTitle,
+      desc: app?.descEn || fallbackDesc || "",
+    };
+  };
+
+  const generateHiggsfieldForEditing = async () => {
+    if (!editingProduct?.title?.trim()) { toast.error("Nhập tên sản phẩm trước"); return; }
+    if (hfConfigured === false) { toast.error("Chưa cấu hình khoá Higgsfield trong .env"); return; }
+    setHfGenerating(true);
+    const { title, desc } = enTextFor(editingProduct.n ?? 0, editingProduct.title, editingProduct.description);
+    const toastId = toast.loading("Higgsfield đang vẽ ảnh (khoảng 30–60 giây)...");
+    try {
+      const res = await generateHiggsfieldImage({
+        prompt: buildHiggsfieldPrompt(title, desc, hfStyle),
+        storagePath: `products/en/hf-product-${editingProduct.n || Date.now()}-en.jpg`,
+        aspectRatio: hfRatio,
+        onStatus: (s) => toast.loading(`Higgsfield: ${s}...`, { id: toastId }),
+      });
+      if (res.ok) {
+        setEditingProduct(p => p ? { ...p, thumbnail_url_en: res.url } : null);
+        toast.success("Đã tạo thumbnail EN bằng Higgsfield — nhớ bấm Lưu!", { id: toastId });
+      } else {
+        toast.error(res.error, { id: toastId, duration: 8000 });
+      }
+    } catch (err: any) {
+      toast.error("Error: " + err.message, { id: toastId });
+    }
+    setHfGenerating(false);
+  };
+
+  const generateHiggsfieldBatch = async (onlyMissing: boolean) => {
+    if (hfConfigured === false) { toast.error("Chưa cấu hình khoá Higgsfield trong .env"); return; }
+    const targets = adminProducts.filter(p => p.is_active && (!onlyMissing || !p.thumbnail_url_en));
+    if (targets.length === 0) { toast.info("Không có sản phẩm nào cần tạo ảnh"); return; }
+    if (!confirm(`Sinh ${targets.length} ảnh mới bằng Higgsfield?\nMỗi ảnh tốn credit trên tài khoản Higgsfield của bạn và ghi đè thumbnail EN hiện tại.`)) return;
+
+    setHfBatchRunning(true);
+    let done = 0, failed = 0;
+    for (const prod of targets) {
+      setHfBatchProgress({ current: done, total: targets.length, label: prod.title });
+      const { title, desc } = enTextFor(prod.n, prod.title, prod.description);
+      try {
+        const res = await generateHiggsfieldImage({
+          prompt: buildHiggsfieldPrompt(title, desc, hfStyle),
+          storagePath: `products/en/hf-product-${prod.n}-en.jpg`,
+          aspectRatio: hfRatio,
+        });
+        if (res.ok) {
+          await (supabase as any).from("admin_products").update({ thumbnail_url_en: res.url }).eq("id", prod.id);
+          setAdminProducts(prev => prev.map(p => p.id === prod.id ? { ...p, thumbnail_url_en: res.url } : p));
+        } else {
+          failed++;
+          console.error(`SP #${prod.n} Higgsfield:`, res.error);
+        }
+      } catch (err: any) {
+        failed++;
+        console.error(`SP #${prod.n} error:`, err.message);
+      }
+      done++;
+      setHfBatchProgress({ current: done, total: targets.length, label: prod.title });
+    }
+    setHfBatchRunning(false);
+    setHfBatchProgress(null);
+    if (failed > 0) toast.warning(`Xong ${done - failed}/${done} ảnh — ${failed} ảnh lỗi (xem Console)`);
+    else toast.success(`Đã sinh ${done} thumbnail EN bằng Higgsfield!`);
   };
 
   const pf = (field: keyof AdminProduct) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -876,6 +959,79 @@ function AdminPage() {
               </div>
             </div>
 
+            {/* Higgsfield API — sinh ảnh trực tiếp từ prompt */}
+            <div className="mb-4 rounded-xl border border-fuchsia-200 bg-fuchsia-50/70 p-4">
+              <div className="flex items-start justify-between gap-3 flex-wrap mb-3">
+                <div>
+                  <div className="text-sm font-bold text-fuchsia-800 flex items-center gap-2">
+                    ✨ Higgsfield API — sinh thumbnail tự động
+                    {hfConfigured === null && <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-muted text-muted-foreground">đang kiểm tra…</span>}
+                    {hfConfigured === true && <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700">✅ đã kết nối</span>}
+                    {hfConfigured === false && <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">⚠️ chưa có khoá API</span>}
+                  </div>
+                  <div className="text-xs text-fuchsia-700/80 mt-0.5">
+                    {hfConfigured === false
+                      ? <>Điền <code className="font-mono">HIGGSFIELD_API_KEY_ID</code> và <code className="font-mono">HIGGSFIELD_API_KEY_SECRET</code> trong <code className="font-mono">.env</code> (lấy tại cloud.higgsfield.ai) rồi khởi động lại server.</>
+                      : "Gọi thẳng Higgsfield sinh ảnh mới từ tên + mô tả sản phẩm, tự lưu vào Supabase Storage."}
+                  </div>
+                </div>
+                <select
+                  value={hfRatio}
+                  onChange={(e) => { setHfRatio(e.target.value); localStorage.setItem("admin_hf_ratio", e.target.value); }}
+                  className="rounded-lg border border-fuchsia-300 bg-white px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-fuchsia-400/40"
+                  title="Tỷ lệ khung ảnh"
+                >
+                  <option value="1:1">1:1 — vuông (như thumbnail hiện tại)</option>
+                  <option value="4:3">4:3 — ngang</option>
+                  <option value="16:9">16:9 — banner</option>
+                  <option value="9:16">9:16 — dọc</option>
+                </select>
+              </div>
+
+              <label className="text-[11px] font-semibold text-fuchsia-800 uppercase mb-1 block">Phong cách (nối sau tên + mô tả sản phẩm)</label>
+              <textarea
+                value={hfStyle}
+                onChange={(e) => { setHfStyle(e.target.value); localStorage.setItem("admin_hf_style", e.target.value); }}
+                rows={2}
+                className="w-full rounded-lg border border-fuchsia-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-fuchsia-400/40 resize-none"
+                placeholder={HF_DEFAULT_STYLE}
+              />
+
+              <div className="flex gap-2 flex-wrap mt-3 items-center">
+                {!hfBatchRunning ? (
+                  <>
+                    <button
+                      onClick={() => generateHiggsfieldBatch(true)}
+                      disabled={hfConfigured === false}
+                      className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition ${hfConfigured === false ? "bg-muted text-muted-foreground cursor-not-allowed" : "bg-fuchsia-600 text-white hover:bg-fuchsia-500 cursor-pointer"}`}
+                      title="Chỉ sinh cho sản phẩm đang bật mà chưa có thumbnail EN"
+                    >
+                      ✨ Sinh ảnh cho SP chưa có ({adminProducts.filter(p => p.is_active && !p.thumbnail_url_en).length})
+                    </button>
+                    <button
+                      onClick={() => generateHiggsfieldBatch(false)}
+                      disabled={hfConfigured === false}
+                      className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition ${hfConfigured === false ? "bg-muted text-muted-foreground cursor-not-allowed" : "bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200 cursor-pointer"}`}
+                      title="Ghi đè toàn bộ thumbnail EN của các sản phẩm đang bật"
+                    >
+                      ♻️ Sinh lại toàn bộ ({adminProducts.filter(p => p.is_active).length})
+                    </button>
+                    <span className="text-[11px] text-fuchsia-700/70">Mỗi ảnh mất ~30–60 giây và tốn credit Higgsfield.</span>
+                  </>
+                ) : (
+                  <div className="flex items-center gap-3 bg-white border border-fuchsia-300 rounded-lg px-4 py-2 w-full">
+                    <div className="w-4 h-4 border-2 border-fuchsia-500 border-t-transparent rounded-full animate-spin shrink-0" />
+                    <span className="text-xs font-bold text-fuchsia-700 truncate">
+                      {hfBatchProgress?.current}/{hfBatchProgress?.total} — {hfBatchProgress?.label}
+                    </span>
+                    <div className="w-24 h-2 bg-fuchsia-100 rounded-full overflow-hidden ml-auto shrink-0">
+                      <div className="h-full bg-fuchsia-500 rounded-full transition-all" style={{ width: `${((hfBatchProgress?.current ?? 0) / (hfBatchProgress?.total || 1)) * 100}%` }} />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
             <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
               <h1 className="text-2xl font-black">Sản phẩm nền tảng ({adminProducts.length})</h1>
               <div className="flex gap-2 flex-wrap">
@@ -1063,6 +1219,15 @@ function AdminPage() {
                           className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition ${(thumbGenerating === "en" || !editingProduct?.title?.trim()) ? "bg-muted text-muted-foreground cursor-not-allowed" : "bg-violet-100 text-violet-700 hover:bg-violet-200 cursor-pointer"}`}
                         >
                           {thumbGenerating === "en" ? "Đang tạo..." : "🤖 Tự tạo EN"}
+                        </button>
+                        <button
+                          type="button"
+                          disabled={hfGenerating || hfConfigured === false || !editingProduct?.title?.trim()}
+                          onClick={generateHiggsfieldForEditing}
+                          title={hfConfigured === false ? "Chưa cấu hình khoá Higgsfield trong .env" : "Gọi Higgsfield sinh ảnh mới từ tên + mô tả sản phẩm"}
+                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition ${(hfGenerating || hfConfigured === false || !editingProduct?.title?.trim()) ? "bg-muted text-muted-foreground cursor-not-allowed" : "bg-fuchsia-100 text-fuchsia-700 hover:bg-fuchsia-200 cursor-pointer"}`}
+                        >
+                          {hfGenerating ? "Higgsfield đang vẽ..." : "✨ Sinh bằng Higgsfield"}
                         </button>
                         </div>
                         {!editingProduct.thumbnail_url_en && (
